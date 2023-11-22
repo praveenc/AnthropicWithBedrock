@@ -19,6 +19,17 @@ It is then the developer's responsibility to:
 - Execute the function by passing arguments
 - Return the results back to Claude for answering
 
+## Implementation
+
+Refer to [anthropic_func_calling.ipynb](anthropic_func_calling.ipynb) for full implementation
+
+In this notebook, we show how to call 2 custom functions:
+
+1. `get_lat_long` function - returns `latitude` and `longitude` values for a given city.
+2. `get_weather` function - return `temperature` and `conditions`
+
+Refer to [tools.py](./tools.py) for function implementations.
+
 ## How does it work?
 
 Suppose a user asks the question, "What's the weather like right now in San Francisco?".
@@ -91,13 +102,3 @@ Just answer the <question> in a direct manner.
 Assistant:
 ```
 
-## Notebook
-
-Refer to [anthropic_func_calling.ipynb](anthropic_func_calling.ipynb) for full implementation
-
-In this notebook, we show how to call 2 custom functions:
-
-1. `get_lat_long` function - returns `latitude` and `longitude` values for a given city.
-2. `get_weather` function - return `temperature` and `conditions`
-
-Refer to [tools.py](./tools.py) for function implementations.
