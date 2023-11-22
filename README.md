@@ -4,9 +4,15 @@ Code samples using Anthropic Claude and Amazon Bedrock
 
 ## Quick Links
 
+### Basic example with raw prompting
+
 - [How function Calling with Claude works](./examples/function_calling/README.md)
 - [Function Calling Notebook](./examples/function_calling/anthropic_func_calling.ipynb)
 - [Functions to be called](./examples/function_calling/tools.py)
+
+### Function calling using Langchain Agents
+
+- [Function calling with Langchain Agents](./examples/function_calling/anthropic_func_calling_langchain.ipynb)
 
 ## Contribution
 
