@@ -90,3 +90,7 @@ Just answer the <question> in a direct manner.
 
 Assistant:
 ```
+
+## Notebook
+
+Refer to [anthropic_func_calling.ipynb](anthropic_func_calling.ipynb) for full implementation
