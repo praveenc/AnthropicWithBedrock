@@ -2,10 +2,6 @@
 
 Code samples using Anthropic Claude and Amazon Bedrock
 
-## Examples Directory
-
-Welcome to the Examples directory of the AnthropicAIOnAWS repository. Here, you'll find practical examples and utility tools that demonstrate how to interact with Anthropic Claude using the Amazon Bedrock environment.
-
 ## Quick Links
 
 - [How function Calling with Claude works](./examples/function_calling/README.md)
