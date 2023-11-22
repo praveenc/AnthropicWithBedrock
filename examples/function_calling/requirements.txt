@@ -1,0 +1,8 @@
+anthropic-bedrock
+duckdb
+rich
+loguru
+openmeteo_requests
+requests-cache
+retry-requests
+jupyterlab
