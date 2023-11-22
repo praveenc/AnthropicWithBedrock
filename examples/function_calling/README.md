@@ -101,4 +101,3 @@ Just answer the <question> in a direct manner.
 
 Assistant:
 ```
-
