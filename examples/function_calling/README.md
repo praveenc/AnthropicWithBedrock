@@ -93,11 +93,19 @@ I have double checked and made sure that I have been provided the get_current_te
 <answer>The current temperature in San Francisco is 71 degrees Fahrenheit.</answer>
 </example>
 
-<question>{user_input}</question>
+This example shows how you should respond to questions that cannot be answered using information from the functions you are provided with. Remember, DO NOT use any functions that I have not provided you with.
 
+Remember, your goal is to answer the user's question to the best of your ability, using only the function(s) provided to gather more information if necessary to better answer the question.
+
+Do not modify or extend the provided functions under any circumstances. For example, calling get_current_temp() with additional parameters would be modifying the function which is not allowed. Please use the functions only as defined.
+
+The result of a function call will be added to the conversation history as an observation. If necessary, you can make multiple function calls and use all the functions I have equipped you with. Let's create a plan and then execute the plan. Double check your plan to make sure you don't call any functions that I haven't provided. Always return your final answer within  <answer></answer> tags.
 
 DO NOT output any preamble like 'based on calling the provided functions ...'. If <function_result> contains items in a list or tuple then format them using markdown list. Do NOT include <function_result> tags in the output.
 Just answer the <question> in a direct manner.
+
+The question to answer is <question>{user_input}</question>
+
 
 Assistant:
 ```
