@@ -22,7 +22,7 @@ flowchart TB
     B -->|Computer Science| E[Computer Science Prompt Chain]
     B -->|History| F[History Prompt Chain]
     B -->|General| G[General Prompt Chain]
-    C --> H[Output Result]
+    C --> H[Output]
     D --> H
     E --> H
     F --> H
