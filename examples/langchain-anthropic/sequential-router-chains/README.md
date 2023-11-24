@@ -10,8 +10,34 @@ flowchart LR
     C --> D
 ```
 
-## Quick Links
+Refer to notebook: [Langchain Sequential Chains](./anthropic-sequential-chains.ipynb)
 
-- [Langchain Sequential Chains](./anthropic-sequential-chains.ipynb)
-- [Multi-prompt Router Chains](./anthropic-router-chains.ipynb)
+## Routing calls to LLMs
+
+```mermaid
+flowchart TB
+    A[User Input] --> B[Classifier Prompt]
+    B -->|Math| C[Math Prompt Chain]
+    B -->|Physics| D[Physics Prompt Chain]
+    B -->|Computer Science| E[Computer Science Prompt Chain]
+    B -->|History| F[History Prompt Chain]
+    B -->|General| G[General Prompt Chain]
+    C --> H[Output Result]
+    D --> H
+    E --> H
+    F --> H
+    G --> H
+```
+
+Refer to notebook: [Multi-prompt Router](./anthropic-router-chains.ipynb)
+
+
+> [!WARNING]
+> The above notebooks also contain *LEGACY* implementations only for demonstration purposes. LCEL is the preffered way.
+
+
+### Quick Links
+
 - [Model kwargs for various Bedrock Models](./utils.py)
+
+
