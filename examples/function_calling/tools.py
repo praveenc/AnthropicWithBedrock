@@ -91,7 +91,7 @@ def get_weather(latitude: str, longitude: str, units: str = "F"):
         "temperature": current_temperature_2m,
         "conditions": conditions,
     }
-    logger.info(weather_dict)
+    # logger.info(weather_dict)
 
     return weather_dict
 
