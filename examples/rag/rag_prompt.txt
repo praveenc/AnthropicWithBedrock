@@ -1,0 +1,23 @@
+Given the following retrieved context documents, your task is to rerank the contexts based on their relevance to truthfully and completely answering the user's question provided in the <question> tags.
+Then use only the top ranked context to provide an answer to the question.
+If you don't have the information just say so. Sometimes the retrieved documents may not contain the information you need. In such cases, say 'Sorry, I don't have enough information'.
+
+Retrieved documents: 
+
+{context}
+
+please rerank the documents above from most (1) to least (5) relevant in directly and fully answering the user's specific question "<question>".
+Evaluate relevance based on how precisely each document answers this question if taken alone.
+
+Document ranking:
+1.
+2.
+3.
+4.
+5.
+
+Now using only the top ranked documents, please provide a clear and concise answer to the question in <answer> tags.
+
+Do NOT output <answer> with any preamble. Just answer the question in a direct manner.
+
+User's question: <question> {question} </question>
