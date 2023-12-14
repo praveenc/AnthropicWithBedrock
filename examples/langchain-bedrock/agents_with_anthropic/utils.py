@@ -1,9 +1,3 @@
-from pathlib import Path
-
-def save_prompt(prompt_text: str, target_path: Path) -> bool:
-    target_path.write_text(prompt_text, encoding='utf-8')
-    return True
-    
 def get_inference_parameters(
     model,
 ):  # return a default set of parameters based on the model's provider
