@@ -1,3 +1,5 @@
+import boto3
+
 def get_inference_parameters(
     model,
 ):  # return a default set of parameters based on the model's provider
@@ -44,3 +46,21 @@ def get_inference_parameters(
             "temperature": 0,
             "topP": 0.9,
         }
+
+
+def get_model_ids(provider, output_modality):
+    """
+    Fetch model IDs from AWS Bedrock for specified provider and output modality.
+
+    Args:
+    provider (str): The provider of the model.
+    output_modality (str): The output modality of the model.
+
+    Returns:
+    list: A list of model IDs that match the criteria.
+    """
+    b_client = boto3.client("bedrock", region_name="us-west-2")
+    models = b_client.list_foundation_models()['modelSummaries']
+    model_ids = [model['modelId'] for model in models if model['providerName'] == provider and model['outputModalities'] == [output_modality]]
+    
+    return model_ids
