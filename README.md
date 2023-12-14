@@ -1,19 +1,27 @@
-# AnthropicWithBedrock
+# Building GenAI applications on Amazon Bedrock with Anthropic
 
-Code samples using Anthropic Claude and Amazon Bedrock
-
-## Quick Links
-
-### Basic example with prompt engineering (not external packages)
-
-- [How function Calling with Claude works](./examples/function_calling/README.md)
-- [Function Calling Notebook](./examples/function_calling/anthropic_func_calling.ipynb)
-- [Functions to be called](./examples/function_calling/tools.py)
-
-### Langchain with Anthropic models on Amazon Bedrock
+## Chaining LLM calls using LangChain with Anthropic models on Amazon Bedrock
 
 - [Langchain Sequential Chains](./examples/langchain-anthropic/sequential-router-chains/anthropic-sequential-chains.ipynb)
 - [Langchain Multi-prompt Router Chains](./examples/langchain-anthropic/sequential-router-chains/anthropic-router-chains.ipynb)
+
+## Retrieval Augmented Generation (RAG)
+
+- [RAG with Claude-v2 and Cohere-v3 on Bedrock](./examples/langchain-bedrock/rag_with_bedrock/RAG_with_claudev2_coherev3.ipynb)
+
+## Function calling - Example with prompt engineering (not external packages)
+
+- [How function Calling with Claude works](./examples/function_calling/README.md)
+- [Function Calling with Anthropic_Bedrock py SDK](./examples/function_calling/anthropic_func_calling.ipynb)
+  - [List of functions to be called](./examples/function_calling/tools.py)
+
+## LangChain Agents with Anthropic Claude
+
+- [Enhancing LLM calls with External tools](./examples/langchain-bedrock/agents_with_anthropic/search_agents_with_claude.ipynb)
+
+## Quick Links
+
+- [Common `utils.py` file](./examples/langchain-bedrock/utils/utils.py)
 
 ## Contribution
 

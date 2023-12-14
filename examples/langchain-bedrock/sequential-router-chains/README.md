@@ -12,7 +12,7 @@ flowchart LR
 
 Refer to notebook: [Langchain Sequential Chains](./anthropic-sequential-chains.ipynb)
 
-## Routing calls to LLMs
+## Classify and Route questions to various Prompts
 
 ```mermaid
 flowchart TB
@@ -31,13 +31,9 @@ flowchart TB
 
 Refer to notebook: [Multi-prompt Router](./anthropic-router-chains.ipynb)
 
-
 > [!WARNING]
 > The above notebooks also contain *LEGACY* implementations only for demonstration purposes. LCEL is the preffered way.
 
-
 ### Quick Links
 
-- [Model kwargs for various Bedrock Models](./utils.py)
-
-
+- [Model kwargs for various Bedrock Models](../utils/utils.py)
