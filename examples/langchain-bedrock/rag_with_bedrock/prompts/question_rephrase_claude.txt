@@ -1,0 +1,19 @@
+Given the user's question provided in the <question> tags, carefully analyze what information the user is seeking.
+Then generate 2-3 rephrased versions of the original question that ask for the same underlying information but using different wording.
+
+The goal of the rephrased questions is to retrieve additional relevant documents from the vector store to improve the chances of surfacing information to answer the user's need.
+
+Make sure the rephrasings use synonymous vocabulary while retaining the intent of the original question.The restatements should expand specificity where helpful to bring back useful context from the vector space.
+
+Importantly, do NOT expand or assume meaning for any abbreviations used in the original question. Leave abbreviations unchanged.
+
+Do NOT output any preamble. Just output the rephrased questions.
+
+Provide these rephrased questions separated by newlines.
+
+User's original question: <question> {question} </question>
+
+Rephrased versions of the user's question:
+1.
+2.
+3.
