@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>What is prompt engineering? - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="what-is-prompt-engineering" /><meta name="default_state" content="what-is-prompt-engineering" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-prompt-engineering.html" /><meta name="description" content="Definition of prompt engineering and use cases." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-prompt-engineering.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-prompt-engineering.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="What is prompt engineering?" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>What is prompt engineering? - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#what-is-prompt-engineering" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/what-is-prompt-engineering.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/what-is-prompt-engineering.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/what-is-prompt-engineering.html" /><meta name="keywords" content="Amazon Bedrock,bedrock,Prompt Engineering,Classification,Question-answer, without context,Question-answer, with context,Summarization,Open-ended text generation,Code generation,Mathematics,Reasoning/logical thinking" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Prompt engineering guidelines",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-engineering-guidelines.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "What is prompt engineering?",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-engineering-guidelines.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#what-is-prompt-engineering" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="what-is-prompt-engineering">What is prompt engineering?</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>Prompt engineering refers to the practice of crafting and optimizing input prompts by
+			selecting appropriate words, phrases, sentences, punctuation, and separator characters
+			to effectively use LLMs for a wide variety of applications. In other words, prompt
+			engineering is the art of communicating with an LLM. High-quality prompts condition the
+			LLM to generate desired or better responses. The detailed guidance provided within this
+			document
+			is
+			applicable across all LLMs within Amazon Bedrock.</p><p>The best prompt engineering approach for your use case is dependent 
+on both the task and the data. Common tasks supported by LLMs on Amazon Bedrock include:</p><div class="itemizedlist">
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+		<ul class="itemizedlist"><li class="listitem">
+				<p>
+					<b>Classification:</b>
+					The
+					prompt includes a question with several possible choices for the answer, and the
+					model must respond with the correct choice. An example classification use case
+					is sentiment analysis: the input is a text passage, and the model must classify
+					the sentiment of the
+					text,
+					such as whether it's positive or
+					negative,
+					or harmless or toxic. </p>
+			</li><li class="listitem">
+				<p>
+					<b>Question-answer, without context:</b>
+					The
+					model must answer the question with its internal knowledge without any context
+					or document. </p>
+			</li><li class="listitem">
+				<p>
+					<b>Question-answer, with context:</b>
+					The
+					user provides an input text with a question, and the model must answer the
+					question based on information provided within the input text. </p>
+			</li><li class="listitem">
+				<p>
+					<b>Summarization:</b>
+					The
+					prompt is a passage of text, and the model must respond with a shorter passage
+					that captures the main points of the input. </p>
+			</li><li class="listitem">
+				<p>
+					<b>Open-ended text generation:</b>
+					Given
+					a prompt, the model must respond with a passage of original text that matches
+					the
+					description.
+					This
+					also includes the generation of creative text such as stories, poems, or movie
+					scripts. </p>
+			</li><li class="listitem">
+				<p>
+					<b>Code generation:</b>
+					The model
+					must generate code based on user
+					specifications.
+					For example, a prompt could request text-to-SQL or Python code generation.
+					</p>
+			</li><li class="listitem">
+				<p>
+					<b>Mathematics:</b>
+					The
+					input describes a problem that requires mathematical reasoning at some level,
+					which may be numerical, logical, geometric or otherwise. </p>
+			</li><li class="listitem">
+				<p>
+					<b>Reasoning
+						or
+						logical
+						thinking:</b>
+					The
+					model must make a series of logical deductions. </p>
+			</li></ul></div><awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./what-is-a-prompt.html">What is a prompt?</div><div id="next" class="next-link" accesskey="n" href="./general-guidelines-for-bedrock-users.html">General
+				guidelines for Amazon Bedrock LLM users</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/what-is-prompt-engineering.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/what-is-prompt-engineering.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

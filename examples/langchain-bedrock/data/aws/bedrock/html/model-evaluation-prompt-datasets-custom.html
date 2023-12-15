@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Custom prompt dataset - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="model-evaluation-prompt-datasets-custom" /><meta name="default_state" content="model-evaluation-prompt-datasets-custom" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" /><meta name="description" content="You can use a custom prompt dataset in model evaluation jobs." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Custom prompt dataset" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Custom prompt dataset - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#model-evaluation-prompt-datasets-custom" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html" /><meta name="keywords" content="Amazon Bedrock,bedrock,model evaluation,human based,Prompt datasets,Built-in datasets,Model evaluations" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Model evaluation",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Using prompt datasets in model evaluation jobs",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-prompt-datasets.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 6,
+        "name" : "Custom prompt dataset",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-prompt-datasets.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#model-evaluation-prompt-datasets-custom" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#model-evaluation-prompt-datasets-custom-automatic">Custom prompt datasets (automatic)</a><a href="#model-evaluation-prompt-datasets-custom-human">Custom prompt datasets (human)</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="model-evaluation-prompt-datasets-custom">Custom prompt dataset</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>Model evaluation jobs are in preview release for Amazon Bedrock and is subject to change. To use model evaluation jobs, you must be in either US East (N. Virginia) Region or US West (Oregon) Region.</p></div></div><p>You can use a custom prompt dataset in model evaluation jobs.</p><p>Custom prompt datasets must be stored in Amazon S3, and use the JSON line format and use the <code class="code">.jsonl</code> file extension. When you upload the dataset to Amazon S3 make sure that you update the Cross Origin Resource Sharing (CORS) configuration on the S3 bucket. To learn more about the required CORS permissions, see <a href="./model-evaluation-security-cors.html">Required Cross Origin Resource Sharing (CORS) permission on S3 buckets</a>. </p><div class="highlights" id="inline-topiclist"><h6>Topics</h6><ul><li><a href="#model-evaluation-prompt-datasets-custom-automatic">Requirements for custom prompt datasets used in automatic model evaluation jobs</a></li><li><a href="#model-evaluation-prompt-datasets-custom-human">Requirements for custom prompt datasets in model evaluation job that use human workers</a></li></ul></div>
+				<h2 id="model-evaluation-prompt-datasets-custom-automatic">Requirements for custom prompt datasets used in automatic model evaluation jobs</h2>
+				
+				<p>In automatic model evaluation jobs you can use a custom prompt dataset for each metric you select in the model evaluation job. Custom datasets use the JSON line format (<code class="code">.jsonl</code>), and each line must be a valid JSON object. There can be up to 1000 prompts in your dataset per automatic evaluation job.</p>
+
+				<p>You must use the following keys in a custom dataset.</p>
+
+				<div class="itemizedlist">
+					 
+					 
+					 
+				<ul class="itemizedlist"><li class="listitem">
+						<p><code class="code">prompt</code> â required to indicate the input for the following tasks:</p>
+						<div class="itemizedlist">
+							 
+							 
+							 
+							 
+						<ul class="itemizedlist"><li class="listitem">
+								<p>The prompt that your model should respond to, in general text generation.</p>
+							</li><li class="listitem">
+								<p>The question that your model should answer in the question and answer task type.</p>
+							</li><li class="listitem">
+								<p>The text that your model should summarize in text summarization task.</p>
+							</li><li class="listitem">
+								<p>The text that your model should classify in classification tasks.</p>
+							</li></ul></div>
+					</li><li class="listitem">
+						<p><code class="code">referenceResponse</code> â required to indicate the ground truth response against which your model is evaluated for the following tasks types:</p>
+						<div class="itemizedlist">
+							 
+							 
+						<ul class="itemizedlist"><li class="listitem">
+								<p>The answer for all prompts in question and answer tasks.</p>
+							</li><li class="listitem">
+								<p>The answer for all accuracy, and robustness evaluations.</p>
+							</li></ul></div>
+					</li><li class="listitem">
+						<p><code class="code">category</code>â (optional) generates evaluation scores reported for each category. </p>
+					</li></ul></div>
+
+				<p>As an example, accuracy requires both the question to ask and the answer to check the model response against. In this example, use the key <code class="code">prompt</code> with the value contained in the question, and the key <code class="code">referenceResponse</code> with the value contained in the answer as follows.</p>
+
+				<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+	"prompt": "Bobigny is the capital of",
+	"referenceResponse": "Seine-Saint-Denis",
+	"category": "Capitals"
+}</code></pre>
+
+				<p>The previous example is a single line of a JSON line input file that will be sent to your model as an inference request. Model will be invoked for every such record in your JSON line dataset. The following data input example is for a question answer task that uses an optional <code class="code">category</code> key for evaluation.</p>
+
+				<div class="awsdocs-note awsdocs-important"><div class="awsdocs-note-title"><awsui-icon name="status-warning" variant="error"></awsui-icon><h6>Important</h6></div><div class="awsdocs-note-text"><p>After your last prompt in your custom dataset, the file must end with a newline.</p></div></div>
+
+				<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>"referenceResponse":"Cantal","category":"Capitals","prompt":"Aurillac is the capital of"}
+<span>{</span>"referenceResponse":"Bamiyan Province","category":"Capitals","prompt":"Bamiyan city is the capital of"}
+<span>{</span>"referenceResponse":"Abkhazia","category":"Capitals","prompt":"Sokhumi is the capital of"}
+## The file must end with a newline
+</code></pre>
+
+				<p>To learn more about the format requirements for model evaluation jobs that use human workers, see <a href="#model-evaluation-prompt-datasets-custom-human">Requirements for custom prompt datasets in model evaluation job that use human workers</a>.</p>
+
+
+				 
+					<h3 id="claude-requirements-automatic">Anthropic Claude custom prompt dataset requirements</h3>
+
+					<p>If you want to specify custom prompt dataset, and use an Anthropic Claude model in your automatic model evaluation job you must modify, you must modify your <code class="code">prompt</code> keys to have the following structure.</p>
+
+					<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+	"prompt": "<code class="userinput">Human:</code> What is high intensity interval training? <code class="userinput">Assistant:</code>" ,
+	"category": "Fitness",
+	"referenceResponse": "High-Intensity Interval Training (HIIT) is a cardiovascular exercise approach that involves short, intense bursts of exercise followed by brief recovery or rest periods."
+}</code></pre>
+
+					<p>These keywords, <code class="userinput">Human:</code> and <code class="userinput">Assistant:</code> are case-sensitive and must include the colon.</p>
+
+					<p>We recommend you test the sensitivity of including these keywords using Amazon Bedrock Playground.</p>
+				 
+			 
+				<h2 id="model-evaluation-prompt-datasets-custom-human">Requirements for custom prompt datasets in model evaluation job that use human workers</h2>
+
+				<p>In the JSON line format, each line is a valid JSON object. A prompt dataset can have a maximum of 1000 prompts per model evaluation job.</p>
+
+				<p>A valid prompt entry must contain the <code class="code">prompt</code> key, both <code class="code">category</code> and <code class="code">referenceResponse</code> are optional. Use the <code class="code">category</code> key to label your prompt with a specific category that you can use to filter the results when reviewing them in the model evaluation report card. Use the <code class="code">referenceResponse</code> key to specify the ground truth response that your workers can reference during the evaluation.</p>
+
+				<p>In the worker UI, what you specify for <code class="code">prompt</code> and <code class="code">referenceResponse</code> are visible to your human workers.</p>
+
+				<p>The following is an example custom dataset that contains 6 inputs and uses the JSON line format.</p>
+
+				<div class="awsdocs-note awsdocs-important"><div class="awsdocs-note-title"><awsui-icon name="status-warning" variant="error"></awsui-icon><h6>Important</h6></div><div class="awsdocs-note-text"><p>After your last prompt in your custom dataset, the file must end with a newline.</p></div></div>
+
+				<pre class="programlisting"><div class="code-btn-container"></div><code class="json "><span>{</span>"prompt":"<code class="userinput">Provide the prompt you want the model to use during inference</code>","category":"<code class="userinput">(Optional) Specify an optional category</code>","referenceResponse":"<code class="userinput">(Optional) Specify a ground truth response</code>."}
+<span>{</span>"prompt":"<code class="userinput">Provide the prompt you want the model to use during inference</code>","category":"<code class="userinput">(Optional) Specify an optional category</code>","referenceResponse":"<code class="userinput">(Optional) Specify a ground truth response</code>."}
+<span>{</span>"prompt":"<code class="userinput">Provide the prompt you want the model to use during inference</code>","category":"<code class="userinput">(Optional) Specify an optional category</code>","referenceResponse":"<code class="userinput">(Optional) Specify a ground truth response</code>."}
+<span>{</span>"prompt":"<code class="userinput">Provide the prompt you want the model to use during inference</code>","category":"<code class="userinput">(Optional) Specify an optional category</code>","referenceResponse":"<code class="userinput">(Optional) Specify a ground truth response</code>."}
+<span>{</span>"prompt":"<code class="userinput">Provide the prompt you want the model to use during inference</code>","category":"<code class="userinput">(Optional) Specify an optional category</code>","referenceResponse":"<code class="userinput">(Optional) Specify a ground truth response</code>."}
+<span>{</span>"prompt":"<code class="userinput">Provide the prompt you want the model to use during inference</code>","category":"<code class="userinput">(Optional) Specify an optional category</code>","referenceResponse":"<code class="userinput">(Optional) Specify a ground truth response</code>."}
+## The file must end with a newline</code></pre>
+
+				<p>The following example is a single entry expanded for clarity</p>
+
+				<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "prompt": "What is high intensity interval training?",
+    "category": "Fitness",
+    "referenceResponse": "High-Intensity Interval Training (HIIT) is a cardiovascular exercise approach that involves short, intense bursts of exercise followed by brief recovery or rest periods."
+}</code></pre>
+
+				 
+					<h3 id="claude-requirements-automatic">Anthropic Claude custom prompt dataset requirements</h3>
+
+					<p>If either model you select in your model evaluation job is an Anthropic Claude model, you must modify your <code class="code">prompt</code> keys to have the following structure..</p>
+
+					<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "prompt": " <code class="userinput">Human:</code> What is high intensity interval training?" <code class="userinput">Assistant:</code>,
+    "category": "Fitness",
+    "referenceResponse": "High-Intensity Interval Training (HIIT) is a cardiovascular exercise approach that involves short, intense bursts of exercise followed by brief recovery or rest periods."
+}</code></pre>
+
+					<p>These keywords, <code class="userinput">Human:</code> and <code class="userinput">Assistant:</code> are case-sensitive and must include the colon.</p>
+
+					<p>Because these prompts are sent to the second model in your model evaluation job, we recommend you test the sensitivity of including these keywords on the second model using Amazon Bedrock Playground.</p>
+				 
+			<awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./model-evaluation-prompt-datasets-builtin.html">Built-in prompt datasets</div><div id="next" class="next-link" accesskey="n" href="./worker-job.html">Worker instructions</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-prompt-datasets-custom.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

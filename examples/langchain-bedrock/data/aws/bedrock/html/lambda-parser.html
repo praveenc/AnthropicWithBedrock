@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Parser Lambda function - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="lambda-parser" /><meta name="default_state" content="lambda-parser" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html" /><meta name="description" content="In order to write a parser Lambda function for your prompt template, you need to understand the input event that your agent sends and the response that the agent expects as the output from the Lambda function. You write a handler function to manipulate variables from the input event and to return the response. For more information about how AWS Lambda works, see" /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/lambda-parser.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/lambda-parser.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/lambda-parser.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/lambda-parser.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/lambda-parser.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/lambda-parser.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/lambda-parser.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/lambda-parser.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/lambda-parser.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/lambda-parser.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/lambda-parser.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/lambda-parser.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/lambda-parser.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/lambda-parser.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/lambda-parser.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/lambda-parser.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/lambda-parser.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/lambda-parser.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Parser Lambda function" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Parser Lambda function - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#lambda-parser" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/lambda-parser.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/lambda-parser.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/lambda-parser.html" /><meta name="keywords" content="Amazon Bedrock,bedrock,chatbot,action groups,agent" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Agents for Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Advanced prompts",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 6,
+        "name" : "Parser Lambda function",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#lambda-parser" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#lambda-parser-input">Parser Lambda input event</a><a href="#lambda-parser-response">Parser Lambda response</a><a href="#lambda-parser-example">Parser Lambda examples</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="lambda-parser">Parser Lambda function</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>In order to write a parser Lambda function for your prompt template, you need to understand the input event that your agent sends and the response that the agent expects as the output from the Lambda function. You write a handler function to manipulate variables from the input event and to return the response. For more information about how AWS Lambda works, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-services.html#event-driven-invocation">Event-driven invocation</a>.</p><div class="highlights" id="inline-topiclist"><h6>Topics</h6><ul><li><a href="#lambda-parser-input">Parser Lambda input event</a></li><li><a href="#lambda-parser-response">Parser Lambda response</a></li><li><a href="#lambda-parser-example">Parser Lambda examples</a></li></ul></div>
+            
+            <h2 id="lambda-parser-input">Parser Lambda input event</h2>
+            
+            <p>The following is the general structure of the input event from the agent. Use the fields to write your Lambda handler function.</p>
+            
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "messageVersion": "1.0",
+    "agent": <span>{</span>
+        "name": "string",
+        "id": "string",
+        "alias": "string",
+        "version": "string"
+    },
+    "invokeModelRawResponse": "string",
+    "promptType": "ORCHESTRATION | POST_PROCESSING | PRE_PROCESSING | KNOWLEDGE_BASE_RESPONSE_GENERATION ",
+    "overrideType": "OUTPUT_PARSER"
+}</code></pre>
+            
+            <p>The input event fields are described below.</p>
+            
+            <div class="itemizedlist">
+                 
+                 
+                 
+                 
+                 
+            <ul class="itemizedlist"><li class="listitem">
+                    <p><code class="code">messageVersion</code> â The version of the message that identifies the format of the event data going into the Lambda function and the expected format of the response from the Lambda function. Agents for Amazon Bedrock only supports version 1.0.</p>
+                </li><li class="listitem">
+                    <p><code class="code">agent</code> â Contains information about the name, ID, alias, and version of the agent that the prompts belongs to.</p>
+                </li><li class="listitem">
+                    <p><code class="code">invokeModelRawResponse</code> â The raw foundation model output of the prompt whose output is to be parsed.</p>
+                </li><li class="listitem">
+                    <p><code class="code">promptType</code> â The prompt type whose output is to be parsed.</p>
+                </li><li class="listitem">
+                    <p><code class="code">overrideType</code> â The artifacts that this Lambda function overrides. Currently, only <code class="code">OUTPUT_PARSER</code> is supported. This indicates that the default parser is to be overridden.</p>
+                </li></ul></div>
+            
+         
+            
+            <h2 id="lambda-parser-response">Parser Lambda response</h2>
+            
+            <p>Your agent expects a response from your Lambda function that matches the following format. The agent uses the response for further orchestration or to help it return a response to the customer. Use these fields to shape how the output is returned.</p>
+         
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "messageVersion": "1.0",
+    "promptType": "ORCHESTRATION | PRE_PROCESSING | POST_PROCESSING | KNOWLEDGE_BASE_RESPONSE_GENERATION",
+    "preProcessingParsedResponse": <span>{</span>
+        "isValidInput": "boolean",
+        "rationale": "string"
+    },
+    "orchestrationParsedResponse": <span>{</span>
+        "rationale": "string",
+        "parsingErrorDetails": <span>{</span>
+            "repromptResponse": "string"
+        },
+        "responseDetails": <span>{</span>
+            "invocationType": "ACTION_GROUP | KNOWLEDGE_BASE | FINISH | ASK_USER",
+            "agentAskUser": <span>{</span>
+                "responseText": "string"
+            },
+            "actionGroupInvocation": <span>{</span>
+                "actionGroupName": "string",
+                "apiName": "string",
+                "verb": "string",
+                "actionGroupInput": <span>{</span>
+                    "<code class="replaceable">&lt;parameter&gt;</code>": <span>{</span>
+                        "value": "string"
+                    },
+                    ...
+                }
+            },
+            "agentKnowledgeBase": <span>{</span>
+                "knowledgeBaseId": "string",
+                "searchQuery": <span>{</span>
+                    "value": "string"
+                }
+            },
+            "agentFinalResponse": <span>{</span>
+                "responseText": "string",
+                "citations": <span>{</span>
+                    "generatedResponseParts": [<span>{</span>
+                        "text": "string",
+                        "references": [<span>{</span>"sourceId": "string"}]
+                    }]
+                }
+            },
+        }
+    },
+    "knowledgeBaseResponseGenerationParsedResponse": <span>{</span> 
+       'generatedResponse': <span>{</span>
+            'generatedResponseParts': [
+                <span>{</span>
+                    'text': 'string',
+                    'references': [
+                        <span>{</span>'sourceId': 'string'},
+                        ...
+                    ]
+                }
+            ]
+        }
+    },
+    "postProcessingParsedResponse": <span>{</span>
+        "responseText": "string",
+        "citations": <span>{</span>
+            "generatedResponseParts": [<span>{</span>
+                "text": "string",
+                "references": [<span>{</span>
+                    "sourceId": "string"
+                }]
+            }]
+        }
+    }
+}</code></pre>
+            
+            <p>The Lambda response fields are described below. You can use the Lambda function to shape how this information is returned.</p>
+            
+            <div class="itemizedlist">
+                 
+                 
+                 
+                 
+                 
+                 
+            <ul class="itemizedlist"><li class="listitem">
+                    <p><code class="code">messageVersion</code> â The version of the message that identifies the format of the event data going into the Lambda function and the expected format of the response from a Lambda function. Agents for Amazon Bedrock only supports version 1.0.</p>
+                </li><li class="listitem">
+                    <p><code class="code">promptType</code> â The prompt type of the current turn.</p>
+                </li><li class="listitem">
+                    <p><code class="code">preProcessingParsedResponse</code> â The parsed response for the <code class="code">PRE_PROCESSING</code> prompt type.</p>
+                </li><li class="listitem">
+                    <p><code class="code">orchestrationParsedResponse</code> â The parsed response for the <code class="code">ORCHESTRATION</code> prompt type. See below for more details.</p>
+                </li><li class="listitem">
+                    <p><code class="code">knowledgeBaseResponseGenerationParsedResponse</code> â The parsed response for the <code class="code">KNOWLEDGE_BASE_RESPONSE_GENERATION</code> prompt type.</p>
+                </li><li class="listitem">
+                    <p><code class="code">postProcessingParsedResponse</code> â The parsed response for the <code class="code">POST_PROCESSING</code> prompt type.</p>
+                </li></ul></div>
+            
+            <p>The parsed responses for the four steps are expanded upon below.</p>
+            
+            <awsdocs-tabs><dl style="display: none">
+                <dt>preProcessingParsedResponse</dt><dd tab-id="preprocessingparsedresponse">
+                        
+                        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "isValidInput": "boolean",
+    "rationale": "string"
+}</code></pre>
+                        
+                        <p>The <code class="code">preProcessingParsedResponse</code> contains the following fields.</p>
+                        
+                        <div class="itemizedlist">
+                             
+                             
+                        <ul class="itemizedlist"><li class="listitem">
+                                <p><code class="code">isValidInput</code> â Specifies whether the user input is valid or not. You can define the function to determine how to characterize the validity of user input.</p>
+                            </li><li class="listitem">
+                                <p><code class="code">rationale</code> â The reasoning for the user input categorization. This rationale is provided by the model in the raw response, the lambda parses it and and agents presents in the trace for pre-processing.</p>
+                            </li></ul></div>
+                        
+                    </dd>
+                <dt>orchestrationResponse</dt><dd tab-id="orchestrationresponse">
+                        
+                        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "rationale": "string",
+    "parsingErrorDetails": <span>{</span>
+        "repromptResponse": "string"
+    },
+    "responseDetails": <span>{</span>
+        "invocationType": "ACTION_GROUP | KNOWLEDGE_BASE | FINISH | ASK_USER",
+        "agentAskUser": <span>{</span>
+            "responseText": "string"
+        },
+        "actionGroupInvocation": <span>{</span>
+            "actionGroupName": "string",
+            "apiName": "string",
+            "verb": "string",
+            "actionGroupInput": <span>{</span>
+                "<code class="replaceable">&lt;parameter&gt;</code>": <span>{</span>
+                    "value": "string"
+                },
+                ...
+            }
+        },
+        "agentKnowledgeBase": <span>{</span>
+            "knowledgeBaseId": "string",
+            "searchQuery": <span>{</span>
+                "value": "string"
+            }
+        },
+        "agentFinalResponse": <span>{</span>
+            "responseText": "string",
+            "citations": <span>{</span>
+                "generatedResponseParts": [
+                    <span>{</span>
+                        "text": "string",
+                        "references": [
+                            <span>{</span>"sourceId": "string"},
+                            ...
+                        ]
+                    },
+                    ...
+                ]
+            }
+        },
+    }
+}</code></pre>
+                        
+                        <p>The <code class="code">orchestrationParsedResponse</code> contains the following fields.</p>
+                        
+                        <div class="itemizedlist">
+                             
+                             
+                             
+                        <ul class="itemizedlist"><li class="listitem">
+                                <p><code class="code">rationale</code> â The reasoning for what to do next, based on the foundation model output. You can define the function to parse from the model output.</p>
+                            </li><li class="listitem">
+                                <p><code class="code">parsingErrorDetails</code> â Contains the <code class="code">repromptResponse</code>, which is the message to reprompt the model to update its raw response when the model response can't be parsed. You can define the function to manipulate how to reprompt the model.</p>
+                            </li><li class="listitem">
+                                <p><code class="code">responseDetails</code> â Contains the details for how to handle the output of the foundation model. Contains an <code class="code">invocationType</code>, which is the next step for the agent to take, and a second field that should match the <code class="code">invocationType</code>. The following objects are possible.</p>
+                                
+                                <div class="itemizedlist">
+                                     
+                                     
+                                     
+                                     
+                                <ul class="itemizedlist"><li class="listitem">
+                                        <p><code class="code">agentAskUser</code> â Compatible with the <code class="code">ASK_USER</code> invocation type. This invocation type ends the orchestration step. Contains the <code class="code">responseText</code> to ask the user for more information. You can define your function to manipulate this field.</p>
+                                    </li><li class="listitem">
+                                        <p><code class="code">actionGroupInvocation</code> â Compatible with the <code class="code">ACTION_GROUP</code> invocation type. Contains the following fields, which define the following. You can define your function to determine action groups to invoke and parameters to pass.</p>
+                                        
+                                        <div class="itemizedlist">
+                                             
+                                             
+                                             
+                                             
+                                        <ul class="itemizedlist"><li class="listitem">
+                                                <p><code class="code">actionGroupName</code> â The action group to invoke.</p>
+                                            </li><li class="listitem">
+                                                <p><code class="code">apiName</code> â The name of the API to invoke in the action group.</p>
+                                            </li><li class="listitem">
+                                                <p><code class="code">verb</code> â The method of the API to use.</p>
+                                            </li><li class="listitem">
+                                                <p><code class="code">actionGroupInput</code> â Contains parameters to specify in the API request.</p>
+                                            </li></ul></div>
+                                    </li><li class="listitem">
+                                        <p><code class="code">agentKnowledgeBase</code> â Compatible with the <code class="code">KNOWLEDGE_BASE</code> invocation type. Contains the following fields. You can define your function to determine how to query knowledge bases.</p>
+                                        <div class="itemizedlist">
+                                             
+                                             
+                                        <ul class="itemizedlist"><li class="listitem">
+                                                <p><code class="code">knowledgeBaseId</code> â The unique identifier of the knowledge base.</p>
+                                            </li><li class="listitem">
+                                                <p><code class="code">searchQuery</code> â Contains the query to send the knowledge base in the <code class="code">value</code> field.</p>
+                                            </li></ul></div>
+                                    </li><li class="listitem">
+                                        <p><code class="code">agentFinalResponse</code> â Compatible with the <code class="code">FINISH</code> invocation type. This invocation type ends the orchestration step. Contains the response to the user in the <code class="code">responseText</code> field and citations for the response in the <code class="code">citations</code> object.</p>
+                                    </li></ul></div>
+                            </li></ul></div>
+                        
+                    </dd>
+                <dt>knowledgeBaseResponseGenerationParsedResponse</dt><dd tab-id="knowledgebaseresponsegenerationparsedresponse">
+                        
+                        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span> 
+   'generatedResponse': <span>{</span>
+        'generatedResponseParts': [
+            <span>{</span>
+                'text': 'string',
+                'references': [
+                    <span>{</span> 'sourceId': 'string' },
+                    ...
+                ]
+            },
+            ...
+        ]
+    }
+}</code></pre>
+                        
+                        <p>The <code class="code">knowledgeBaseResponseGenerationParsedResponse</code> contains the <code class="code">generatedResponse</code> from querying the knowledge base and references for where the information comes from.</p>
+                        
+                    </dd>
+                <dt>postProcessingParsedResponse</dt><dd tab-id="postprocessingparsedresponse">
+                        
+                        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "responseText": "string",
+    "citations": <span>{</span>
+        "generatedResponseParts": [
+            <span>{</span>
+                "text": "string",
+                "references": [
+                    <span>{</span> "sourceId": "string" },
+                    ...
+                ]
+            },
+            ...
+        ]
+    }
+}</code></pre>
+                        
+                        <p>The <code class="code">postProcessingParsedResponse</code> contains the following fields.</p>
+                        <div class="itemizedlist">
+                             
+                             
+                        <ul class="itemizedlist"><li class="listitem">
+                                <p><code class="code">responseText</code> â The response to return to the end user. You can define the function to format the response.</p>
+                            </li><li class="listitem">
+                                <p><code class="code">citations</code> â Contains a list of citations for the response. Each citation shows the text that is cited and its references.</p>
+                            </li></ul></div>
+                        
+                    </dd>
+            </dl></awsdocs-tabs>
+            
+         
+            
+            <h2 id="lambda-parser-example">Parser Lambda examples</h2>
+            
+            <p>Select a tab to see an example parser Lambda function for a prompt template and example input events sent to function and responses from it. The <code class="code">lambda_handler</code> function returns the parsed response to the agent.</p>
+            
+            <awsdocs-tabs><dl style="display: none">
+                <dt>Pre-processing</dt><dd tab-id="pre-processing">
+                        
+                        <p><b>Example function</b></p>
+                        
+                        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="python ">import json
+import re
+import logging
+
+PRE_PROCESSING_RATIONALE_REGEX = "&lt;thinking&gt;(.*?)&lt;/thinking&gt;"
+PREPROCESSING_CATEGORY_REGEX = "&lt;category&gt;(.*?)&lt;/category&gt;"
+PREPROCESSING_PROMPT_TYPE = "PRE_PROCESSING"
+PRE_PROCESSING_RATIONALE_PATTERN = re.compile(PRE_PROCESSING_RATIONALE_REGEX, re.DOTALL)
+PREPROCESSING_CATEGORY_PATTERN = re.compile(PREPROCESSING_CATEGORY_REGEX, re.DOTALL)
+
+logger = logging.getLogger()
+
+# This parser lambda is an example of how to parse the LLM output for the default PreProcessing prompt
+def lambda_handler(event, context):
+    
+    print("Lambda input: " + str(event))
+    logger.info("Lambda input: " + str(event))
+    
+    prompt_type = event["promptType"]
+    
+    # Sanitize LLM response
+    model_response = sanitize_response(event['invokeModelRawResponse'])
+    
+    if event["promptType"] == PREPROCESSING_PROMPT_TYPE:
+        return parse_pre_processing(model_response)
+
+def parse_pre_processing(model_response):
+    
+    category_matches = re.finditer(PREPROCESSING_CATEGORY_PATTERN, model_response)
+    rationale_matches = re.finditer(PRE_PROCESSING_RATIONALE_PATTERN, model_response)
+
+    category = next((match.group(1) for match in category_matches), None)
+    rationale = next((match.group(1) for match in rationale_matches), None)
+
+    return <span>{</span>
+        "promptType": "PRE_PROCESSING",
+        "preProcessingParsedResponse": <span>{</span>
+            "rationale": rationale,
+            "isValidInput": get_is_valid_input(category)
+            }
+        }
+
+def sanitize_response(text):
+    pattern = r"(\\n*)"
+    text = re.sub(pattern, r"\n", text)
+    return text
+    
+def get_is_valid_input(category):
+    if category is not None and category.strip().upper() == "D" or category.strip().upper() == "E":
+        return True
+    return False
+    </code></pre>
+                        
+                        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "agent": <span>{</span>
+        "alias": "TSTALIASID",
+        "id": "AGENTID123",
+        "name": "InsuranceAgent",
+        "version": "DRAFT"
+    },
+    "invokeModelRawResponse": " &lt;thinking&gt;\nThe user is asking about the instructions provided to the function calling agent. This input is trying to gather information about what functions/API's or instructions our function calling agent has access to. Based on the categories provided, this input belongs in Category B.\n&lt;/thinking&gt;\n\n&lt;category&gt;B&lt;/category&gt;",
+    "messageVersion": "1.0",
+    "overrideType": "OUTPUT_PARSER",
+    "promptType": "PRE_PROCESSING"
+}</code></pre>
+                        
+                        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+  "promptType": "PRE_PROCESSING",
+  "preProcessingParsedResponse": <span>{</span>
+    "rationale": "\nThe user is asking about the instructions provided to the function calling agent. This input is trying to gather information about what functions/API's or instructions our function calling agent has access to. Based on the categories provided, this input belongs in Category B.\n",
+    "isValidInput": false
+  }
+}</code></pre>
+                        
+                    </dd>
+                <dt>Orchestration</dt><dd tab-id="orchestration">
+                        
+                        <p><b>Example function</b></p>
+                        
+                        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="python ">import json
+import re
+import logging
+ 
+ 
+RATIONALE_REGEX_LIST = [
+    "(.*?)(&lt;function_call&gt;)",
+    "(.*?)(&lt;answer&gt;)"
+]
+RATIONALE_PATTERNS = [re.compile(regex, re.DOTALL) for regex in RATIONALE_REGEX_LIST]
+ 
+RATIONALE_VALUE_REGEX_LIST = [
+    "&lt;scratchpad&gt;(.*?)(&lt;/scratchpad&gt;)",
+    "(.*?)(&lt;/scratchpad&gt;)",
+    "(&lt;scratchpad&gt;)(.*?)"
+]
+RATIONALE_VALUE_PATTERNS = [re.compile(regex, re.DOTALL) for regex in RATIONALE_VALUE_REGEX_LIST]
+ 
+ANSWER_REGEX = r"(?&lt;=&lt;answer&gt;)(.*)"
+ANSWER_PATTERN = re.compile(ANSWER_REGEX, re.DOTALL)
+ 
+ANSWER_TAG = "&lt;answer&gt;"
+FUNCTION_CALL_TAG = "&lt;function_call&gt;"
+ 
+ASK_USER_FUNCTION_CALL_REGEX = r"(&lt;function_call&gt;user::askuser)(.*)\)"
+ASK_USER_FUNCTION_CALL_PATTERN = re.compile(ASK_USER_FUNCTION_CALL_REGEX, re.DOTALL)
+ 
+ASK_USER_FUNCTION_PARAMETER_REGEX = r"(?&lt;=askuser=\")(.*?)\""  
+ASK_USER_FUNCTION_PARAMETER_PATTERN = re.compile(ASK_USER_FUNCTION_PARAMETER_REGEX, re.DOTALL)
+ 
+KNOWLEDGE_STORE_SEARCH_ACTION_PREFIX = "x_amz_knowledgebase_"
+ 
+FUNCTION_CALL_REGEX = r"&lt;function_call&gt;(\w+)::(\w+)::(.+)\((.+)\)"
+ 
+ANSWER_PART_REGEX = "&lt;answer_part\\s?&gt;(.+?)&lt;/answer_part\\s?&gt;"
+ANSWER_TEXT_PART_REGEX = "&lt;text\\s?&gt;(.+?)&lt;/text\\s?&gt;"  
+ANSWER_REFERENCE_PART_REGEX = "&lt;source\\s?&gt;(.+?)&lt;/source\\s?&gt;"
+ANSWER_PART_PATTERN = re.compile(ANSWER_PART_REGEX, re.DOTALL)
+ANSWER_TEXT_PART_PATTERN = re.compile(ANSWER_TEXT_PART_REGEX, re.DOTALL)
+ANSWER_REFERENCE_PART_PATTERN = re.compile(ANSWER_REFERENCE_PART_REGEX, re.DOTALL)
+ 
+# You can provide messages to reprompt the LLM in case the LLM output is not in the expected format
+MISSING_API_INPUT_FOR_USER_REPROMPT_MESSAGE = "Missing the argument askuser for user::askuser function call. Please try again with the correct argument added"
+ASK_USER_FUNCTION_CALL_STRUCTURE_REMPROMPT_MESSAGE = "The function call format is incorrect. The format for function calls to the askuser function must be: &lt;function_call&gt;user::askuser(askuser=\"$ASK_USER_INPUT\")&lt;/function_call&gt;."
+FUNCTION_CALL_STRUCTURE_REPROMPT_MESSAGE = 'The function call format is incorrect. The format for function calls must be: &lt;function_call&gt;$FUNCTION_NAME($FUNCTION_ARGUMENT_NAME=""$FUNCTION_ARGUMENT_NAME"")&lt;/function_call&gt;.'
+
+logger = logging.getLogger()
+ 
+# This parser lambda is an example of how to parse the LLM output for the default orchestration prompt
+def lambda_handler(event, context):
+    logger.info("Lambda input: " + str(event))
+    
+    # Sanitize LLM response
+    sanitized_response = sanitize_response(event['invokeModelRawResponse'])
+    
+    # Parse LLM response for any rationale
+    rationale = parse_rationale(sanitized_response)
+    
+    # Construct response fields common to all invocation types
+    parsed_response = <span>{</span>
+        'promptType': "ORCHESTRATION",
+        'orchestrationParsedResponse': <span>{</span>
+            'rationale': rationale
+        }
+    }
+    
+    # Check if there is a final answer
+    try:
+        final_answer, generated_response_parts = parse_answer(sanitized_response)
+    except ValueError as e:
+        addRepromptResponse(parsed_response, e)
+        return parsed_response
+        
+    if final_answer:
+        parsed_response['orchestrationParsedResponse']['responseDetails'] = <span>{</span>
+            'invocationType': 'FINISH',
+            'agentFinalResponse': <span>{</span>
+                'responseText': final_answer
+            }
+        }
+        
+        if generated_response_parts:
+            parsed_response['orchestrationParsedResponse']['responseDetails']['agentFinalResponse']['citations'] = <span>{</span>
+                'generatedResponseParts': generated_response_parts
+            }
+       
+        logger.info("Final answer parsed response: " + str(parsed_response))
+        return parsed_response
+    
+    # Check if there is an ask user
+    try:
+        ask_user = parse_ask_user(sanitized_response)
+        if ask_user:
+            parsed_response['orchestrationParsedResponse']['responseDetails'] = <span>{</span>
+                'invocationType': 'ASK_USER',
+                'agentAskUser': <span>{</span>
+                    'responseText': ask_user
+                }
+            }
+            
+            logger.info("Ask user parsed response: " + str(parsed_response))
+            return parsed_response
+    except ValueError as e:
+        addRepromptResponse(parsed_response, e)
+        return parsed_response
+        
+    # Check if there is an agent action
+    try:
+        parsed_response = parse_function_call(sanitized_response, parsed_response)
+        logger.info("Function call parsed response: " + str(parsed_response))
+        return parsed_response
+    except ValueError as e:
+        addRepromptResponse(parsed_response, e)
+        return parsed_response
+
+    addRepromptResponse(parsed_response, 'Failed to parse the LLM output')
+    logger.info(parsed_response)
+    return parsed_response
+        
+    raise Exception("unrecognized prompt type")
+ 
+def sanitize_response(text):
+    pattern = r"(\\n*)"
+    text = re.sub(pattern, r"\n", text)
+    return text
+    
+def parse_rationale(sanitized_response):
+    # Checks for strings that are not required for orchestration
+    rationale_matcher = next((pattern.search(sanitized_response) for pattern in RATIONALE_PATTERNS if pattern.search(sanitized_response)), None)
+    
+    if rationale_matcher:
+        rationale = rationale_matcher.group(1).strip()
+        
+        # Check if there is a formatted rationale that we can parse from the string
+        rationale_value_matcher = next((pattern.search(rationale) for pattern in RATIONALE_VALUE_PATTERNS if pattern.search(rationale)), None)
+        if rationale_value_matcher:
+            return rationale_value_matcher.group(1).strip()
+        
+        return rationale
+    
+    return None
+    
+def parse_answer(sanitized_llm_response):
+    if has_generated_response(sanitized_llm_response):
+        return parse_generated_response(sanitized_llm_response)
+ 
+    answer_match = ANSWER_PATTERN.search(sanitized_llm_response)
+    if answer_match and is_answer(sanitized_llm_response):
+        return answer_match.group(0).strip(), None
+        
+    return None, None
+  
+def is_answer(llm_response):
+    return llm_response.rfind(ANSWER_TAG) &gt; llm_response.rfind(FUNCTION_CALL_TAG)
+    
+def parse_generated_response(sanitized_llm_response):
+    results = []
+    
+    for match in ANSWER_PART_PATTERN.finditer(sanitized_llm_response):
+        part = match.group(1).strip()
+        
+        text_match = ANSWER_TEXT_PART_PATTERN.search(part)
+        if not text_match:
+            raise ValueError("Could not parse generated response")
+        
+        text = text_match.group(1).strip()        
+        references = parse_references(sanitized_llm_response, part)
+        results.append((text, references))
+    
+    final_response = " ".join([r[0] for r in results])
+    
+    generated_response_parts = []
+    for text, references in results:
+        generatedResponsePart = <span>{</span>
+            'text': text, 
+            'references': references
+        }
+        generated_response_parts.append(generatedResponsePart)
+        
+    return final_response, generated_response_parts
+
+    
+def has_generated_response(raw_response):
+    return ANSWER_PART_PATTERN.search(raw_response) is not None
+ 
+def parse_references(raw_response, answer_part):
+    references = []
+    for match in ANSWER_REFERENCE_PART_PATTERN.finditer(answer_part):
+        reference = match.group(1).strip()
+        references.append(<span>{</span>'sourceId': reference})
+    return references
+    
+def parse_ask_user(sanitized_llm_response):
+    ask_user_matcher = ASK_USER_FUNCTION_CALL_PATTERN.search(sanitized_llm_response)
+    if ask_user_matcher:
+        try:
+            ask_user = ask_user_matcher.group(2).strip()
+            ask_user_question_matcher = ASK_USER_FUNCTION_PARAMETER_PATTERN.search(ask_user)
+            if ask_user_question_matcher:
+                return ask_user_question_matcher.group(1).strip()
+            raise ValueError(MISSING_API_INPUT_FOR_USER_REPROMPT_MESSAGE)
+        except ValueError as ex:
+            raise ex
+        except Exception as ex:
+            raise Exception(ASK_USER_FUNCTION_CALL_STRUCTURE_REMPROMPT_MESSAGE)
+        
+    return None
+ 
+def parse_function_call(sanitized_response, parsed_response):
+    match = re.search(FUNCTION_CALL_REGEX, sanitized_response)
+    if not match:
+        raise ValueError(FUNCTION_CALL_STRUCTURE_REPROMPT_MESSAGE)
+    
+    verb, resource_name, function = match.group(1), match.group(2), match.group(3)
+    
+    parameters = <span>{</span>}
+    for arg in match.group(4).split(","):
+        key, value = arg.split("=")
+        parameters[key.strip()] = <span>{</span>'value': value.strip('" ')}
+        
+    parsed_response['orchestrationParsedResponse']['responseDetails'] = <span>{</span>}
+        
+    # Function calls can either invoke an action group or a knowledge base.
+    # Mapping to the correct variable names accordingly
+    if resource_name.lower().startswith(KNOWLEDGE_STORE_SEARCH_ACTION_PREFIX):
+        parsed_response['orchestrationParsedResponse']['responseDetails']['invocationType'] = 'KNOWLEDGE_BASE'
+        parsed_response['orchestrationParsedResponse']['responseDetails']['agentKnowledgeBase'] = <span>{</span>
+            'searchQuery': parameters['searchQuery'],
+            'knowledgeBaseId': resource_name.replace(KNOWLEDGE_STORE_SEARCH_ACTION_PREFIX, '')
+        }
+        
+        return parsed_response
+    
+    parsed_response['orchestrationParsedResponse']['responseDetails']['invocationType'] = 'ACTION_GROUP'
+    parsed_response['orchestrationParsedResponse']['responseDetails']['actionGroupInvocation'] = <span>{</span>
+        "verb": verb, 
+        "actionGroup": resource_name,
+        "apiName": function,
+        "actionGroupInput": parameters
+    }
+    
+    return parsed_response
+    
+def addRepromptResponse(parsed_response, error):
+    error_message = str(error)
+    logger.warn(error_message)
+    
+    parsed_response['orchestrationParsedResponse']['parsingErrorDetails'] = <span>{</span>
+        'repromptResponse': error_message
+    }</code></pre>  
+                        
+                        <p><b>Example request</b></p>
+                        
+                        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    'agent': <span>{</span>
+        'alias': 'TSTALIASID', 
+        'id': 'AGENTID123', 
+        'name': 'InsuranceAgent', 
+        'version': 'DRAFT'
+    }, 
+    'invokeModelRawResponse': ' To answer this question, I will:\\n\\n1. Call the GET::x_amz_knowledgebase_KBID123456::Search function to search for a phone number to call.\\n\\nI have checked that I have access to the GET::x_amz_knowledgebase_KBID23456::Search function.\\n\\n&lt;/scratchpad&gt;\\n\\n&lt;function_call&gt;GET::x_amz_knowledgebase_KBID123456::Search(searchQuery=\"What is the phone number I can call?\")',
+    'messageVersion': '1.0',
+    'overrideType': 'OUTPUT_PARSER',
+    'promptType': 'ORCHESTRATION'
+}</code></pre>
+                        
+                        <p><b>Example response</b></p>
+                        
+                        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    'promptType': 'ORCHESTRATION',
+    'orchestrationParsedResponse': <span>{</span>
+        'rationale': 'To answer this question, I will:\\n\\n1. Call the GET::x_amz_knowledgebase_KBID123456::Search function to search for a phone number to call Farmers.\\n\\nI have checked that I have access to the GET::x_amz_knowledgebase_KBID123456::Search function.',
+        'responseDetails': <span>{</span>
+            'invocationType': 'KNOWLEDGE_BASE',
+            'agentKnowledgeBase': <span>{</span>
+                'searchQuery': <span>{</span>'value': 'What is the phone number I can call?'},
+                'knowledgeBaseId': 'KBID123456'
+            }
+        }
+    }
+}</code></pre>
+                        
+                    </dd>
+                <dt>Knowledge base response generation</dt><dd tab-id="knowledge-base-response-generation">
+                        
+                        <p><b>Example function</b></p>
+                        
+                        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="python ">import json
+import re
+import logging
+ 
+ANSWER_PART_REGEX = "&lt;answer_part\\s?&gt;(.+?)&lt;/answer_part\\s?&gt;"
+ANSWER_TEXT_PART_REGEX = "&lt;text\\s?&gt;(.+?)&lt;/text\\s?&gt;"  
+ANSWER_REFERENCE_PART_REGEX = "&lt;source\\s?&gt;(.+?)&lt;/source\\s?&gt;"
+ANSWER_PART_PATTERN = re.compile(ANSWER_PART_REGEX, re.DOTALL)
+ANSWER_TEXT_PART_PATTERN = re.compile(ANSWER_TEXT_PART_REGEX, re.DOTALL)
+ANSWER_REFERENCE_PART_PATTERN = re.compile(ANSWER_REFERENCE_PART_REGEX, re.DOTALL)
+
+logger = logging.getLogger()
+ 
+# This parser lambda is an example of how to parse the LLM output for the default KB response generation prompt
+def lambda_handler(event, context):
+    logger.info("Lambda input: " + str(event))
+    raw_response = event['invokeModelRawResponse']
+    
+    parsed_response = <span>{</span>
+        'promptType': 'KNOWLEDGE_BASE_RESPONSE_GENERATION',
+        'knowledgeBaseResponseGenerationParsedResponse': <span>{</span>
+            'generatedResponse': parse_generated_response(raw_response)
+        }
+    }
+    
+    logger.info(parsed_response)
+    return parsed_response
+    
+def parse_generated_response(sanitized_llm_response):
+    results = []
+    
+    for match in ANSWER_PART_PATTERN.finditer(sanitized_llm_response):
+        part = match.group(1).strip()
+        
+        text_match = ANSWER_TEXT_PART_PATTERN.search(part)
+        if not text_match:
+            raise ValueError("Could not parse generated response")
+        
+        text = text_match.group(1).strip()        
+        references = parse_references(sanitized_llm_response, part)
+        results.append((text, references))
+    
+    generated_response_parts = []
+    for text, references in results:
+        generatedResponsePart = <span>{</span>
+            'text': text, 
+            'references': references
+        }
+        generated_response_parts.append(generatedResponsePart)
+        
+    return <span>{</span>
+        'generatedResponseParts': generated_response_parts
+    }
+    
+def parse_references(raw_response, answer_part):
+    references = []
+    for match in ANSWER_REFERENCE_PART_PATTERN.finditer(answer_part):
+        reference = match.group(1).strip()
+        references.append(<span>{</span>'sourceId': reference})
+    return references</code></pre>
+                        
+                        <p><b>Example request</b></p>
+                        
+                        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    'agent': <span>{</span>
+        'alias': 'TSTALIASID',
+        'id': 'AGENTID123', 
+        'name': 'InsuranceAgent',
+        'version': 'DRAFT'
+    }, 
+    'invokeModelRawResponse': '<span>{</span>\"completion\":\" &lt;answer&gt;\\\\n&lt;answer_part&gt;\\\\n&lt;text&gt;\\\\nThe search results contain information about different types of insurance benefits, including personal injury protection (PIP), medical payments coverage, and lost wages coverage. PIP typically covers reasonable medical expenses for injuries caused by an accident, as well as income continuation, child care, loss of services, and funerals. Medical payments coverage provides payment for medical treatment resulting from a car accident. Who pays lost wages due to injuries depends on the laws in your state and the coverage purchased.\\\\n&lt;/text&gt;\\\\n&lt;sources&gt;\\\\n&lt;source&gt;1234567-1234-1234-1234-123456789abc&lt;/source&gt;\\\\n&lt;source&gt;2345678-2345-2345-2345-23456789abcd&lt;/source&gt;\\\\n&lt;source&gt;3456789-3456-3456-3456-3456789abcde&lt;/source&gt;\\\\n&lt;/sources&gt;\\\\n&lt;/answer_part&gt;\\\\n&lt;/answer&gt;\",\"stop_reason\":\"stop_sequence\",\"stop\":\"\\\\n\\\\nHuman:\"}',
+    'messageVersion': '1.0',
+    'overrideType': 'OUTPUT_PARSER',
+    'promptType': 'KNOWLEDGE_BASE_RESPONSE_GENERATION'
+}</code></pre>
+                        
+                        <p><b>Example response</b></p>
+                        
+                        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    'promptType': 'KNOWLEDGE_BASE_RESPONSE_GENERATION',
+    'knowledgeBaseResponseGenerationParsedResponse': <span>{</span>
+        'generatedResponse': <span>{</span>
+            'generatedResponseParts': [
+                <span>{</span>
+                    'text': '\\\\nThe search results contain information about different types of insurance benefits, including personal injury protection (PIP), medical payments coverage, and lost wages coverage. PIP typically covers reasonable medical expenses for injuries caused by an accident, as well as income continuation, child care, loss of services, and funerals. Medical payments coverage provides payment for medical treatment resulting from a car accident. Who pays lost wages due to injuries depends on the laws in your state and the coverage purchased.\\\\n',
+                    'references': [
+                        <span>{</span>'sourceId': '1234567-1234-1234-1234-123456789abc'},
+                        <span>{</span>'sourceId': '2345678-2345-2345-2345-23456789abcd'},
+                        <span>{</span>'sourceId': '3456789-3456-3456-3456-3456789abcde'}
+                    ]
+                }
+            ]
+        }
+    }
+}</code></pre>
+                        
+                    </dd>
+                <dt>Post-processing</dt><dd tab-id="post-processing">
+                        
+                        <p><b>Example function</b></p>
+                        
+                        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="python ">import json
+import re
+import logging
+ 
+FINAL_RESPONSE_REGEX = r"&lt;final_response&gt;([\s\S]*?)&lt;/final_response&gt;"
+FINAL_RESPONSE_PATTERN = re.compile(FINAL_RESPONSE_REGEX, re.DOTALL)
+
+logger = logging.getLogger()
+ 
+# This parser lambda is an example of how to parse the LLM output for the default PostProcessing prompt
+def lambda_handler(event, context):
+    logger.info("Lambda input: " + str(event))
+    raw_response = event['invokeModelRawResponse']
+    
+    parsed_response = <span>{</span>
+        'promptType': 'POST_PROCESSING',
+        'postProcessingParsedResponse': <span>{</span>}
+    }
+    
+    matcher = FINAL_RESPONSE_PATTERN.search(raw_response)
+    if not matcher:
+        raise Exception("Could not parse raw LLM output")
+    response_text = matcher.group(1).strip()
+    
+    parsed_response['postProcessingParsedResponse']['responseText'] = response_text
+    
+    logger.info(parsed_response)
+    return parsed_response</code></pre>
+                        
+                        <p><b>Example request</b></p>
+                        
+                        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    'agent': <span>{</span>
+        'alias': 'TSTALIASID',
+        'id': 'AGENTID123',
+        'name': 'InsuranceAgent',
+        'version': 'DRAFT'
+    },
+    'invokeModelRawResponse': ' &lt;final_response&gt;\\nBased on your request, I searched our insurance benefit information database for details. The search results indicate that insurance policies may cover different types of benefits, depending on the policy and state laws. Specifically, the results discussed personal injury protection (PIP) coverage, which typically covers medical expenses for insured individuals injured in an accident (cited sources: 1234567-1234-1234-1234-123456789abc, 2345678-2345-2345-2345-23456789abcd). PIP may pay for costs like medical care, lost income replacement, childcare expenses, and funeral costs. Medical payments coverage was also mentioned as another option that similarly covers medical treatment costs for the policyholder and others injured in a vehicle accident involving the insured vehicle. The search results further noted that whether lost wages are covered depends on the state and coverage purchased. Please let me know if you need any clarification or have additional questions.\\n&lt;/final_response&gt;',
+    'messageVersion': '1.0',
+    'overrideType': 'OUTPUT_PARSER',
+    'promptType': 'POST_PROCESSING'
+}</code></pre>
+                        
+                        
+                        <p><b>Example response</b></p>
+                        
+                        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    'promptType': 'POST_PROCESSING',
+    'postProcessingParsedResponse': <span>{</span>
+        'responseText': 'Based on your request, I searched our insurance benefit information database for details. The search results indicate that insurance policies may cover different types of benefits, depending on the policy and state laws. Specifically, the results discussed personal injury protection (PIP) coverage, which typically covers medical expenses for insured individuals injured in an accident (cited sources: 24c62d8c-3e39-4ca1-9470-a91d641fe050, 197815ef-8798-4cb1-8aa5-35f5d6b28365). PIP may pay for costs like medical care, lost income replacement, childcare expenses, and funeral costs. Medical payments coverage was also mentioned as another option that similarly covers medical treatment costs for the policyholder and others injured in a vehicle accident involving the insured vehicle. The search results further noted that whether lost wages are covered depends on the state and coverage purchased. Please let me know if you need any clarification or have additional questions.'
+    }
+}</code></pre>
+                        
+                    </dd>
+            </dl></awsdocs-tabs>
+            
+        <awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./prompt-placeholders.html">Prompt template placeholder variables</div><div id="next" class="next-link" accesskey="n" href="./agents-deploy.html">Deploy your agent: versioning and aliases</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/lambda-parser.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/lambda-parser.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

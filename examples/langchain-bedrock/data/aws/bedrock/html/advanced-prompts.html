@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Advanced prompts - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="advanced-prompts" /><meta name="default_state" content="advanced-prompts" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html" /><meta name="description" content="Gain more control over the behavior of your agent by defining and configuring prompt templates for your agent. These prompt templates help you customize how the agent processes user input text and output prompts from foundation models, how it orchestrates between the model, action groups, and knowledge bases, and how it returns responses to the user. Advanced prompts allow you to enhance your agent's accuracy through more detailed configurations and the ability to provide hand-curated examples for" /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/advanced-prompts.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/advanced-prompts.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/advanced-prompts.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/advanced-prompts.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/advanced-prompts.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/advanced-prompts.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/advanced-prompts.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/advanced-prompts.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/advanced-prompts.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/advanced-prompts.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/advanced-prompts.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/advanced-prompts.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/advanced-prompts.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/advanced-prompts.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/advanced-prompts.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/advanced-prompts.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/advanced-prompts.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/advanced-prompts.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Advanced prompts" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Advanced prompts - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#advanced-prompts" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/advanced-prompts.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/advanced-prompts.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/advanced-prompts.html" /><meta name="keywords" content="Amazon Bedrock,bedrock,chatbot,action groups,agent" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Agents for Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Advanced prompts",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#advanced-prompts" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="advanced-prompts">Advanced prompts</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>Gain more control over the behavior of your agent by defining and configuring prompt templates for your agent. These prompt templates help you customize how the agent processes user input text and output prompts from foundation models, how it orchestrates between the model, action groups, and knowledge bases, and how it returns responses to the user. Advanced prompts allow you to enhance your agent's accuracy through more detailed configurations and the ability to provide hand-curated examples for <em>few-shot prompting</em>, a procedure that lets you improve model performance by providing some labeled examples related to a specific task.</p><p>The following terminology is helpful in understanding how advanced prompts work.</p><div class="itemizedlist">
+         
+         
+         
+         
+         
+    <ul class="itemizedlist"><li class="listitem">
+            <p><b>Session</b> â A group of <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a> calls made to the same agent with the same session ID. When you make an <code class="code">InvokeAgent</code> request, you can reuse a <code class="code">sessionId</code> that was returned from the response of a previous call in order to continue the same session with an agent. As long as the <code class="code">idleSessionTTLInSeconds</code> time that you set in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_Agent.html">Agent</a> configuration has not expired, you maintain the same session with the agent.</p>
+        </li><li class="listitem">
+            <p><b>Turn</b> â A single <code class="code">InvokeAgent</code> call. A sessions consists of one or more turns.</p>
+        </li><li class="listitem">
+            <p><b>Iteration</b> â An iteration is a sequence of the following actions (an action may be skipped depending on the configuration of the agent or the agent's need at that moment). A turn consists of one or more iterations.</p>
+            
+            <div class="orderedlist">
+                 
+                 
+                 
+                 
+            <ol><li>
+                    <p>(Required) A call to the foundation model</p>
+                </li><li>
+                    <p>(Optional) An action group invocation</p>
+                </li><li>
+                    <p>(Optional) A knowledge base invocation</p>
+                </li><li>
+                    <p>(Optional) A response to the user asking for more information</p>
+                </li></ol></div>
+        </li><li class="listitem">
+            <p><b>Prompt</b> â A prompt consists of the instructions to the agent, context, and text input. The text input may come from a user or from the output of another step in the agent sequence. The prompt is provided to the foundation model in order to determine the next step that the agent takes in responding to user input</p>
+        </li><li class="listitem">
+            <p><b>Base prompt template</b> â The structural elements that make up a prompt. The template consists of placeholders that are filled in by user input, the agent configuration, and context to create a prompt (for more information, see <a href="./prompt-placeholders.html">Prompt template placeholder variables</a>). Advanced prompts offers templates for the following parts of the agent sequence. At each of these steps, the base prompt template is used alongside the input to that step in order to generate a prompt for the foundation model to interpret.</p>
+            
+            <div class="itemizedlist">
+                 
+                 
+                 
+                 
+            <ul class="itemizedlist"><li class="listitem">
+                    <p><b>Pre-processing</b> â Defines how an agent contextualizes and categorizes user inputs. Can be used to validate user input.</p>
+                </li><li class="listitem">
+                    <p><b>Orchestration</b> â Defines the order in which actions are executed and which knowledge bases are retrieved.</p>
+                    
+                </li><li class="listitem">
+                    <p><b>Knowledge base response generation (Retrieval)</b> â Generates a response based on retrieved results for the query.</p>
+                </li><li class="listitem">
+                    <p><b>Post-processing</b> â Defines how an agent formats and represents a final response to the end user.</p>
+                </li></ul></div>
+        </li></ul></div><p>With advanced prompts, you can toggle invocation for different steps in the agent sequence, configure their inference parameters, and edit the default base prompt templates that the agent uses in order to override the logic with your own configurations in order to customize your agent's behavior. You can edit the following parts.</p><div class="itemizedlist">
+         
+         
+        
+         
+        
+    <ul class="itemizedlist"><li class="listitem">
+            <p><b>Prompt template</b> â Describe how the agent should interpret and use the prompt that it receives at the step for which you are editing the template. For information on placeholder variables that you can use in a template, see <a href="./prompt-placeholders.html">Prompt template placeholder variables</a>.</p>
+            
+            <p>You can enable or disable any step in the agent sequence. The following are the default states for each step.</p>
+            
+            <div class="itemizedlist">
+                 
+                 
+                 
+                 
+            <ul class="itemizedlist"><li class="listitem">
+                    <p>Pre-processing â enabled</p>
+                </li><li class="listitem">
+                    <p>Orchestration â enabled</p>
+                </li><li class="listitem">
+                    <p>Knowledge base response generation â enabled</p>
+                </li><li class="listitem">
+                    <p>Post-processing â disabled</p>
+                </li></ul></div>
+            
+            <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>If you disable the orchestration step, the agent sends the user input to the foundation model and doesn't use the base prompt template for orchestration.</p><p></p><p>If you disable any of the other steps, the agent skips that step entirely.</p></div></div>
+            
+        </li><li class="listitem">
+            <p><b>Inference configurations</b> â Influence the response generated by the model that you use. For definitions of the inference parameters and more details about the parameters that different models support, see <a href="./model-parameters.html">Inference parameters for foundation models</a>.</p>
+        </li><li class="listitem">
+            <p><b>(Optional) Parser Lambda function</b> â Defines how to parse the raw foundation model output and how to use it in the runtime flow. This function acts on the output from the steps in which you enable it and returns the parsed response as you define it in the function.</p>
+            
+            <p>Depending on how you customized the base prompt template, the raw foundation model output might be specific to the template and the agent's default parser may have difficulty parsing it correctly. Writing a custom parser Lambda function allows you to help the agent parse the raw foundation model output based on your use-case. To see details about the parser Lambda function and how to write it, see <a href="./lambda-parser.html">Parser Lambda function</a>.</p>
+            
+            <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>You can define one parser Lambda function for all of the base templates, but you can configure whether to invoke the function in each step or not. Be sure to configure a resource-based policy for your Lambda function so that you agent can invoke it. For more information, see <a href="./agents-permissions.html#agents-permissions-lambda">Permissions to access your action group Lambda functions</a>.</p></div></div>
+            
+        </li></ul></div><p>After you edit the prompt templates, you can test your agent and examine the trace to analyze the step-by-step thought process of the agent and determine if it is working as you intend it to. For more information, see <a href="./trace-events.html">Trace events</a>.</p><p>You can configure advanced prompts in either the console or through the API.</p><awsdocs-tabs><dl style="display: none">
+        <dt>Console</dt><dd tab-id="console">
+                
+                <p>In the console, you can configure advanced prompts after you have created the agent. You configure them while editing the agent.</p>
+                
+                <div class="procedure"><h6>To view or edit advanced prompts for your agent</h6><ol><li>
+                        <p>Choose an agent in the <b>Agents</b> section and select the <b>Working draft</b>.</p>
+                    </li><li>
+                        <p>In the <b>Advanced prompts</b> section, select the tab corresponding to the part of the agent sequence for which you want to edit.</p>
+                    </li><li>
+                        <p>Turn on <b>Override template defaults</b> to enable editing of the template. Select <b>Confirm</b> for the message that appears.</p>
+                        
+                        <div class="awsdocs-note awsdocs-warning"><div class="awsdocs-note-title"><awsui-icon name="status-warning" variant="error"></awsui-icon><h6>Warning</h6></div><div class="awsdocs-note-text"><p>If you turn off <b>Override template defaults</b> or change the model, the default Amazon Bedrock template is used and your template will be deleted. To confirm, enter <code class="userinput">confirm</code> in the text box to confirm the message that appears.</p></div></div>
+                    </li><li>
+                        <p>Turn on <b>Activate template</b> to allow it to be used by the agent when generating responses. If this configuration is turned off, the agent doesn't use it.</p>
+                    </li><li>
+                        <p>Use the <b>Prompt template editor</b> to modify the example prompt template.</p>
+                    </li><li>
+                        <p>Modify inference parameters under <b>Configurations</b>. For definitions of parameters and more information about parameters for different models, see <a href="./model-parameters.html">Inference parameters for foundation models</a>.</p>
+                    </li><li>
+                        <p>(Optional) To use a Lambda function that you have defined to parse the raw foundation model output, carry out the following actions.</p>
+                        
+                        <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>One Lambda function is used for all the prompt templates.</p></div></div>
+                        
+                        <ol><li>
+                                <p>Turn on <b>Use Lambda function for parsing</b> in the <b>Configurations</b> section. If you turn this setting off, your agent will use the default parser for the prompt.</p>
+                            </li><li>
+                                <p>Select a Lambda function in the <b>Parser Lambda function</b> section.</p>
+                                
+                                <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>Remember to attach permissions for your agent to be able to access the Lambda function. For more information, see <a href="./agents-permissions.html#agents-permissions-lambda">Permissions to access your action group Lambda functions</a>.</p></div></div>
+                                
+                            </li></ol>
+                        
+                    </li><li>
+                        <p>Save your settings and <b>Prepare</b> the agent to test with these updated settings.</p>
+                    </li></ol></div>
+                
+                
+            </dd>
+        
+        <dt>API</dt><dd tab-id="api">
+                
+                <p>To configure advanced prompts through the API, you send a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateAgent.html">CreateAgent</a> or <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_UpdateAgent.html">UpdateAgent</a> call and modify the following <code class="code">promptOverrideConfiguration</code> object.</p>
+                
+                <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json ">"promptOverrideConfiguration": <span>{</span> 
+    "overrideLambda": "string",
+    "promptConfigurations": [ 
+        <span>{</span> 
+            "basePromptTemplate": "string",
+            "inferenceConfiguration": <span>{</span> 
+                "maximumLength": int,
+                "stopSequences": [ "string" ],
+                "temperature": float,
+                "topK": float,
+                "topP": float
+            },
+            "parserMode": "DEFAULT | OVERRIDDEN",
+            "promptCreationMode": "DEFAULT | OVERRIDDEN",
+            "promptState": "ENABLED | DISABLED",
+            "promptType": "PRE_PROCESSING | ORCHESTRATION | KNOWLEDGE_BASE_RESPONSE_GENERATION | POST_PROCESSING"
+        }
+    ]
+}</code></pre>
+                
+                <div class="procedure"><ol><li>
+                        <p>In the <code class="code">promptConfigurations</code> list, include a <code class="code">promptConfiguration</code> object for each prompt template that you want to edit.</p>
+                    </li><li>
+                        <p>Specify the prompt to modify in the <code class="code">promptType</code> field.</p>
+                    </li><li>
+                        <p>Configure the prompt template that you want to replace the default one through the following steps.</p>
+                        
+                        <ol><li>
+                                <p>Specify the <code class="code">basePromptTemplate</code> fields with your prompt template.</p>
+                            </li><li>
+                                <p>Include inference parameters in the <code class="code">inferenceConfiguration</code> objects. For more information about inference configurations, see <a href="./model-parameters.html">Inference parameters for foundation models</a>.</p>
+                            </li></ol>
+                    </li><li>
+                        <p>To enable the prompt template, carry out the following steps. set the <code class="code">promptCreationMode</code> to <code class="code">OVERRIDDEN</code>.</p>
+                    </li><li>
+                        <p>To allow or prevent the agent to carry out the step in the <code class="code">promptType</code> field, modify the <code class="code">promptState</code> value. This setting can be useful when debugging the agent's behavior.</p> 
+                        
+                        <div class="itemizedlist">
+                             
+                             
+                             
+                        <ul class="itemizedlist"><li class="listitem">
+                                <p>If you set the <code class="code">promptState</code> to <code class="code">DISABLED</code> for the <code class="code">PRE_PROCESSING</code>, <code class="code">KNOWLEDGE_BASE_RESPONSE_GENERATION</code>, or <code class="code">POST_PROCESSING</code> steps, that step is skipped by the agent.</p>
+                            </li><li class="listitem">
+                                <p>If you set the <code class="code">promptState</code> to <code class="code">DISABLED</code> for the <code class="code">ORCHESTRATION</code> step, the agent sends only the user input to the foundation model in orchestration and returns the response as is without orchestrating calls between APIs and knowledge bases.</p>
+                            </li><li class="listitem">
+                                <p>By default, the <code class="code">POST_PROCESSING</code> step is <code class="code">DISABLED</code>, while the <code class="code">PRE_PROCESSING</code>, <code class="code">ORCHESTRATION</code>, and <code class="code">KNOWLEDGE_BASE_RESPONSE_GENERATION</code> steps are <code class="code">ENABLED</code>.</p>
+                            </li></ul></div>
+                    </li><li>
+                        <p>To use a Lambda function that you have defined to parse the raw foundation model output, carry out the following steps.</p>
+                        
+                        <ol><li>
+                                <p>For each prompt template that you want to enable the Lambda function for, set the <code class="code">parserMode</code> to <code class="code">OVERRIDDEN</code>.</p>
+                            </li><li>
+                                <p>Specify the ARN of the Lambda function in the <code class="code">overrideLambda</code> field in the <code class="code">promptOverrideConfiguration</code> object.</p>
+                            </li></ol>
+                        
+                    </li></ol></div>
+                
+            </dd>
+        
+    </dl></awsdocs-tabs><div class="highlights"><h6>Topics</h6><ul><li><a href="./prompt-placeholders.html">Prompt template placeholder variables</a></li><li><a href="./lambda-parser.html">Parser Lambda function</a></li></ul></div><awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./agents-edit.html">Manage your agent</div><div id="next" class="next-link" accesskey="n" href="./prompt-placeholders.html">Prompt template placeholder variables</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/advanced-prompts.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/advanced-prompts.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

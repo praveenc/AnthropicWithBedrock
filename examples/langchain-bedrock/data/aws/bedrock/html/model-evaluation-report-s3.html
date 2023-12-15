@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Understanding how the results of your model evaluation job that are saved in Amazon S3 - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="model-evaluation-report-s3" /><meta name="default_state" content="model-evaluation-report-s3" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-report-s3.html" /><meta name="description" content="The output from a model evaluation job is saved in the Amazon S3 bucket you specified when you created the model evaluation job. Results of model evaluation jobs are saved as JSON line files ( .jsonl )." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-report-s3.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-report-s3.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Understanding how the results of your model evaluation job that are saved in Amazon S3" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Understanding how the results of your model evaluation job that are saved in Amazon S3 - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#model-evaluation-report-s3" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-report-s3.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-report-s3.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-report-s3.html" /><meta name="keywords" content="Amazon Bedrock,bedrock,model evaluation,human based,Model evaluation results,Evaluation report card,Buckets" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Model evaluation",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Model evaluation job results",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-report.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 6,
+        "name" : "Understanding how the results of your model evaluation job that are saved in Amazon S3",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-report.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#model-evaluation-report-s3" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#model-evaluation-report-s3-automated">Output data (automated)</a><a href="#model-evaluation-report-s3-hil">Output data
+						(human)</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="model-evaluation-report-s3">Understanding how the results of your model evaluation job that are saved in Amazon S3</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>Model evaluation jobs are in preview release for Amazon Bedrock and is subject to change. To use model evaluation jobs, you must be in either US East (N. Virginia) Region or US West (Oregon) Region.</p></div></div><p>The output from a model evaluation job is saved in the Amazon S3 bucket you specified when you created the model evaluation job. Results of model evaluation jobs are saved as JSON line files (<code class="code">.jsonl</code>).</p><p>The results from the model evaluation job is saved in the S3 bucket you specified as follows. </p><div class="itemizedlist">
+				 
+				 
+			<ul class="itemizedlist"><li class="listitem">
+					<p>For model evaluation jobs that use human workers:</p>
+					<p><code class="code">s3://<code class="replaceable">user-specified-model-evaluation-job-output-bucket</code>/<code class="replaceable">human-loop-name</code>/output.jsonl</code>
+					</p>
+				</li><li class="listitem">
+					<p>For automatic model evaluation jobs:</p>
+					<p><code class="code">s3://<code class="replaceable">user-specified-model-evaluation-job-output-bucket</code>/output/system-generated-id-tag/datasets</code></p>
+				</li></ul></div><p>The following topics describe how the results from automated and human worker based model evaluation job are saved in Amazon S3.</p>
+				<h2 id="model-evaluation-report-s3-automated">Output data from automated model evaluation jobs</h2>
+
+				<p>The results of the automated evaluation job are stored in the <code class="code">datasets</code> directory when job status changes to <b>Completed</b>.</p>
+
+				<p>For each metric and corresponding prompt dataset you selected when the model evaluation job was created, a JSON line file is generated in the <code class="code">datasets</code> directory. The file uses the following naming convention <code class="code"><code class="userinput">metric</code>_<code class="userinput">input-dataset</code>.jsonl</code>.</p>
+
+				<p>Each result from the model evaluation job starts with the <code class="code">automatedEvaluationResult</code> key. The first child key <code class="code">scores</code> contains the metrics you selected in the Amazon Bedrock console. In this example, only a single metric <code class="code">Accuracy</code> was selected. It also contains <code class="code">result</code> which is calculated value for the selected metric. To learn more about what specific value is calculated, see <a href="./model-evaluation-report-programmatic.html">Automated model evaluation job report cards (console)</a>.</p>
+
+				<p>The second key, <code class="code">inputRecord</code> is a copy of what you provided in your input prompt dataset.</p>
+
+				<p>The third key, <code class="code">modelInvocations</code> contains a list of JSON objects which contains the ARN of the model selected when you created the model evaluation job. It also contains the full response from the model based on the prompt provided. </p>
+
+				<p>The following is an example output for the text summarization task type with only one metric, accuracy, selected.</p>
+
+				<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "automatedEvaluationResult": <span>{</span>
+        "scores": [<span>{</span>
+            "metricName": "Accuracy",
+            "result": 0.31920555233955383
+        }]
+    },
+    "inputRecord": <span>{</span>
+        "prompt": "Human: two bodies have been recovered from a flooded coal mine in yiyang city , central china 's henan province , as of #:## thursday morning , rescuers said . Assistant:",
+        "referenceResponse": "two bodies recovered from flooded coal mine in c. china"
+    },
+    "modelInvocations": [<span>{</span>
+        "modelIdentifier": "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-v2",
+        "responseText": " Here are the key points I gathered from your news summary:\n\n- Two bodies have been recovered from a flooded coal mine in Yiyang City, in China's Henan province.\n\n- This happened as of Thursday morning, according to rescuers.\n\n- The location is central China's Henan province. \n\n- Yiyang City is where the flooded coal mine is located.\n\n- The coal mine was flooded, leading to the two deaths and need for rescue/recovery efforts.\n\n- This news is developing as of Thursday morning, so the death toll and rescue details may still be unfolding.\n\nPlease let me know if I have accurately summarized the key information or if you would like me to expand on any part of it."
+    }]
+}</code></pre>
+			 
+				<h2 id="model-evaluation-report-s3-hil">Output data from model
+						evaluation jobs that use human workers.</h2>
+				<p>When a model evaluation job has completed, you see the following parameters in
+					the output data returned from human review tasks.</p>
+				<div class="table-container"><div class="table-contents"><table id="w230aac40c31c23c17b5"><thead>
+							<tr>
+								<th>Parameter</th>
+								<th>Value Type</th>
+								<th>Example Values</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+							<tr>
+								<td tabindex="-1"><code class="code">flowDefinitionArn</code></td>
+								<td tabindex="-1">
+									<p>String</p>
+								</td>
+								<td tabindex="-1"><code class="code">arn:aws:sagemaker:us-west-2:<code class="replaceable">111122223333</code>:flow-definition/<code class="replaceable">flow-definition-name</code></code></td>
+								<td tabindex="-1">
+									<p>The Amazon Resource Number (ARN) of the human review
+										workflow (flow definition) used to create the human loop.
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td tabindex="-1"><code class="code">humanAnswers</code></td>
+								<td tabindex="-1">
+									<p>List of JSON objects</p>
+								</td>
+								<td tabindex="-1">
+									<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json ">"answerContent": <span>{</span>
+    "evaluationResults": <span>{</span>
+		"approvalRate": [<span>{</span>
+			"metric": "<code class="userinput">Relevance</code>",
+			"modelResponseId": "0",
+			"result": false
+		}]
+	}
+}</code></pre>
+								</td>
+								<td tabindex="-1">
+									<p>A list of JSON objects that contain worker responses in
+											<code class="code">answerContent</code>. </p>
+								</td>
+							</tr>
+							<tr>
+								<td tabindex="-1">
+									<p><code class="code">humanLoopName</code></p>
+								</td>
+								<td tabindex="-1">String</td>
+								<td tabindex="-1"><code class="code">system-generated-hash</code></td>
+								<td tabindex="-1">A system generated 40-character hex string.</td>
+							</tr>
+							<tr>
+								<td tabindex="-1"><code class="code">inputRecord</code></td>
+								<td tabindex="-1">JSON object</td>
+								<td tabindex="-1">
+									<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json ">"inputRecord": <span>{</span>
+    "prompt": "What does vitamin C serum do for skin?",
+    "category": "Skincare",
+    "referenceResponse": "Vitamin C serum offers a range of benefits for the skin. Firstly, it acts....
+}</code></pre>
+								</td>
+								<td tabindex="-1">A JSON object that contains an entry prompt from the input
+									dataset. </td>
+							</tr>
+							<tr>
+								<td tabindex="-1"><code class="code">modelInvocations</code></td>
+								<td tabindex="-1">List of JSON objects</td>
+								<td tabindex="-1">
+									<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json ">"modelResponses": [<span>{</span>
+	"modelIdentifier": "arn:aws:bedrock:<code class="userinput">us-east-1</code>::foundation-model/<code class="userinput">anthropic.claude-v2</code>",
+	"responseText": "the-models-response-to-the-prompt"
+}]</code></pre>
+								</td>
+								<td tabindex="-1">The individual responses from the models.</td>
+							</tr>
+							<tr>
+								<td tabindex="-1">
+									<p><code class="code">inputRecord</code></p>
+								</td>
+								<td tabindex="-1">
+									<p>List of JSON object</p>
+								</td>
+								<td tabindex="-1">
+									<p><a href="#code-sample-model-eval">See the following
+											code sample</a></p>
+								</td>
+								<td tabindex="-1">
+									<p>The input content sent to SageMaker in the request to <a href="https://docs.aws.amazon.com/augmented-ai/2019-11-07/APIReference/API_StartHumanLoop.html"><code class="code">StartHumanLoop</code></a>.</p>
+								</td>
+							</tr>
+						</table></div></div>
+				<p>The following is an example of output data from a model
+					evaluation job. </p>
+
+				<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "output": [<span>{</span>
+        "flowDefinitionArn": "arn:aws:sagemaker:<code class="userinput">us-west-2</code>:<code class="userinput">111122223333</code>:flow-definition/<code class="userinput">flow-definition-name</code>",
+        "humanAnswers": [<span>{</span>
+            "acceptanceTime": "2023-11-09T19:17:43.107Z",
+            "answerContent": <span>{</span>
+                "evaluationResults": <span>{</span>
+                    "approvalRate": [<span>{</span>
+                        "metric": "Coherence",
+                        "metricName": "Coherence",
+                        "modelResponseId": "0",
+                        "result": false
+                    }, <span>{</span>
+                        "metric": "Accuracy",
+                        "metricName": "Accuracy",
+                        "modelResponseId": "0",
+                        "result": true
+                    }],
+                    "approvalStrength": [<span>{</span>
+                        "metric": "Toxicity",
+                        "metricName": "Toxicity",
+                        "modelResponseId": "0",
+                        "result": 1
+                    }]
+                }
+            },
+            "submissionTime": "2023-11-09T19:17:52.101Z",
+            "timeSpentInSeconds": 8.994,
+            "workerId": "444455556666",
+            "workerMetadata": <span>{</span>
+                "identityData": <span>{</span>
+                    "identityProviderType": "Cognito",
+                    "issuer": "https://cognito-idp.us-west-2.amazonaws.com/<code class="userinput">us-west-2_111222</code>",
+                    "sub": "<code class="userinput">c6aa8eb7-9944-42e9-a6b9-</code>"
+                }
+            }
+        }],
+   
+       
+					
+					...Additional response have been truncated for clarity...
+
+      }],
+     "humanLoopName": "b3b1c64a2166e001e094123456789012"
+    },
+	"inputRecord": <span>{</span>
+	        "category": "Fitness",
+	        "prompt": "Human: What is High-Intensity Interval Training ? \\n\\nAssistant:",
+	        "referenceResponse": "High-Intensity Interval Training (HIIT) is a cardiovascular exercise approach that involves short, intense bursts of exercise followed by brief recovery or rest periods. In HIIT, you perform exercises at near-maximum effort during the high-intensity intervals, which can include activities like sprinting, cycling, jumping, or body weight exercises such as burpees or push-ups. These intense intervals are interspersed with short recovery periods to lower your heart rate before the next high-intensity bout. HIIT workouts usually consist of multiple cycles of these intervals, and the number of cycles and the length of intervals can vary. HIIT is known for its time efficiency, making it an excellent choice for those with busy schedules. It offers both aerobic and anaerobic benefits, improving cardiovascular fitness, burning calories, and promoting fat loss, all while boosting metabolism for continued calorie burning post-workout."
+	    },
+	    "modelInvocations": [<span>{</span>
+	        "modelIdentifier": "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-v2",
+	        "responseText": " High-intensity interval training (HIIT) is a form of exercise that involves short bursts of intense activity alternated with recovery periods. Here are some key features of HIIT:\n\n- Alternates short periods of intense anaerobic exercise with less intense recovery periods. The high-intensity periods are typically done at 80-95% of maximum heart rate.\n\n- The duration of the intense periods can range from 5 seconds to 8 minutes, but typically are in the range of 30 seconds to 4 minutes.\n\n- The total HIIT session typically lasts between 10-30 minutes, including warm-up, recovery periods, and cool down. \n\n- Uses exercises like sprints, cycling, rowing, jumping rope, stair climbing, swimming, etc. Movements that get your heart rate up quickly.\n\n- The short, intense intervals help improve cardiovascular fitness by increasing heart rate and oxygen consumption.\n\n- HIIT burns more calories and fat than steady-state cardio in a shorter time period. It also helps build muscle strength and endurance.\n\n- Considered an efficient and effective form of exercise for fat loss and improving aerobic power. But it requires motivation to push yourself during the intense intervals.\n\n- Not suitable for beginners due to the high-intensity. Start with steady-state cardio and build up endurance before trying HIIT.\n\nIn summary, HIIT intersperses intense bursts of"
+	    }]
+}
+
+    
+}</code></pre>
+				<p>The following table explains how the <b>Rating method</b> you
+					selected for each metric in the Amazon Bedrock console is returned in your Amazon S3 bucket.
+					The first child-key under <code class="code">evaluationResults</code> is how the
+						<b>Rating method</b> is returned.</p>
+				<p></p>
+				<div class="table-container"><div class="table-contents"><table id="w230aac40c31c23c17c15"><thead><tr><th class="table-header" colspan="100"><div class="title">How rating methods selected in the Amazon Bedrock console are saved in Amazon S3</div></th></tr>
+							<tr>
+								<th>Rating method selected</th>
+								<th>Saved in Amazon S3</th>
+							</tr>
+						</thead>
+							<tr>
+								<td tabindex="-1">Likert scale - Individual</td>
+								<td tabindex="-1"><code class="code">approvalStrength</code></td>
+							</tr>
+							<tr>
+								<td tabindex="-1">Likert scale - Comparison</td>
+								<td tabindex="-1"><code class="code">preferenceStrength</code></td>
+							</tr>
+							<tr>
+								<td tabindex="-1">Choice buttons</td>
+								<td tabindex="-1"><code class="code">preferenceRate</code></td>
+							</tr>
+							<tr>
+								<td tabindex="-1">Ordinal rank</td>
+								<td tabindex="-1"><code class="code">preferenceRank</code></td>
+							</tr>
+							<tr>
+								<td tabindex="-1">Thumbs up/down</td>
+								<td tabindex="-1"><code class="code">approvalRate</code></td>
+							</tr>
+						</table></div></div>
+			<awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./model-evaluation-report-human-customer.html">Human report cards</div><div id="next" class="next-link" accesskey="n" href="./model-evaluation-security.html">Required permissions</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-report-s3.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-report-s3.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

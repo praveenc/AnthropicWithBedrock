@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Manage your agent - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="agents-edit" /><meta name="default_state" content="agents-edit" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-edit.html" /><meta name="description" content="After you create an agent, you can update its configuration as required. The configuration applies to the working draft." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-edit.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/agents-edit.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/agents-edit.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/agents-edit.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/agents-edit.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-edit.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-edit.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/agents-edit.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/agents-edit.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/agents-edit.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/agents-edit.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/agents-edit.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/agents-edit.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/agents-edit.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/agents-edit.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/agents-edit.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/agents-edit.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/agents-edit.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/agents-edit.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/agents-edit.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/agents-edit.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-edit.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Manage your agent" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Manage your agent - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#agents-edit" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/agents-edit.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/agents-edit.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/agents-edit.html" /><meta name="keywords" content="Amazon Bedrock,bedrock,chatbot,action groups,agent" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Agents for Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Manage your agent",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#agents-edit" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#agents-actions">Manage the action groups of an agent</a><a href="#agents-kb">Manage the knowledge bases of an agent</a><a href="#agents-delete">Delete an agent</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="agents-edit">Manage your agent</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>After you create an agent, you can update its configuration as required. The configuration applies to the working draft.</p><div class="procedure"><h6>To edit the agent configuration</h6><ol><li>
+            <p>Choose an agent in the <b>Agents</b> section.</p>
+        </li><li>
+            <p>Select <b>Edit</b> in the <b>Agent overview</b> section.</p>
+        </li><li>
+            <p>Edit the existing fields as necessary.</p>
+        </li><li>
+            <p>Select <b>Save changes</b>. A green success banner appears at the top.</p>
+            
+            <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>If you change the foundation model, all the prompt templates will be set to default for that model. 
+
+                    For more information, see <a href="./advanced-prompts.html">Advanced prompts</a>.</p></div></div>
+            
+        </li></ol></div><p>You might want to try different foundation models for your agent or change the instructions for the agent. These changes apply only to the working draft.</p><div class="procedure"><h6>To change the foundation model that your agent uses or the instructions to the agent.</h6><ol><li>
+            <p>Choose an agent in the <b>Agents</b> section.</p>
+        </li><li>
+            <p>Select <b>View</b> in the <b>Working draft</b> section or choose the working draft.</p>
+        </li><li>
+            <p>In the <b>Model details</b> section, select <b>Edit</b></p>
+        </li><li>
+            <p>Edit the fields as necessary. You can configure advanced points in this section. For more information about advanced prompts, see <a href="./advanced-prompts.html">Advanced prompts</a>.</p>
+        </li><li>
+            <p>Select <b>Save</b> to remain in the same window. A green success banner appears at the top.</p>
+        </li><li>
+            <p>Test the updated agent in the right panel and make changes as necessary.</p>
+        </li><li>
+            <p>Select <b>Save and exit</b> to return to the working draft page.</p>
+        </li></ol></div>
+        <h2 id="agents-actions">Manage the action groups of an agent</h2>
+        
+        <p>After creating an agent, you can add more action groups or edit them. Adding and editing take place within the working draft. To carry out these operations, choose an agent from the <b>Agents</b> section and then choose the <b>Working draft</b> in the <b>Working Draft</b> section.</p>
+        
+        <div class="procedure"><h6>To add an action group</h6><ol><li>
+                <p>Select <b>Add</b> in the <b>Action groups</b> section.</p>
+            </li><li>
+                <p>Fill out the action group details</p>
+            </li><li>
+                <p>To define the schema for the action group with the in-line OpenAPI schema editor, carry out the following actions. For more information about API schemas for your action group, see <a href="./agents-api-schema.html">Action group OpenAPI schemas</a>.</p>
+                
+                <ol><li>
+                        <p>Choose <b>Define with in-line OpenAPI schema editor</b> under <b>Select API schema</b>. A sample schema appears that you can edit.</p>
+                    </li><li>
+                        <p>Select the format for the schema by using the dropdown menu next to <b>Format</b>.</p>
+                    </li><li>
+                        <p>To import an existing schema from S3 to edit, select <b>Import schema</b>, provide the S3 URI, and select <b>Import</b>.</p>
+                    </li><li>
+                        <p>To restore the schema to the original sample schema, select <b>Reset</b> and then confirm the message that appears by selecting <b>Reset</b> again.</p>
+                    </li></ol>
+            </li><li>
+                <p>Select <b>Add</b>. A green success banner appears if there are no issues. If there are issues validating the schema, a red banner appears. The following issues are identified by the validation process.</p>
+                <div class="itemizedlist">
+                     
+                     
+                <ul class="itemizedlist"><li class="listitem">
+                        <p>Scroll through the schema to see the lines where an error or warning about formatting exists. An X indicates a formatting error, while an exclamation mark indicates a warning about formatting.</p>
+                    </li><li class="listitem">
+                        <p>Select <b>View details</b> in the red banner to see a list of errors about the content of the API schema.</p>
+                    </li></ul></div>
+            </li><li>
+                <p>Select <b>Prepare</b> to apply the changes that you have made to the agent before testing it.</p>
+            </li></ol></div>
+        
+        <div class="procedure"><h6>To edit an action group</h6><ol><li>
+                <p>Do one of the following:</p>
+                <ul>
+                    <li>
+                        <p>Choose the radio button next to the action group to edit and select <b>Edit</b>.</p>
+                    </li>
+                    <li>
+                        <p>Select an action group to see its details. Choose <b>Edit</b> at the top.</p>
+                    </li>
+                </ul>
+            </li><li>
+                <p>Edit the existing fields as necessary.</p>
+            </li><li>
+                <p>To define the schema for the action group with the in-line OpenAPI schema editor, carry out the following actions.</p>
+                
+                <ol><li>
+                        <p>Choose <b>Define with in-line OpenAPI schema editor</b> under <b>Select API schema</b>. A sample schema appears that you can edit.</p>
+                    </li><li>
+                        <p>Select the format for the schema by using the dropdown menu next to <b>Format</b>.</p>
+                    </li><li>
+                        <p>To import an existing schema from S3 to edit, select <b>Import schema</b>, provide the S3 URI, and select <b>Import</b>.</p>
+                    </li><li>
+                        <p>To restore the schema to the original sample schema, select <b>Reset</b> and then confirm the message that appears by selecting <b>Reset</b> again.</p>
+                    </li></ol>
+            </li><li>
+                <p>Select <b>Save</b> to remain in the same window. A green success banner appears if there are no issues.</p>
+            </li><li>
+                <p>If there are issues validating the schema, a red banner appears. Scroll through the schema to see the lines where an error or warning exists. Select the gear icon or <b>View details</b> at the top of the page to see a list of errors.</p>
+            </li><li>
+                <p>Test the updated agent in the right panel and make changes as necessary.</p>
+            </li><li>
+                <p>Select <b>Save and exit</b> to return to the working draft page.</p>
+            </li><li>
+                <p>Select <b>Prepare</b> to apply the changes that you have made to the agent before testing it.</p>
+            </li></ol></div>
+        
+        <div class="procedure"><h6>To delete an action group</h6><ol><li>
+                <p>In the Amazon Bedrock console, select <b>Agents</b> from the left navigation pane.</p>
+            </li><li>
+                <p>Select the working draft from the <b>Working draft</b> section.</p>
+            </li><li>
+                <p>In the <b>Action groups</b> section, select the radio button next to the action group to delete.</p>
+            </li><li>
+                <p>A modal appears warning you about the consequences of deletion. Enter <code class="userinput">delete</code> in the input box to confirm the message and select <b>Delete</b> to confirm.</p>
+            </li><li>
+                <p>A blue banner appears to inform you that the action group is being deleted. When deletion is complete, a green success banner appears.</p>
+            </li><li>
+                <p>Select <b>Prepare</b> to apply the changes that you have made to the agent before testing it.</p>
+            </li></ol></div>
+        
+        
+        
+     
+        <h2 id="agents-kb">Manage the knowledge bases of an agent</h2>
+        
+        <p>After creating an agent, you can add more knowledge bases or edit them. Adding and editing take place within the working draft. To carry out these operations, choose an agent from the <b>Agents</b> section and then choose the <b>Working draft</b> in the <b>Working Draft</b> section.</p>
+        
+        <div class="procedure"><h6>To add a knowledge base</h6><ol><li>
+                <p>Select <b>Add</b> in the <b>Knowledge bases</b> section.</p>
+            </li><li>
+                <p>Choose a knowledge base that you have created and provide instructions for how the agent should interact with it.</p>
+            </li><li>
+                <p>Select <b>Add</b>. A green success banner appears at the top.</p>
+            </li><li>
+                <p>Select <b>Prepare</b> to apply the changes that you have made to the agent before testing it.</p>
+            </li></ol></div>
+        
+        <div class="procedure"><h6>To edit a knowledge base</h6><ol><li>
+                <p>Select a knowledge base.</p>
+            </li><li>
+                <p>In the knowledge base details page, select <b>Edit</b></p>
+            </li><li>
+                <p>Edit the existing fields as necessary.</p>
+            </li><li>
+                <p>Select <b>Save</b> to remain in the same window. A green success banner appears if there are no issues and a red banner appears if there are errors in the edit.</p>
+            </li><li>
+                <p>Test the updated agent in the right panel and make changes as necessary.</p>
+            </li><li>
+                <p>Select <b>Save and exit</b> to return to the working draft page.</p>
+            </li><li>
+                <p>Select <b>Prepare</b> to apply the changes that you have made to the agent before testing it.</p>
+            </li></ol></div>
+        
+        <div class="procedure"><h6>To delete a knowledge base</h6><ol><li>
+                <p>Select the radio button next to the knowledge base to delete.</p>
+            </li><li>
+                <p>Select <b>Delete</b>.</p>
+            </li><li>
+                <p>Select <b>Prepare</b> to apply the changes that you have made to the agent before testing it.</p>
+            </li></ol></div>
+        
+     
+        <h2 id="agents-delete">Delete an agent</h2>
+        
+        <div class="procedure"><h6>To delete an agent</h6><ol><li>
+                <p>In the Amazon Bedrock console, select <b>Agents</b> from the left navigation pane.</p>
+            </li><li>
+                <p>Select the radio button next to the agent to delete.</p>
+            </li><li>
+                <p>A modal appears warning you about the consequences of deletion. Enter <code class="userinput">delete</code> in the input box and select <b>Delete</b> to confirm.</p>
+            </li><li>
+                <p>A blue banner appears to inform you that the agent is being deleted. When deletion is complete, a green success banner appears.</p>
+            </li></ol></div>
+        
+    <awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./trace-events.html">Trace events</div><div id="next" class="next-link" accesskey="n" href="./advanced-prompts.html">Advanced prompts</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/agents-edit.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/agents-edit.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

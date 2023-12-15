@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Agents for Amazon Bedrock - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="agents" /><meta name="default_state" content="agents" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html" /><meta name="description" content="Learn about how to set up conversational agents using Amazon Bedrock" /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/agents.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/agents.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/agents.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/agents.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/agents.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/agents.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/agents.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/agents.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/agents.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/agents.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/agents.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/agents.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/agents.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/agents.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/agents.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/agents.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/agents.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/agents.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Agents for Amazon Bedrock" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Agents for Amazon Bedrock - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#agents" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/agents.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/agents.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/agents.html" /><meta name="keywords" content="Amazon Bedrock,bedrock,chatbot,action groups,agent" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Agents for Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#agents" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#agents-how">How Agents for Amazon Bedrock works</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="agents">Agents for Amazon Bedrock</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>Agents for Amazon Bedrock offers you the ability to build and configure autonomous agents in your application. The agent helps your end-users complete actions based on organization data and user input. Agents orchestrate interactions between foundation models, data sources, software applications, and user conversations, and automatically call APIs to take actions and invoke knowledge bases to supplement information for these actions. Developers can easily integrate the agents and accelerate delivery of generative AI applications saving weeks of development effort.</p><p>With agents, you can automate tasks for your customers. For example, you can create an agent that helps customers process insurance claims or one that helps customers make travel reservations and answer questions related to these tasks. You don't have to worry about provisioning, managing infrastructure, or writing custom code. Amazon Bedrock manages prompt engineering, memory, monitoring, encryption, user permissions, and API invocation.</p><p>Agents can carry out the following tasks:</p><div class="itemizedlist">
+         
+         
+         
+         
+         
+         
+    <ul class="itemizedlist"><li class="listitem">
+            <p>Extend foundation models to understand user requests and break down the tasks it needs to perform into smaller steps.</p>
+        </li><li class="listitem">
+            <p>Collect additional information from a user through natural conversation.</p>
+        </li><li class="listitem">
+            <p>Take actions to fulfill a customer's request.</p>
+        </li><li class="listitem">
+            <p>Make API calls to your company systems to carry out actions.</p>
+        </li><li class="listitem">
+            <p>Augment performance and accuracy by querying data sources. </p>
+        </li><li class="listitem">
+            <p>Carry out source attribution.</p>
+        </li></ul></div><p>To take advantage of agents, you carry out the following steps:</p><div class="procedure"><ol><li>
+            <p>(Optional) Create a knowledge base to store your private data in that database. For more information, see <a href="./knowledge-base.html">Knowledge base for Amazon Bedrock</a>.</p>
+        </li><li>
+            <p>Create an agent for your use-case, add actions that it can carry out and define how to handle them by writing Lambda functions in a programming language of your choice.</p>
+        </li><li>
+            <p>Attach the knowledge base you created to augment its performance. For more information, see <a href="./agents-create.html">Create an agent</a>.</p>
+        </li><li>
+            <p>(Optional) Modify prompt templates for the pre-processing, orchestration, knowledge base response generation, and post-processing steps carried out by an agent in order to customize the agent's behavior to your specific use-case. For more information, see <a href="./advanced-prompts.html">Advanced prompts</a>.</p>
+        </li><li>
+            <p>Test your agent in the console or through API calls to the <code class="code">TestAlias</code> and modify the configurations as necessary. Use traces to examine your agent's reasoning process at each step of its orchestration. For more information, see <a href="./agents-test.html">Test your agent</a> and <a href="./trace-events.html">Trace events</a>.</p>
+        </li><li>
+            <p>When you have sufficiently modified your agent and it is ready to be deployed to your application, create an alias to point to a version of your agent. For more information, see <a href="./agents-deploy.html">Deploy your agent: versioning and aliases</a>.</p>
+        </li><li>
+            <p>Set up your application to make API calls to your agent alias.</p>
+        </li><li>
+            <p>Iterate on your agent and create more versions and aliases as necessary.</p>
+        </li></ol></div><div class="highlights"><h6>Topics</h6><ul><li><a href="#agents-how">How Agents for Amazon Bedrock works</a></li><li><a href="./agents-supported.html">Supported regions and models</a></li><li><a href="./agents-setup.html">Set up action groups for your agent</a></li><li><a href="./agents-create.html">Create an agent</a></li><li><a href="./agents-test.html">Test your agent</a></li><li><a href="./agents-edit.html">Manage your agent</a></li><li><a href="./advanced-prompts.html">Advanced prompts</a></li><li><a href="./agents-deploy.html">Deploy your agent: versioning and aliases</a></li><li><a href="./agents-api.html">Use the API</a></li></ul></div>
+        <h2 id="agents-how">How Agents for Amazon Bedrock works</h2>
+        
+        <p>Agents for Amazon Bedrock consists of two main sets of API operations to help you set up and run an agent, <b>build-time</b> API operations to create, configure, and manage your agents and their related resources, and <b>runtime</b> API operations to invoke your agent with user input and to initiate orchestration to carry out a task.</p>
+        
+        <p><b>Build-time execution</b></p>
+        
+        <p>An agent consists of the following components:</p>
+        
+        <div class="itemizedlist">
+             
+             
+             
+             
+        <ul class="itemizedlist"><li class="listitem">
+                <p>Foundation model â You choose a foundation model that the agent invokes to interpret user input and subsquent prompts in its orchestration process, and to generate responses and follow-up steps in its process.</p>
+            </li><li class="listitem">
+                <p>Instructions â You write up instructions that describe what the agent is designed to do. With advanced prompts, you can further customize instructions for the agent at every step of orchestration and include Lambda functions to parse the output of each step.</p>
+            </li><li class="listitem">
+                <p>(Optional) Action groups â You define the actions that the agent should carry out through providing two resources.</p>
+                <div class="itemizedlist">
+                     
+                     
+                <ul class="itemizedlist"><li class="listitem">
+                        <p>An OpenAPI schema to define the APIs that the agent can invoke to carry out its tasks.</p>
+                    </li><li class="listitem">
+                        <p>A Lambda function with the following input and output.</p>
+                        <div class="itemizedlist">
+                             
+                             
+                        <ul class="itemizedlist"><li class="listitem">
+                                <p>Input â The API and parameters identified during orchestration.</p>
+                            </li><li class="listitem">
+                                <p>Output â The result of the API invocation.</p>
+                            </li></ul></div>
+                    </li></ul></div>
+            </li><li class="listitem">
+                <p>(Optional) Knowledge bases â Associate knowledge bases with an agent to allow it to query the knowledge base for extra context to augment response generation and input into steps of the orchestration process.</p>
+            </li></ul></div>
+        
+        <p>In build-time, all these components are gathered to construct base prompts for the agent in order to carry out orchestration until the user request is completed. With advanced prompts, you can modify these base prompts with additional logic and few-shot examples to improve accuracy for each step of agent invocation. The base prompt templates contain instructions, action descriptions, knowledge base descriptions, and conversation history, all of which you can customize to modify the agent to the best of your needs. You then <em>prepare</em> your agent, which packages all the components of the agents, including security configurations, and brings the agent into a state where it is ready for testing in runtime. The following image schematizes how build-time APIs construct your agent.</p>
+        
+        <div class="mediaobject">
+             
+                <img src="/images/bedrock/latest/userguide/images/agents-buildtime.png" class="aws-docs-img-whiteBg aws-docs-img-padding" alt="How build-time APIs construct your agent" style="max-width:50%" />
+             
+             
+        </div>
+        
+        <p><b>Runtime execution</b></p>
+        
+        <p>Runtime is managed by one API, the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a>, which sets off the agent sequence, which consists of three main steps.</p>
+        
+        <div class="orderedlist">
+             
+             
+             
+        <ol><li>
+                <p>Pre-processing â Manages how the agent contextualizes and categorizes user input and whether the input is valid.</p>
+            </li><li>
+                <p>Orchestration â Interprets the user input, invokes action groups and queries knowledge bases, and returns output to the user or as input to continued orchestration. Orchestration consists of the following steps.</p> 
+                <div class="itemizedlist">
+                     
+                     
+                     
+                     
+                <ul class="itemizedlist"><li class="listitem">
+                        <p>The agent interprets the input with a foundation model and generates a <em>rationale</em> that lays out the logic for the next step it should take.</p>
+                    </li><li class="listitem">
+                        <p>The agent invokes action groups and queries knowledge bases to retrieve additional context and summarize the data to augment its generation.</p>
+                    </li><li class="listitem">
+                        <p>The agent generates an output, known as an <em>observation</em>, from invoking action groups and summarizing results from knowledge bases. The agent uses the observation to augment the base prompt, which is then interpreted with a foundation model. The agent then determines if it needs to reiterate the orchestration process.</p>
+                    </li><li class="listitem">
+                        <p>This loop continues until the agent is ready to return a response to the user or until it needs to prompt the user for extra information.</p>
+                    </li></ul></div>
+                
+                <p>During orchestration, the base prompt template is augmented with the agent instructions, action groups, and knowledge bases that you have added to the agent. The augmented base prompt is then used to invoke the foundation model. The foundation model predicts the best possible steps and trajectory in order to fulfill the user input. At each iteration of orchestration, the foundation model predicts the API to invoke or the knowledge base to query.</p>
+                
+            </li><li>
+                <p>Post-processing â The agent creates a final response from parts of the API and knowledge base responses. This step is turned off by default.</p>
+            </li></ol></div>
+        
+        <p>As the user session with the agent continues through more <code class="code">InvokeAgent</code> requests, conversation history is preserved and serves to continually augment the orchestration base prompt template with context, helping improve accuracy and performance. The following diagram schematizes the agent's process during runtime.</p>
+        
+        <div class="mediaobject">
+             
+                <img src="/images/bedrock/latest/userguide/images/agents-runtime.png" class="aws-docs-img-whiteBg aws-docs-img-padding" alt="How your agent works in runtime" style="max-width:75%" />
+             
+             
+        </div>
+        
+        <p><b>Tracing your agent's reasoning process</b></p>
+        
+        <p>Agents for Amazon Bedrock provides the ability to turn on a <em>trace</em> at runtime, which allows you to track the agent's rationale, actions, queries, and observations at each step of the agent sequence. The trace includes the full prompt sent to as input to the foundation model at each step and the outputs from the foundation model, API responses, and knowledge base queries. You can use the rationale to understand the agent's reasoning at each step. For more information, see <a href="./trace-events.html">Trace events</a></p>
+        
+        <p><b>Advanced prompts</b></p>
+        
+        <p>Agents for Amazon Bedrock exposes the default base prompt templates that are used during <em>pre-processing</em>, <em>orchestration</em>, <em>knowledge base response generation</em>, and <em>post-processing</em>. You can edit these base prompt templates to customize your agent's behavior at each step of its sequence. You can also turn off steps for debugging purposes or if you deem them unnecessary. For more information, see <a href="./advanced-prompts.html">Advanced prompts</a>.</p>
+        
+    <awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./knowledge-base-api-query.html">Query a knowledge base</div><div id="next" class="next-link" accesskey="n" href="./agents-supported.html">Supported regions and models</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/agents.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/agents.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Human model evaluation job report cards (console) - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="model-evaluation-report-human-customer" /><meta name="default_state" content="model-evaluation-report-human-customer" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-report-human-customer.html" /><meta name="description" content="In your model evaluation report card, you will see the total number of prompts in the dataset you provided or selected, and how many of those prompts received responses. If the number of responses is less than the number of input prompts times the number of workers per prompt you configured in the job (either 1,2 or 3), make sure to check the data output file in your Amazon S3 bucket. It is possible that the prompt caused an error with the model and there was no inference retrieved. Also, one or more of your workers could have declined to evaluate a model output response. Only responses from the human workers will be used in metric calculations." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-report-human-customer.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-report-human-customer.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Human model evaluation job report cards (console)" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Human model evaluation job report cards (console) - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#model-evaluation-report-human-customer" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-report-human-customer.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-report-human-customer.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-report-human-customer.html" /><meta name="keywords" content="Amazon Bedrock,bedrock,model evaluation,human based,Model evaluation results,Evaluation report card,Buckets" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Model evaluation",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Model evaluation job results",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-report.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 6,
+        "name" : "Human model evaluation job report cards (console)",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-report.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#model-evaluation-report-human-customer" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#likert-compare">Likert scale, comparison of multiple model outputs</a><a href="#choice-buttons">Choice buttons (radio button)</a><a href="#ordinal-rank">Ordinal rank</a><a href="#thump-up-down">Thumbs up/down</a><a href="#likert-single">Likert scale, evaluation of a single model response</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="model-evaluation-report-human-customer">Human model evaluation job report cards (console)</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>Model evaluation jobs are in preview release for Amazon Bedrock and is subject to change. To use model evaluation jobs, you must be in either US East (N. Virginia) Region or US West (Oregon) Region.</p></div></div><p>In your model evaluation report card, you will see the total number of prompts in the dataset you provided or selected, and how many of those prompts received responses. If the number of responses is less than the number of input prompts times the number of workers per prompt you configured in the job (either 1,2 or 3), make sure to check the data output file in your Amazon S3 bucket. It is possible that the prompt caused an error with the model and there was no inference retrieved. Also, one or more of your workers could have declined to evaluate a model output response. Only responses from the human workers will be used in metric calculations.</p><p>Use the following procedure to open up a model evaluation that used human workers on the Amazon Bedrock console.</p><div class="procedure"><ol><li>
+					<p>Open the Amazon Bedrock console.</p>
+				</li><li>
+					<p>From the navigation pane, choose <b>Model evaluation</b>.</p>
+				</li><li>
+					<p>Next, in the <b>Model evaluations</b> table find the name of the model evaluation job you want to review. Then, choose it.</p>
+				</li></ol></div><p>The model evaluation report provides insights about the data collected during a human evaluation job using report cards. Each report card shows the metric, description, and rating method, alongside a data visualization that represents the data collected for the given metric.</p><p>In each of the following sections, you can see an examples of the 5 possible rating methods your work team saw in the evaluation UI.  The examples also show what key value pair is used to save the results in Amazon S3.</p>
+				<h2 id="likert-compare">Likert scale, comparison of multiple model outputs</h2>
+
+				<p>Human evaluators indicate their preference between the two responses from the model on a 5 point Likert scale <a href="./worker-job.html"> according to your instructions</a>. The results in the final report will be shown as a histogram of preference strength ratings from the evaluators over your whole dataset.</p>
+
+				<p>Make sure you define the important points of the 5 point scale in your instructions, so your evaluators know how to rate responses based on your expectations.</p>
+
+				<div class="mediaobject">
+					 
+						<img src="/images/bedrock/latest/userguide/images/likert-compare.png" class="aws-docs-img-whiteBg aws-docs-img-padding" alt="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;This is my image.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;" style="max-width:35%" />
+					 
+					 
+				</div>
+
+				 
+					<h6>JSON output</h6>
+					<p>The first child-key under <code class="code">evaluationResults</code> is where the selected rating method is returned. In the output file saved to your Amazon S3 bucket, the results from each worker are saved to the <code class="code">"evaluationResults": "preferenceStrength"</code> key value pair.</p>
+				 
+			 
+				<h2 id="choice-buttons">Choice buttons (radio button)</h2>
+
+				<p>Choice buttons allow a human evaluator to indicate their one preferred response over another response. Evaluators indicate their preference between two responses according to your instructions with radio buttons. The results in the final report will be shown as a percentage of responses that workers preferred for each model.  Be sure to explain your evaluation method clearly in the instructions.</p>
+
+				<div class="mediaobject">
+					 
+						<img src="/images/bedrock/latest/userguide/images/radiobuttons.png" class="aws-docs-img-whiteBg aws-docs-img-padding" alt="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;This is my image.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;" style="max-width:35%" />
+					 
+					 
+				</div>
+
+				 
+					<h6>JSON output</h6>
+					<p>The first child-key under <code class="code">evaluationResults</code> is where the selected rating method is returned. In the output file saved to your Amazon S3 bucket, the results from each worker are saved to the <code class="code">"evaluationResults": "preferenceRate"</code> key value pair.</p>
+				 
+			 
+				<h2 id="ordinal-rank">Ordinal rank</h2>
+
+				<p>Ordinal rank allows a human evaluator to rank their preferred responses to a prompt in order starting at 1 according to your instructions. The results in the final report will be shown as a histogram of the rankings from the evaluators over the whole dataset. Be sure to define what a rank of 1 means in your instructions. This data type is called Preference Rank.</p>
+
+				<div class="mediaobject">
+					 
+						<img src="/images/bedrock/latest/userguide/images/ordinal-rank.png" class="aws-docs-img-whiteBg aws-docs-img-padding" alt="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;This is my image.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;" style="max-width:35%" />
+					 
+					 
+				</div>
+				 
+					<h6>JSON output</h6>
+					<p>The first child-key under <code class="code">evaluationResults</code> is where the selected rating method is returned. In the output file saved to your Amazon S3 bucket, the results from each worker are saved to the <code class="code">"evaluationResults": "preferenceRank"</code> key value pair.</p>
+				 
+			 
+				<h2 id="thump-up-down">Thumbs up/down</h2>
+
+				
+				<p>Thumbs up/down allows a human evaluator to rate each response from a model as acceptable/unacceptable according to your instructions. The results in the final report will be shown as a percentage of the total number of ratings by evaluators that received a thumbs up rating for each model. You may use this rating method for a model evaluation job that contains one or more models. If you use this in an evaluation that contains two models, a thumbs up/down will be presented to your work team for each model response and the final report will show the aggregated results for each model individually. Be sure to define what is acceptable (that is, what is a thumbs up rating) in your instructions.</p>
+
+				<div class="mediaobject">
+					 
+						<img src="/images/bedrock/latest/userguide/images/thumb-up.png" class="aws-docs-img-whiteBg aws-docs-img-padding" alt="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;This is my image.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;" style="max-width:35%" />
+					 
+					 
+				</div>
+				 
+					<h6>JSON output</h6>
+					<p>The first child-key under <code class="code">evaluationResults</code> is where the selected rating method is returned. In the output file saved to your Amazon S3 bucket, the results from each worker are saved to the <code class="code">"evaluationResults": "approvalRate"</code> key value pair.</p>
+				 
+			 
+				<h2 id="likert-single">Likert scale, evaluation of a single model response</h2>
+
+				<p>Allows a human evaluator to indicate how strongly they approved of the model's response based on your instructions on a 5 point Likert scale. The results in the final report will be shown as a histogram of the 5 point ratings from the evaluators over your whole dataset. You may use this for an evaluation containing one or more models. If you select this rating method in an evaluation that contains more than one model, a 5 point Likert scale will be presented to your work team for each model response and the final report will show the aggregated results for each model individually. Be sure to define the important points on the 5 point scale in your instructions so your evaluators know how to rate the responses according to your expectations.</p>
+
+				<div class="mediaobject">
+					 
+						<img src="/images/bedrock/latest/userguide/images/model-eval-likert2-final.png" class="aws-docs-img-whiteBg aws-docs-img-padding" alt="&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;This is my image.&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;" style="max-width:35%" />
+					 
+					 
+				</div>
+				 
+					<h6>JSON output</h6>
+					<p>The first child-key under <code class="code">evaluationResults</code> is where the selected rating method is returned. In the output file saved to your Amazon S3 bucket, the results from each worker are saved to the <code class="code">"evaluationResults": "approvalStrength"</code> key value pair.</p>
+				 
+			<awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./model-evaluation-report-programmatic.html">Automated reports</div><div id="next" class="next-link" accesskey="n" href="./model-evaluation-report-s3.html">Amazon S3 output</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-report-human-customer.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-report-human-customer.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

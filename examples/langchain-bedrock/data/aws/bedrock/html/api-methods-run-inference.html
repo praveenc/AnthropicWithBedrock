@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Running inference on a model - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="api-methods-run-inference" /><meta name="default_state" content="api-methods-run-inference" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run-inference.html" /><meta name="description" content="The following examples show how to run inference on a model with InvokeModel and, with Python, run inference with streaming with the InvokeModelWithResponseStream operation." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run-inference.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run-inference.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Running inference on a model" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Running inference on a model - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#api-methods-run-inference" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/api-methods-run-inference.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/api-methods-run-inference.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/api-methods-run-inference.html" /><meta name="keywords" content="Amazon Bedrock,bedrock" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Use the Amazon Bedrock API",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/using-api.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Amazon Bedrock API operations",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 6,
+        "name" : "Run inference",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 7,
+        "name" : "Running inference on a model",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#api-methods-run-inference" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#api-methods-examples">Inference examples</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="api-methods-run-inference">Running inference on a model</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>The following examples show how to run inference on a model with <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html">InvokeModel</a> and, with Python, 
+                run inference with streaming with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html">InvokeModelWithResponseStream</a> operation.</p><div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>The AWS CLI does not support streaming.</p></div></div><p>For information about the parameters each model
+                supports, see <a href="./model-parameters.html">Inference parameters for foundation models</a>. For information about writing prompts, see <a href="./prompt-engineering-guidelines.html">
+			Prompt engineering guidelines</a>.</p><awsdocs-tabs><dl style="display: none">
+
+            
+            <dt>AWS CLI</dt><dd tab-id="aws-cli">
+                    
+                        <p>The following example shows how to generate text with the AWS CLI using
+                            the prompt <code class="replaceable">story of two dogs</code> and the
+                                Anthropic Claude V2 model. The example
+                            returns up to <code class="replaceable">300</code> tokens in the response and
+                            saves the response to the file <code class="replaceable">output.txt</code>:</p>
+                    
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight ">aws bedrock-runtime invoke-model \
+     --model-id anthropic.claude-v2 \
+     --body "<span>{</span>\"prompt\": \"\n\nHuman: <code class="replaceable">story of two dogs</code>\n\nAssistant:\", \"max_tokens_to_sample\" : <code class="replaceable">300</code>}" \
+     --cli-binary-format raw-in-base64-out \
+     <code class="replaceable">invoke-model-output.txt</code></code></pre>
+                   
+                    <p>The following example shows how to call the <em>Llama 2 Chat 13B</em> model.</p>
+                   
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight ">aws bedrock-runtime invoke-model \
+     --region us-east-1 \
+     --model-id meta.llama2-13b-chat-v1 \
+     --body "<span>{</span>\"prompt\": \"What is the average lifespan of a Llama?\", \"max_gen_len\" : 128, \"temperature\": 0.1, \"top_p\": 0.9}" \
+     invoke-model-output.txt</code></pre>
+                   
+
+                    
+                </dd>
+            
+            <dt>Python (Boto)</dt><dd tab-id="python-(boto)">
+                    
+                    <p>The following example shows how to generate text with Python using the
+                        prompt <code class="replaceable">explain black holes to 8th graders</code> and
+                        the Anthropic Claude V2 model:</p>
+                    
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="python ">import boto3
+import json
+brt = boto3.client(service_name='bedrock-runtime')
+
+body = json.dumps(<span>{</span>
+    "prompt": "\n\nHuman: <code class="replaceable">explain black holes to 8th graders</code>\n\nAssistant:",
+    "max_tokens_to_sample": 300,
+    "temperature": 0.1,
+    "top_p": 0.9,
+})
+
+modelId = 'anthropic.claude-v2'
+accept = 'application/json'
+contentType = 'application/json'
+
+response = brt.invoke_model(body=body, modelId=modelId, accept=accept, contentType=contentType)
+
+response_body = json.loads(response.get('body').read())
+
+# text
+print(response_body.get('completion'))</code></pre>
+                    
+                        <p>The following example shows how to generate streaming text with Python
+                            using the prompt 
+                            <code class="replaceable">write an essay for living on mars in 1000
+                                words</code> and the
+                                Anthropic Claude V2 model:</p>
+                    
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="python ">import boto3
+import json
+
+brt = boto3.client(service_name='bedrock-runtime')
+
+body = json.dumps(<span>{</span>
+    'prompt': '\n\nHuman: <code class="replaceable">write an essay for living on mars in 1000 words</code>\n\nAssistant:',
+    'max_tokens_to_sample': 100
+})
+                   
+response = brt.invoke_model_with_response_stream(
+    modelId='anthropic.claude-v2', 
+    body=body
+)
+    
+stream = response.get('body')
+if stream:
+    for event in stream:
+        chunk = event.get('chunk')
+        if chunk:
+            print(json.loads(chunk.get('bytes').decode()))</code></pre>
+                    
+                </dd>
+            
+        </dl></awsdocs-tabs>
+                <h2 id="api-methods-examples">Base model inference examples</h2>
+                
+                <p>The following Python (Boto) examples show how you can perform inference 
+                    with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html">InvokeModel</a> operation on different Amazon Bedrock base models.</p>
+
+                
+                
+                <div class="highlights" id="inline-topiclist"><h6>Topics</h6><ul><li><a href="#api-inference-examples-a2i-jurassic">A2I Jurassic-2</a></li><li><a href="#api-inference-examples-cohere-command">Cohere Command</a></li><li><a href="#api-inference-examples-meta-llama">Meta Llama 2</a></li><li><a href="#api-inference-examples-stable-diffusion">Stability AI Diffusion XL</a></li></ul></div>
+                
+                 
+                    <h3 id="api-inference-examples-a2i-jurassic">A2I Jurassic-2</h3>
+                    <p>This examples shows how to call the <em>A2I Jurassic-2 Mid</em> model.</p>
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="python ">import boto3
+import json
+
+brt = boto3.client(service_name='bedrock-runtime')
+
+body = json.dumps(<span>{</span>
+    "prompt": "Translate to spanish: 'Amazon Bedrock is the easiest way to build and scale generative AI applications with base models (FMs)'.", 
+    "maxTokens": 200,
+    "temperature": 0.5,
+    "topP": 0.5
+})
+
+modelId = 'ai21.j2-mid-v1'
+accept = 'application/json'
+contentType = 'application/json'
+
+response = brt.invoke_model(
+    body=body, 
+    modelId=modelId, 
+    accept=accept, 
+    contentType=contentType
+)
+
+response_body = json.loads(response.get('body').read())
+
+# text
+print(response_body.get('completions')[0].get('data').get('text'))</code></pre>
+                 
+                
+                 
+                    <h3 id="api-inference-examples-cohere-command">Cohere Command</h3>
+                    <p>This examples shows how to call the <em>Cohere Command</em> model.</p>
+                    
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="">import boto3
+import json
+
+brt = boto3.client(service_name='bedrock-runtime')
+
+body = json.dumps(<span>{</span>
+    "prompt": "How do you tie a tie?", 
+    "max_tokens": 200,
+    "temperature": 0.5,
+    "p": 0.5
+})
+
+modelId = 'cohere.command-text-v14'
+accept = 'application/json'
+contentType = 'application/json'
+
+response = brt.invoke_model(
+    body=body, 
+    modelId=modelId, 
+    accept=accept, 
+    contentType=contentType
+)
+
+response_body = json.loads(response.get('body').read())
+
+# text
+print(response_body.get('generations')[0].get('text'))</code></pre>
+                 
+                
+                
+                
+                 
+                    <h3 id="api-inference-examples-meta-llama">Meta Llama 2</h3>
+                    <p>This example shows how to call the <em>Llama 2 Chat 13B</em> model.</p>
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="">import boto3
+import json
+bedrock = boto3.client(service_name='bedrock-runtime', region_name='us-east-1')
+
+body = json.dumps(<span>{</span>
+    "prompt": "What is the average lifespan of a Llama?",
+    "max_gen_len": 128,
+    "temperature": 0.1,
+    "top_p": 0.9,
+})
+
+modelId = 'meta.llama2-13b-chat-v1'
+accept = 'application/json'
+contentType = 'application/json'
+
+response = bedrock.invoke_model(body=body, modelId=modelId, accept=accept, contentType=contentType)
+
+response_body = json.loads(response.get('body').read())
+print(response_body)</code></pre>
+                 
+                
+                
+                 
+                    <h3 id="api-inference-examples-stable-diffusion">Stability AI Diffusion XL</h3>
+                    
+                    <p>The following example shows how to run inference with the Stability.ai Diffusion 1.0
+                        model and on demand throughput. The example submits a text prompt to a model, retrieves
+                        the response from the model, and finally shows the image.</p>
+                    
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="python "># Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0
+"""
+Shows how to generate an image with SDXL 1.0 (on demand).
+"""
+import base64
+import io
+import json
+import logging
+import boto3
+from PIL import Image
+
+from botocore.exceptions import ClientError
+
+class ImageError(Exception):
+    "Custom exception for errors returned by SDXL"
+    def __init__(self, message):
+        self.message = message
+
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
+
+
+def generate_image(model_id, body):
+    """
+    Generate an image using SDXL 1.0 on demand.
+    Args:
+        model_id (str): The model ID to use.
+        body (str) : The request body to use.
+    Returns:
+        image_bytes (bytes): The image generated by the image.
+    """
+
+    logger.info("Generating image with SDXL model %s", model_id)
+
+    bedrock = boto3.client(service_name='bedrock-runtime')
+   
+    accept = "application/json"
+    content_type = "application/json"
+
+    response = bedrock.invoke_model(
+        body=body, modelId=model_id, accept=accept, contentType=content_type
+    )
+    response_body = json.loads(response.get("body").read())
+    print(response_body['result'])
+
+    base64_image = response_body.get("artifacts")[0].get("base64")
+    base64_bytes = base64_image.encode('ascii')
+    image_bytes = base64.b64decode(base64_bytes)
+
+    finish_reason = response_body.get("artifacts")[0].get("finishReason")
+
+    if finish_reason == 'ERROR' or finish_reason == 'CONTENT_FILTERED':
+        raise ImageError(f"Image generation error. Error code is <span>{</span>finish_reason}")
+
+
+    logger.info("Successfully generated image withvthe SDXL 1.0 model %s", model_id)
+
+    return image_bytes
+
+
+
+def main():
+    """
+    Entrypoint for SDXL example.
+    """
+
+    logging.basicConfig(level = logging.INFO,
+                        format = "%(levelname)s: %(message)s")
+
+    model_id='stability.stable-diffusion-xl-v1'
+
+    prompt="""Sri lanka tea plantation."""
+
+
+    body=json.dumps(<span>{</span>
+        "text_prompts": [
+        <span>{</span>
+        "text": prompt
+        }
+    ],
+    "cfg_scale": 10,
+    "seed": 0,
+    "steps": 50,
+    "samples" : 1,
+    "style_preset" : "photographic"
+
+    })
+
+    try:
+        image_bytes=generate_image(model_id = model_id,
+                                 body = body)
+        image = Image.open(io.BytesIO(image_bytes))
+        image.show()
+
+
+    except ClientError as err:
+        message=err.response["Error"]["Message"]
+        logger.error("A client error occurred: %s", message)
+        print("A client error occured: " +
+              format(message))
+    except ImageError as err:
+        logger.error(err.message)
+        print(err.message)
+
+    else:
+        print(f"Finished generating text with SDXL model <span>{</span>model_id}.")
+
+
+if __name__ == "__main__":
+    main()
+
+</code></pre>
+                   
+  
+                 
+                
+                
+                
+                
+                
+            <awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./api-methods-run.html">Run inference</div><div id="next" class="next-link" accesskey="n" href="./batch-inference.html">Run batch inference</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/api-methods-run-inference.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/api-methods-run-inference.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

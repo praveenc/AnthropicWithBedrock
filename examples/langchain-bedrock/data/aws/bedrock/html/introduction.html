@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Introduction - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="introduction" /><meta name="default_state" content="introduction" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/introduction.html" /><meta name="description" content="Overview of prompt engineering for large language models (LLMs) on Amazon Bedrock." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/introduction.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/introduction.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/introduction.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/introduction.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/introduction.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/introduction.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/introduction.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/introduction.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/introduction.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/introduction.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/introduction.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/introduction.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/introduction.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/introduction.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/introduction.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/introduction.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/introduction.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/introduction.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/introduction.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/introduction.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/introduction.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/introduction.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Introduction" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Introduction - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#introduction" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/introduction.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/introduction.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/introduction.html" /><meta name="keywords" content="Amazon Bedrock,bedrock,Prompt Engineering,Prompt engineering definition,Prompt engineering resources" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Prompt engineering guidelines",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-engineering-guidelines.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Introduction",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-engineering-guidelines.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#introduction" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#additional-prompt-resources">Additional prompt resources</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="introduction">Introduction</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>Welcome to the prompt engineering guide for
+			large
+			language
+			models
+			(LLMs) on
+			Amazon Bedrock.
+			Amazon Bedrock is Amazonâs service for foundation models (FMs), which offers access to a range of
+			powerful FMs for text and images.</p><p>
+			<em>Prompt engineering</em> refers to the practice of optimizing textual
+			input to LLMs to obtain desired responses. Prompting helps LLMs perform a wide variety
+			of tasks, including classification, question answering, code generation, creative
+			writing, and more. The quality of prompts that you provide to LLMs can impact the
+			quality of their
+			responses. These guidelines provide you with all the necessary
+			information to get started with prompt engineering. It also covers tools to help you
+			find the best possible prompt format for your use case when using LLMs on Amazon Bedrock. </p><p>Whether youâre a beginner in the world of generative AI and language models, or an expert
+			with previous experience, these guidelines can help you optimize your prompts for Amazon Bedrock
+			text models. Experienced users can skip to the
+				<em>General Guidelines for Amazon Bedrock LLM
+			Users</em>
+			or
+				<em>Prompt Templates and Examples for Amazon Bedrock Text
+				Models</em>
+			sections.</p><div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>All examples in this doc are obtained via API calls. The response may vary due to the
+				stochastic nature of
+				the
+				LLM generation process. If not
+				otherwise
+				specified,
+				the prompts are written by employees of AWS.</p></div></div><p><b>Disclaimer:</b> The examples in this document use the current
+			text models available within Amazon Bedrock. Also, this document is for general prompting
+			guidelines. For model-specific guides, refer to their respective docs on Amazon Bedrock. This
+			document provides a starting point. While the following example responses are generated
+			using specific models on Amazon Bedrock, you can use other models in Amazon Bedrock to get results as well.
+			The results may differ between models as each model has its own performance
+			characteristics. The output that you generate using AI
+			services
+			is
+			your
+			content.
+			Due to the nature of machine learning, output may not be unique across customers and the
+			services
+			may generate the same or similar results across customers. </p>
+			<h2 id="additional-prompt-resources">Additional prompt resources</h2>
+			
+			<p>The following resources offer additional guidelines on prompt engineering.</p>
+			
+			<div class="itemizedlist">
+				 
+				 
+				 
+				 
+				 
+				 
+			<ul class="itemizedlist"><li class="listitem">
+					<p><b>Claude
+						model prompt guide:</b>
+						<a href="https://docs.anthropic.com/claude/docs/configuring-gpt-prompts-for-claude" rel="noopener noreferrer" target="_blank"><span>https://docs.anthropic.com/claude/docs</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>
+					</p>
+				</li><li class="listitem">
+					<p><b>Claude
+						prompt engineering resources:</b>
+						<a href="https://docs.anthropic.com/claude/docs/configuring-gpt-prompts-for-claude" rel="noopener noreferrer" target="_blank"><span>https://docs.anthropic.com/claude/docs/guide-to-anthropics-prompt-engineering-resources</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>
+					</p>
+				</li><li class="listitem">
+					<p><b>Cohere
+						prompt guide:</b>
+						<a href="https://txt.cohere.com/how-to-train-your-pet-llm-prompt-engineering" rel="noopener noreferrer" target="_blank"><span>https://txt.cohere.com/how-to-train-your-pet-llm-prompt-engineering</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>
+					</p>
+				</li><li class="listitem">
+					<p>
+						<b>AI21 Jurassic model prompt guide:</b>
+						<a href="https://docs.ai21.com/docs/prompt-engineering" rel="noopener noreferrer" target="_blank"><span>https://docs.ai21.com/docs/prompt-engineering</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>
+					</p>
+				</li><li class="listitem">
+					<p>
+						<b>Llama 2 prompt guide:</b>
+						<a href="https://ai.meta.com/llama/get-started/#prompting" rel="noopener noreferrer" target="_blank"><span>
+							https://ai.meta.com/llama/get-started/#prompting
+						</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>
+					</p>
+				</li><li class="listitem">
+					<p>
+						<b>Stability documentation:</b>
+						<a href="https://platform.stability.ai/docs/getting-started" rel="noopener noreferrer" target="_blank"><span>https://platform.stability.ai/docs/getting-started</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>
+					</p>
+				</li></ul></div>
+		<awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./prompt-engineering-guidelines.html">
+			Prompt engineering guidelines</div><div id="next" class="next-link" accesskey="n" href="./what-is-a-prompt.html">What is a prompt?</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/introduction.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/introduction.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

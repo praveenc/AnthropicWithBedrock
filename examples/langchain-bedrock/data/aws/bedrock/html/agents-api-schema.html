@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Action group OpenAPI schemas - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="agents-api-schema" /><meta name="default_state" content="agents-api-schema" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html" /><meta name="description" content="When you create an action group, you must define the APIs that the agent can invoke with an OpenAPI schema in JSON or YAML format. You can create OpenAPI schema files yourself and upload them to Amazon S3 buckets, or you can use our OpenAPI text editor in order to easily validate your schema. The text editor is available after you create the agent. You can use the text editor when you add an action group to an agent or edit an existing one (for more information, see" /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/agents-api-schema.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/agents-api-schema.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/agents-api-schema.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/agents-api-schema.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/agents-api-schema.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/agents-api-schema.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/agents-api-schema.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/agents-api-schema.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/agents-api-schema.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/agents-api-schema.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/agents-api-schema.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/agents-api-schema.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/agents-api-schema.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/agents-api-schema.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/agents-api-schema.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/agents-api-schema.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/agents-api-schema.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/agents-api-schema.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Action group OpenAPI schemas" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Action group OpenAPI schemas - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#agents-api-schema" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/agents-api-schema.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/agents-api-schema.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/agents-api-schema.html" /><meta name="keywords" content="Amazon Bedrock,bedrock,chatbot,action groups,agent" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Agents for Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Set up action groups for your agent",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-setup.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 6,
+        "name" : "Action group OpenAPI schemas",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-setup.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#agents-api-schema" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#agents-api-schema-example">Example API schema</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="agents-api-schema">Action group OpenAPI schemas</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>When you create an action group, you must define the APIs that the agent can invoke with an OpenAPI schema in JSON or YAML format. You can create OpenAPI schema files yourself and upload them to Amazon S3 buckets, or you can use our OpenAPI text editor in order to easily validate your schema. The text editor is available after you create the agent. You can use the text editor when you add an action group to an agent or edit an existing one (for more information, see <a href="./agents-edit.html">Manage your agent</a>).</p><div class="itemizedlist">
+             
+             
+        <ul class="itemizedlist"><li class="listitem">
+                <p>For more details about OpenAPI schemas, see <a href="https://swagger.io/specification/" rel="noopener noreferrer" target="_blank"><span>OpenAPI specification</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+            </li><li class="listitem">
+                <p>For best practices in writing API schemas, see <a href="https://swagger.io/resources/articles/best-practices-in-api-design/" rel="noopener noreferrer" target="_blank"><span>Best practices in API design</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+            </li></ul></div><p>The following is the general format of an OpenAPI schema for an action group.</p><pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "openapi": "3.0.0",
+    "paths": <span>{</span>
+        "/<code class="replaceable">path</code>": <span>{</span>
+            "<code class="replaceable">method</code>": <span>{</span>
+                "description": "<code class="replaceable">string</code>",
+                "operationId": "<code class="replaceable">string</code>",
+                "parameters": [ ... ],
+                "requestBody": <span>{</span> ... },
+                "responses": <span>{</span> ... }
+           }
+       }
+    }
+}</code></pre><p>These fields are described below.</p><div class="itemizedlist">
+             
+             
+             
+        <ul class="itemizedlist"><li class="listitem">
+                <p><code class="code">openapi</code> â (Required) The version of OpenAPI being used. This value must be <code class="code">"3.0.0"</code> or higher for the action group to work.</p>
+            </li><li class="listitem">
+                <p><code class="code">paths</code> â (Required) Contains relative paths to individual endpoints. Each path must begin with a forward slash (/).</p>
+            </li><li class="listitem">
+                <p><code class="code">method</code> â (Required) Defines the method to use.</p>
+            </li></ul></div><p>Minimally, each method requires the following fields.</p><div class="itemizedlist">
+             
+            
+             
+        <ul class="itemizedlist"><li class="listitem">
+                <p><code class="code">description</code> â A description of the API operation. Use this field to inform the agent when this API should be called and what it does.</p>
+            </li><li class="listitem">
+                <p><code class="code">responses</code> â The properties defined for the operation response are not just used for constructing prompts. They are used for accurately processing the results of an API call, and for determining a proper set of steps for carrying out a task. By knowing the response coming back from one operation, the agent can know that those values can be used as inputs for subsequent steps in the process.</p>
+            </li></ul></div><p>The fields within the following two objects provide more information for your agent to effectively take advantage of your action group. For each field, you can set the <code class="code">required</code> field (<code class="code">true</code> if required, <code class="code">false</code> if optional).</p><div class="itemizedlist">
+             
+             
+        <ul class="itemizedlist"><li class="listitem">
+                <p><code class="code">parameters</code> â Contains information about parameters that can be included in the request.</p>
+            </li><li class="listitem">
+                <p><code class="code">requestBody</code> â Contains the fields in the request body for the operation. Don't include this field for <code class="code">GET</code> and <code class="code">DELETE</code> methods.</p>
+            </li></ul></div><p>Select a tab to learn more about a structure</p><awsdocs-tabs><dl style="display: none">
+            <dt>response</dt><dd tab-id="response">
+                    
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json ">"responses": <span>{</span>
+    "200": <span>{</span>
+        "content": <span>{</span>
+            "<code class="replaceable">&lt;media type&gt;</code>": <span>{</span>
+                "schema": <span>{</span>
+                    "properties": <span>{</span>
+                        "<code class="replaceable">&lt;property&gt;</code>": <span>{</span>
+                            "type": "<code class="replaceable">string</code>",
+                            "description": "<code class="replaceable">string</code>"
+                        },
+                        ...
+                    }
+                }
+            }
+        },
+    },
+    ...
+}</code></pre>
+                    
+                    <p>Each key in the <code class="code">responses</code> object is a response code, which describes the status of the response, mapping to an object containing the following information for the response.</p>
+                    
+                    <div class="itemizedlist">
+                         
+                         
+                         
+                         
+                    <ul class="itemizedlist"><li class="listitem">
+                            <p><code class="code">content</code> â (Required for each response) The content of the response.</p> 
+                        </li><li class="listitem">
+                            <p><code class="replaceable">&lt;media type&gt;</code> â The format of the response body. For more information, see <a href="https://swagger.io/docs/specification/media-types/" rel="noopener noreferrer" target="_blank"><span>Media types</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>)</p>
+                        </li><li class="listitem">
+                            <p><code class="code">schema</code> â (Required for each media type) Defines the data type of the response body and its fields.</p> 
+                        </li><li class="listitem">
+                            <p><code class="code">properties</code> â (Required if there are <code class="code">items</code> in the schema) Your agent uses properties that you define in the schema to determine the information it needs to return to the end user in order to fulfill a task. Each property contains the following fields:</p>
+                            <div class="itemizedlist">
+                                 
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <p><code class="code">type</code> â (Required for each property) The data type of the response field.</p>
+                                </li><li class="listitem">
+                                    <p><code class="code">description</code> â (Optional) Describes the property. The agent can use this information to determine the information it needs to return to the end user.</p>
+                                </li></ul></div>
+                        </li></ul></div>
+                    
+                </dd>
+            <dt>parameter</dt><dd tab-id="parameter">
+                    
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json ">"parameters": [
+    <span>{</span>
+        "name": "<code class="replaceable">string</code>",
+        "description": "<code class="replaceable">string</code>",
+        "required": boolean,
+        "schema": <span>{</span>
+            ...
+        }
+    },
+    ...
+]</code></pre>
+                    
+                    <p>Your agent uses the following fields to determine the information it needs to get from the agent user in order to carry out the action group.</p>
+                    
+                    
+                    <div class="itemizedlist">
+                         
+                         
+                         
+                         
+                    <ul class="itemizedlist"><li class="listitem">
+                            <p><code class="code">name</code> â (Required) The name of the parameter.</p>
+                        </li><li class="listitem">
+                            <p><code class="code">description</code> â (Required) A description of the parameter. Use this field to help the agent understand how to elicit this parameter from the agent user or determine that it already has that parameter value from prior actions or from the userâs request to the agent.</p>
+                        </li><li class="listitem">
+                            <p><code class="code">required</code> â (Optional) Whether the parameter is required for the API request or not. Use this field to let the agent know whether this parameter is needed for every invocation or if it is optional.</p>
+                        </li><li class="listitem">
+                            <p><code class="code">schema</code> â (Optional) The definition of input and output data types. For more information, see <a href="https://swagger.io/docs/specification/data-models/" rel="noopener noreferrer" target="_blank"><span>Data Models (Schemas)</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+                        </li></ul></div>
+                    
+                </dd>
+            <dt>requestBody</dt><dd tab-id="requestbody">
+                    
+                    
+                    
+                    <p>The <code class="code">requestBody</code>The general structure of a <code class="code">requestBody</code> field is below.</p>
+                    
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json ">"requestBody": <span>{</span>
+    "required": boolean,
+    "content": <span>{</span>
+        "<code class="replaceable">&lt;media type&gt;</code>": <span>{</span>
+            "schema": <span>{</span>
+                "properties": <span>{</span>
+                    "<code class="replaceable">&lt;property&gt;</code>": <span>{</span>
+                        "type": "<code class="replaceable">string</code>",
+                        "description": "<code class="replaceable">string</code>"
+                    },
+                    ...
+                }
+            }
+        }
+    }
+}</code></pre>
+                    
+                    <p>The fields are described below:</p>
+                    
+                    <div class="itemizedlist">
+                         
+                         
+                         
+                         
+                         
+                    <ul class="itemizedlist"><li class="listitem">
+                            <p><code class="code">required</code> â (Optional) Whether the request body is required for the API request or not.</p>
+                        </li><li class="listitem">
+                            <p><code class="code">content</code> â (Required) The content of the request body.</p>
+                        </li><li class="listitem">
+                            <p><code class="replaceable">&lt;media type&gt;</code> â (Optional) The format of the request body. For more information, see <a href="https://swagger.io/docs/specification/media-types/" rel="noopener noreferrer" target="_blank"><span>Media types</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>)</p>
+                        </li><li class="listitem">
+                            <p><code class="code">schema</code> â (Optional) Defines the data type of the request body and its fields.</p> 
+                        </li><li class="listitem">
+                            <p><code class="code">properties</code> â (Optional) Your agent uses properties that you define in the schema to determine the information it needs to get from the agent user in order to carry out the action group. Each property contains the following fields:</p>
+                            <div class="itemizedlist">
+                                 
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <p><code class="code">type</code> â (Optional) The data type of the request field.</p>
+                                </li><li class="listitem">
+                                    <p><code class="code">description</code> â (Optional) Describes the property. The agent can use this information to determine the information it needs to return to the end user.</p>
+                                </li></ul></div>
+                        </li></ul></div>
+                    
+                </dd>
+        </dl></awsdocs-tabs>
+            <h2 id="agents-api-schema-example">Example API schema</h2>
+            
+            <p>The following API schema defines a group of APIs that help handle insurance claims. There are three APIs that are defined:</p>
+            
+            <div class="itemizedlist">
+                 
+                 
+                 
+            <ul class="itemizedlist"><li class="listitem">
+                    <p><code class="code">getAllOpenClaims</code> â Your agent can use the <code class="code">description</code> field to determine that it should call this API if a list of open claims is needed. The <code class="code">properties</code> in the <code class="code">responses</code> specify to return the ID and the policy holder and the status of the claim. The agent returns this information to the agent user or uses some or all of the response as input to subsequent API calls.</p>
+                </li><li class="listitem">
+                    <p><code class="code">identifyMissingDocuments</code> â Your agent can use the <code class="code">description</code> field to determine that it should call this API if missing documents need to be identified for an insurance claim. The <code class="code">name</code>, <code class="code">description</code>, and <code class="code">required</code> fields tell the agent that it must elicit the unique identifier of the open claim from the customer. The <code class="code">properties</code> in the <code class="code">responses</code> specify to return the IDs of the open insurance claims. The agent returns this information to the customeror or uses some or all of the response as input to subsequent API calls.</p>
+                </li><li class="listitem">
+                    <p><code class="code">sendReminders</code> â Your agent can use the <code class="code">description</code> field to determine that it should call this API if there is a need to send reminders to the customer about pending documents that they have for open claims. The <code class="code">properties</code> in the <code class="code">requestBody</code> tell the agent that it needs to find the claim IDs and the pending documents, whereas the <code class="code">properties</code> in the <code class="code">responses</code> specify to return an ID of the reminder and its status. The agent returns this information to the customer or uses some or all of the response as input to subsequent API calls.</p>
+                </li></ul></div>
+            
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "openapi": "3.0.0",
+    "info": <span>{</span>
+        "title": "Insurance Claims Automation API",
+        "version": "1.0.0",
+        "description": "APIs for managing insurance claims by pulling a list of open claims, identifying outstanding paperwork for each claim, and sending reminders to policy holders."
+    },
+    "paths": <span>{</span>
+        "/claims": <span>{</span>
+            "get": <span>{</span>
+                "summary": "Get a list of all open claims",
+                "description": "Get the list of all open insurance claims. Return all the open claimIds.",
+                "operationId": "getAllOpenClaims",
+                "responses": <span>{</span>
+                    "200": <span>{</span>
+                        "description": "Gets the list of all open insurance claims for policy holders",
+                        "content": <span>{</span>
+                            "application/json": <span>{</span>
+                                "schema": <span>{</span>
+                                    "type": "array",
+                                    "items": <span>{</span>
+                                        "type": "object",
+                                        "properties": <span>{</span>
+                                            "claimId": <span>{</span>
+                                                "type": "string",
+                                                "description": "Unique ID of the claim."
+                                            },
+                                            "policyHolderId": <span>{</span>
+                                                "type": "string",
+                                                "description": "Unique ID of the policy holder who has filed the claim."
+                                            },
+                                            "claimStatus": <span>{</span>
+                                                "type": "string",
+                                                "description": "The status of the claim. Claim can be in Open or Closed state"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/claims/<span>{</span>claimId}/identify-missing-documents": <span>{</span>
+            "get": <span>{</span>
+                "summary": "Identify missing documents for a specific claim",
+                "description": "Get the list of pending documents that need to be uploaded by policy holder before the claim can be processed. The API takes in only one claim id and returns the list of documents that are pending to be uploaded by policy holder for that claim. This API should be called for each claim id",
+                "operationId": "identifyMissingDocuments",
+                "parameters": [<span>{</span>
+                    "name": "claimId",
+                    "in": "path",
+                    "description": "Unique ID of the open insurance claim",
+                    "required": true,
+                    "schema": <span>{</span>
+                        "type": "string"
+                    }
+                }],
+                "responses": <span>{</span>
+                    "200": <span>{</span>
+                        "description": "List of documents that are pending to be uploaded by policy holder for insurance claim",
+                        "content": <span>{</span>
+                            "application/json": <span>{</span>
+                                "schema": <span>{</span>
+                                    "type": "object",
+                                    "properties": <span>{</span>
+                                        "pendingDocuments": <span>{</span>
+                                            "type": "string",
+                                            "description": "The list of pending documents for the claim."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        },
+        "/send-reminders": <span>{</span>
+            "post": <span>{</span>
+                "summary": "API to send reminder to the customer about pending documents for open claim",
+                "description": "Send reminder to the customer about pending documents for open claim. The API takes in only one claim id and its pending documents at a time, sends the reminder and returns the tracking details for the reminder. This API should be called for each claim id you want to send reminders for.",
+                "operationId": "sendReminders",
+                "requestBody": <span>{</span>
+                    "required": true,
+                    "content": <span>{</span>
+                        "application/json": <span>{</span>
+                            "schema": <span>{</span>
+                                "type": "object",
+                                "properties": <span>{</span>
+                                    "claimId": <span>{</span>
+                                        "type": "string",
+                                        "description": "Unique ID of open claims to send reminders for."
+                                    },
+                                    "pendingDocuments": <span>{</span>
+                                        "type": "string",
+                                        "description": "The list of pending documents for the claim."
+                                    }
+                                },
+                                "required": [
+                                    "claimId",
+                                    "pendingDocuments"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": <span>{</span>
+                    "200": <span>{</span>
+                        "description": "Reminders sent successfully",
+                        "content": <span>{</span>
+                            "application/json": <span>{</span>
+                                "schema": <span>{</span>
+                                    "type": "object",
+                                    "properties": <span>{</span>
+                                        "sendReminderTrackingId": <span>{</span>
+                                            "type": "string",
+                                            "description": "Unique Id to track the status of the send reminder Call"
+                                        },
+                                        "sendReminderStatus": <span>{</span>
+                                            "type": "string",
+                                            "description": "Status of send reminder notifications"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": <span>{</span>
+                        "description": "Bad request. One or more required fields are missing or invalid."
+                    }
+                }
+            }
+        }
+    }
+}</code></pre>
+            
+            <p>For more examples of OpenAPI schemas, see 
+            <a href="https://github.com/OAI/OpenAPI-Specification/tree/main/examples/v3.0" rel="noopener noreferrer" target="_blank"><span>https://github.com/OAI/OpenAPI-Specification/tree/main/examples/v3.0</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+            
+        <awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./agents-setup.html">Set up action groups for your agent</div><div id="next" class="next-link" accesskey="n" href="./agents-lambda.html">Action group Lambda functions</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/agents-api-schema.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/agents-api-schema.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

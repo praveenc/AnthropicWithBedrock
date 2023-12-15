@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Prompt templates and examples for Amazon Bedrock text models - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="prompt-templates-and-examples" /><meta name="default_state" content="prompt-templates-and-examples" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-templates-and-examples.html" /><meta name="description" content="Collection of prompt templates to us with Amazon Bedrock." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-templates-and-examples.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-templates-and-examples.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Prompt templates and examples for Amazon Bedrock text models" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Prompt templates and examples for Amazon Bedrock text models - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#prompt-templates-and-examples" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/prompt-templates-and-examples.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/prompt-templates-and-examples.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/prompt-templates-and-examples.html" /><meta name="keywords" content="Amazon Bedrock,bedrock,Prompt Engineering,Prompt templates,Prompt examples,Text classification,Question-answer, without context,Question-answer, with context,Summarization,Text generation,Code generation,Mathematics,Reasoning/logical thinking" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Prompt engineering guidelines",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-engineering-guidelines.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Prompt templates and examples for Amazon Bedrock text models",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-engineering-guidelines.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#prompt-templates-and-examples" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#text-classification">Text classification</a><a href="#qa-without-context">Question-answer, without context</a><a href="#qa-with-context">Question-answer, with context</a><a href="#summarization">Summarization</a><a href="#text-generation">Text generation</a><a href="#code-generation">Code generation</a><a href="#mathematics">Mathematics</a><a href="#reasoning-logical-thinking">Reasoning/logical thinking</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="prompt-templates-and-examples">Prompt templates and examples for
+    Amazon Bedrock text models</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div>
+			<h2 id="text-classification">Text classification</h2>
+			<p>For
+				text classification, the prompt includes a question with several
+				possible choices for the answer, and the model must respond with the correct choice.
+				Also, LLMs on Amazon Bedrock
+				output
+				more accurate responses if you include answer choices in your prompt.</p>
+			<p>The first example is a straightforward multiple-choice 
+classification question.</p>
+			<div class="table-container"><div class="table-contents"><table id="w230aac34c15b3b7">
+						<tr>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt template for Amazon Titan and AI21 Jurassic:</b>
+<em>"""<span>{</span><span>{</span>Text}}
+	
+	
+<span>{</span><span>{</span>Question}}? Choose from the following:
+<span>{</span><span>{</span>Choice 1}}
+<span>{</span><span>{</span>Choice 2}}
+<span>{</span><span>{</span>Choice 3}}"""</em>
+</code></pre>
+							</td>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt: </b>
+<em>San Francisco, officially the City and County 
+of San Francisco, is the commercial, financial, and cultural 
+center of Northern California. The city proper is the fourth 
+most populous city in California, with 808,437 residents, 
+and the 17th most populous city in the United States as of 2022.
+
+What is the paragraph above about? Choose from the following:
+
+A city
+A person
+An event</em>
+</code></pre>
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output: </b>
+<em>A city</em>
+</code></pre>
+							</td>
+						</tr>
+					</table></div></div>
+			<p>(Source of prompt: <a href="https://en.wikipedia.org/wiki/San_Francisco" rel="noopener noreferrer" target="_blank"><span> 
+			Wikipedia on San Francisco</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>, model used: Amazon Titan Text G1 - Express)</p>
+	  
+			<p>Sentiment analysis is a form of classification, where the model chooses
+				the
+				sentiment from a list of choices expressed in the text.</p>
+	  
+			<div class="table-container"><div class="table-contents"><table id="w230aac34c15b3c13">
+						<tr>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt template for Amazon Titan and AI21 Jurassic:</b>
+<em>"""The following is text from a <span>{</span><span>{</span>Text Type, e.g. ârestaurant 
+reviewâ}}
+<span>{</span><span>{</span>Input}}
+Tell me the sentiment of the <span>{</span><span>{</span>Text Type}} and categorize it 
+as one of the following:
+<span>{</span><span>{</span>Sentiment A}}
+<span>{</span><span>{</span>Sentiment B}}
+<span>{</span><span>{</span>Sentiment C}}"""</em>
+</code></pre>
+							</td>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt: </b>
+<em>The following is text from a restaurant review:
+
+âI finally got to check out Alessandroâs Brilliant Pizza 
+and it is now one of my favorite restaurants in Seattle. 
+The dining room has a beautiful view over the Puget Sound 
+but it was surprisingly not crowed. I ordered the fried 
+castelvetrano olives, a spicy Neapolitan-style pizza 
+and a gnocchi dish. The olives were absolutely decadent, 
+and the pizza came with a smoked mozzarella, which 
+was delicious. The gnocchi was fresh and wonderful. 
+The waitstaff were attentive, and overall the experience 
+was lovely. I hope to return soon.â
+
+Tell me the sentiment of the restaurant review 
+and categorize it as one of the following:
+
+Positive
+Negative
+Neutral</em>
+</code></pre>
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output: </b>
+<em>Positive.</em>
+</code></pre>
+							</td>
+						</tr>
+					</table></div></div>
+			<p>(Source of prompt: AWS, model used: Amazon Titan Text G1 - Express)</p>
+		
+	  <p>The
+				following example uses Claude models to classify text. As
+				suggested in <a href="https://docs.anthropic.com/claude/docs/constructing-a-prompt" rel="noopener noreferrer" target="_blank"><span>
+					Claude Guides</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>, use XML tags such as
+				&lt;text&gt;&lt;/text&gt;
+				to denote important parts
+				of
+				the prompt. Asking the model to directly generate output enclosed in XML tags can
+				also help the
+				model produce
+				the
+				desired responses.</p>
+	  
+			<div class="table-container"><div class="table-contents"><table id="w230aac34c15b3c19">
+						<tr>
+							<td tabindex="-1">
+								<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt template for Claude: </b>
+<em>"""
+	
+	
+Human: <span>{</span><span>{</span>classification task description}}
+&lt;text&gt;
+<span>{</span><span>{</span>input text content to be classified}}
+&lt;/text&gt;
+
+Categories are:
+<span>{</span><span>{</span>category name 1}}
+<span>{</span><span>{</span>category name 2}}
+<span>{</span><span>{</span>category name 3}}
+
+Assistant:"""</em>
+</code></pre> (Source: Written by AWS) </td>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt: </b>
+	
+
+<em>Human:  Classify the given product description into given 
+categories. Please output the category label in 
+&lt;output&gt;&lt;/output&gt; tags.
+
+Here is the product description.
+
+&lt;text&gt;
+Safe, made from child-friendly materials with smooth edges.
+Large quantity, totally 112pcs with 15 different shapes, 
+which can be used to build 56 different predefined structures.
+Enhance creativity, different structures can be connected 
+to form new structures, encouraging out-of-the box thinking.
+Enhance child-parent bonding, parents can play with their 
+children together to foster social skills.
+&lt;/text&gt;
+
+Categories are:
+(1) Toys
+(2) Beauty and Health
+(3) Electronics
+
+Assistant:</em>
+	
+</code></pre>
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output: </b>
+<em>&lt;output&gt;Toys&lt;/output&gt;</em>
+</code></pre>
+							</td>
+						</tr>
+					</table></div></div>
+			<p>(Source of prompt: AWS, model used:
+				Claude)</p>
+		 
+			<h2 id="qa-without-context">Question-answer, without context</h2>
+		 
+			<p>In
+				a question-answer prompt without context, the model must answer
+				the question with its internal knowledge without
+				using
+				any context or document.</p>
+			<div class="table-container"><div class="table-contents"><table id="w230aac34c15b5b5">
+						<tr>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt Template to Amazon Titan and AI21 Jurassic:</b>
+<em>"""<span>{</span><span>{</span>Question}}"""</em>
+</code></pre>
+							</td>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt: </b>
+<em>What is Robert Frost's "Stopping by the woods on a 
+snowy evening" about metaphorically?</em>
+</code></pre>
+
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output: </b>
+<em>The poem by Robert Frost, "Stopping by Woods on a Snowy Evening," 
+uses the woods as a metaphor for death. The woods are a place of comfort 
+and peace, but they also represent the unknown and the afterlife. 
+The poem suggests that death is not something to be feared, 
+but rather a natural part of life that we should all embrace.
+
+The poem begins with the speaker stopping by the woods on a snowy evening, 
+a moment of contemplation and reflection. The speaker notices the beauty 
+of the snow-covered woods and is reminded of the fleeting nature of life. 
+The poem continues as the speaker considers the temptation of continuing 
+on to his destination, but instead chooses to pause and take in the beauty 
+of the woods.
+
+The woods are used as a metaphor for the unknown and the afterlife. 
+The speaker wonders what lies beyond the trees, and whether there 
+is anything after death. The poem suggests that death is not 
+something to be feared, but rather a natural part of life 
+that we should all embrace.
+
+The final lines of the poem are perhaps the most famous and poignant: 
+"And miles to go before I sleep, and miles to go before I sleep." 
+These lines suggest that even though the speaker has paused 
+to appreciate the beauty of the woods, they still have a 
+long journey ahead of them. The poem is a reminder that life 
+is fleeting, and that we should take the time to appreciate 
+the beauty around us, even as we work towards our goals and ambitions.
+
+Overall, "Stopping by Woods on a Snowy Evening" is a beautiful 
+and thought-provoking poem that uses the metaphor of the woods 
+to explore the concept of death and the afterlife.</em>
+</code></pre>
+							</td>
+						</tr>
+					</table></div></div>
+		 
+			<p>(Source of prompt: AWS, model used: Amazon Titan Text G1 - Express)</p>
+		 
+			<p>Model
+				encouragement can also help in question-answer tasks.</p>
+			<div class="table-container"><div class="table-contents"><table id="w230aac34c15b5c11">
+						<tr>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt Template to Amazon Titan and AI21 Jurassic:</b>
+<em>"""<span>{</span><span>{</span>Model encouragement}}
+<span>{</span><span>{</span>Question}}"""</em>
+</code></pre>
+							</td>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt: </b>
+<em>You are excellent at answering questions, 
+and it makes you happy when you provide the correct answer.
+
+What moon in the solar system is most likely to host life?</em>
+</code></pre>
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output: </b>
+<em>The moon of Titan, which is a moon of the planet Saturn, 
+is the most likely to support life in the solar system.
+
+Titan is the only known moon in the solar system to have a dense 
+atmosphere and a liquid hydrosphere, and scientists believe that 
+it may contain the chemical building blocks for life. 
+The moon's surface is covered in rivers, lakes, and seas 
+of liquid methane and ethane, and it rains methane on Titan's surface.
+
+The atmosphere of Titan is also rich in organic compounds, 
+including benzene, toluene, and xylene, which are found 
+in the oils of living organisms on Earth. 
+Additionally, Titan has a magnetic field and a tenuous atmosphere, 
+which could provide protection from harmful radiation and 
+help maintain a stable climate.
+
+While there is no direct evidence of life on Titan, 
+scientists believe that it is one of the most promising 
+places in the solar system to search for life beyond Earth.</em>
+</code></pre>
+							</td>
+						</tr>
+					</table></div></div>
+		 
+			<p>(Source of prompt: AWS, model used: Amazon Titan Text G1 - Express)</p>
+		 
+			<div class="table-container"><div class="table-contents"><table id="w230aac34c15b5c15">
+						<tr>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt template to Amazon Titan and AI21 Jurassic: </b>
+<em>"""<span>{</span><span>{</span>Model encouragement}}
+<span>{</span><span>{</span>Question}}
+<span>{</span><span>{</span>Constraints}}"""</em>
+</code></pre>
+							</td>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt: </b>
+<em>You feel rewarded by helping people learn more about climate change.
+Could you please explain what climate change is?
+Assume your audience is composed of high school students.</em>
+</code></pre>
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output: </b>
+<em>Climate change is the long-term warming of the planet, 
+which can be caused by human activities such as burning fossil fuels 
+and deforestation, as well as natural processes. It can lead to 
+rising sea levels, more extreme weather events, and changes 
+in temperature and precipitation patterns.</em>
+</code></pre>
+							</td>
+						</tr>
+					</table></div></div>
+		 
+			<p>(Source of prompt: AWS, model used: AI21 Jurassic-2 Ultra v1)</p>
+		 
+			<h2 id="qa-with-context">Question-answer, with context</h2>
+		 
+			<p>In a question-answer
+				prompt with context,
+				an
+				input text followed by a question is provided by the user, and the model must answer
+				the question based on information provided within the input text. Putting the
+				question in the end after the text can help LLMs on
+				Amazon Bedrock
+				better answer the question.
+				Model
+				encouragement works for this use case as well.</p>
+		 
+			<div class="table-container"><div class="table-contents"><table id="w230aac34c15b7b5">
+						<tr>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt template to Amazon Titan and AI21 Jurassic: </b>
+<em>"""<span>{</span><span>{</span>Text}}
+<span>{</span><span>{</span>Question}}"""</em>
+</code></pre>
+							</td>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt: </b>
+<em>The red panda (Ailurus fulgens), also known as the lesser panda, 
+is a small mammal native to the eastern Himalayas and southwestern China. 
+It has dense reddish-brown fur with a black belly and legs, white-lined ears, 
+a mostly white muzzle and a ringed tail. Its head-to-body length is 51â63.5 cm 
+(20.1â25.0 in) with a 28â48.5 cm (11.0â19.1 in) tail, and it weighs between 
+3.2 and 15 kg (7.1 and 33.1 lb). It is well adapted to climbing due to its 
+flexible joints and curved semi-retractile claws.
+
+The red panda was first formally described in 1825. The two currently 
+recognized subspecies, the Himalayan and the Chinese red panda, genetically 
+diverged about 250,000 years ago. The red panda's place on the evolutionary 
+tree has been debated, but modern genetic evidence places it in close 
+affinity with raccoons, weasels, and skunks. It is not closely related 
+to the giant panda, which is a bear, though both possess elongated 
+wrist bones or "false thumbs" used for grasping bamboo. 
+The evolutionary lineage of the red panda (Ailuridae) stretches 
+back around 25 to 18 million years ago, as indicated by extinct 
+fossil relatives found in Eurasia and North America.
+
+The red panda inhabits coniferous forests as well as temperate broadleaf 
+and mixed forests, favoring steep slopes with dense bamboo cover close 
+to water sources. It is solitary and largely arboreal. It feeds mainly 
+on bamboo shoots and leaves, but also on fruits and blossoms. 
+Red pandas mate in early spring, with the females giving birth 
+to litters of up to four cubs in summer. It is threatened 
+by poaching as well as destruction and fragmentation of habitat 
+due to deforestation. The species has been listed as Endangered 
+on the IUCN Red List since 2015. It is protected in all range countries.
+
+Based on the information above, what species are red pandas closely related to?</em>
+</code></pre>
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output:</b>
+<em>Red pandas are closely related to raccoons, weasels, and skunks.</em>
+</code></pre>
+							</td>
+						</tr>
+					</table></div></div>
+		 
+			<p>(Source of prompt: https://en.wikipedia.org/wiki/Red_panda, 
+model used: Amazon Titan Text G1 - Express)</p>
+			<p>When prompting
+				Claude
+				models, it's helpful to wrap the input text in XML tags.
+				In
+				the following example,  the input text is enclosed in
+					<code class="code">&lt;text&gt;&lt;/text&gt;</code>.</p>
+			
+		 <div class="table-container"><div class="table-contents"><table id="w230aac34c15b7c11">
+						<tr>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt template for Claude: </b>
+<em>"""
+
+Human: <span>{</span><span>{</span>Instruction}}
+&lt;text&gt;
+<span>{</span><span>{</span>Text}}
+&lt;text&gt;
+<span>{</span><span>{</span>Question}}
+
+Assistant:"""</em>
+</code></pre>
+							</td>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt: </b>
+
+
+<em>Human: Read the following text inside &lt;text&gt;&lt;/text&gt; 
+XML tags, and then answer the question:
+
+&lt;text&gt;
+On November 12, 2020, the selection of the Weeknd to headline 
+the show was announced; marking the first time a Canadian solo artist 
+headlined the Super Bowl halftime show. When asked about preparations 
+for the show, the Weeknd stated, "We've been really focusing 
+on dialing in on the fans at home and making performances 
+a cinematic experience, and we want to do that with the Super Bowl." 
+
+The performance featured a choir whose members were dressed in white 
+and wore masks over their faces with glowing red eyes, and were 
+standing within a backdrop of a neon cityscape. The performance 
+opened with a white figure dressed the same as the choir being 
+lowered into the backdrop where the choir was standing while singing 
+âCall Out My Name". At this time, the Weeknd sat in a convertible 
+against a skyline backdrop designed to resemble the Las Vegas Strip. 
+For the next part of the performance, the backdrop then split open 
+to reveal the Weeknd, who then performed "Starboy", followed by "The Hills". 
+
+Next, performing the song "Can't Feel My Face", the Weeknd traveled 
+through a labyrinth constructed behind the stage, joined by dancers 
+dressed in red blazers and black neckties similar to his, 
+but with their faces covered with bandages, in keeping with 
+the aesthetic of his fourth studio album After Hours (2020). 
+The dancers would wear these bandages throughout the performance. 
+In the labyrinth section of the performance, camerawork was visually unsteady. 
+The next songs performed were "I Feel It Coming", "Save Your Tears", 
+and "Earned It". For the "Earned It" performance, the Weeknd 
+was accompanied by violinists. For the finale of the show, 
+the Weeknd took to the field of the stadium with his dancers to perform 
+âBlinding Lights". He and the dancers entered the field by performing 
+"House of Balloons / Glass Table Girls". The performance ended 
+with an array of fireworks.
+&lt;/text&gt;
+Based on the text above, what songs did the Weeknd play 
+at the Super Bowl halftime show?
+
+Assistant:</em>
+</code></pre>
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output: </b>
+<em>Based on the text, the songs the Weeknd played 
+at the Super Bowl halftime show were:
+
+- Call Out My Name
+- Starboy 
+- The Hills
+- Can't Feel My Face
+- I Feel It Coming
+- Save Your Tears
+- Earned It
+- Blinding Lights
+- House of Balloons / Glass Table Girls</em>
+</code></pre>
+							</td>
+						</tr>
+					</table></div></div>
+			
+			<p>(Source of prompt: <a href="https://en.wikipedia.org/wiki/Super_Bowl_LV_halftime_show" rel="noopener noreferrer" target="_blank"><span>
+				Wikipedia on the Super Bowl LV halftime show</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>, model used:
+				Claude)</p>
+		 
+		 
+			<h2 id="summarization">Summarization</h2>
+			<p>For a summarization task, the prompt is a passage of text, 
+and the model must respond with a shorter passage that captures 
+the main points of the input. Specification of the output 
+in terms of length (number of sentences or paragraphs) 
+is helpful for this use case.</p>
+		 
+			<div class="table-container"><div class="table-contents"><table id="w230aac34c15b9b5">
+						<tr>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt template for Amazon Titan and AI21 Jurassic: </b>
+<em>"""The following is text from a <span>{</span><span>{</span>Text Category}}:
+<span>{</span><span>{</span>Text}}
+Summarize the <span>{</span><span>{</span>Text Category}} in <span>{</span><span>{</span>length of summary, 
+e.g., âone sentenceâ or âone paragraphâ}}"""</em>
+</code></pre>
+							</td>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt: </b>
+<em>The following is text from a restaurant review:
+âI finally got to check out Alessandroâs Brilliant Pizza 
+and it is now one of my favorite restaurants in Seattle. 
+The dining room has a beautiful view over the Puget Sound 
+but it was surprisingly not crowed. I ordered the fried 
+castelvetrano olives, a spicy Neapolitan-style pizza 
+and a gnocchi dish. The olives were absolutely decadent, 
+and the pizza came with a smoked mozzarella, which was delicious. 
+The gnocchi was fresh and wonderful. The waitstaff were attentive, 
+and overall the experience was lovely. I hope to return soon.â
+Summarize the above restaurant review in one sentence.</em>
+</code></pre>
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output: </b>
+<em>Alessandroâs Brilliant Pizza is a fantastic restaurant 
+in Seattle with a beautiful view over Puget Sound that offers 
+decadent and delicious food.</em>
+</code></pre>
+							</td>
+						</tr>
+					</table></div></div>
+			<p>(Source of prompt: AWS, model used: Amazon Titan Text G1 - Express)</p>
+		 
+			<p>In the following example,
+				Claude
+				summarizes the given text in one sentence. To include input text in your prompts,
+				format the text with XML mark up: <code class="code">&lt;text&gt; <span>{</span><span>{</span>text content}}
+					&lt;/text&gt;</code>. Using XML within prompts is a common practice when
+				prompting
+				Claude
+				models.</p>
+		 
+			<div class="table-container"><div class="table-contents"><table id="w230aac34c15b9c11">
+						<tr>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt template for Claude: </b>
+<em>"""
+
+Human: Please read the text:
+&lt;text&gt;
+<span>{</span><span>{</span>text context}}
+&lt;/text&gt;
+
+Summarize the text in <span>{</span><span>{</span>length of summary, e.g., âone 
+sentenceâ or âone paragraphâ}}
+
+Assistant:"""</em>
+</code></pre>
+							</td>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt: </b>
+
+
+<em>Human: Please read the text:
+
+&lt;text&gt;
+In game theory, the Nash equilibrium, named after the mathematician 
+John Nash, is the most common way to define the solution 
+of a non-cooperative game involving two or more players. 
+In a Nash equilibrium, each player is assumed to know 
+the equilibrium strategies of the other players, 
+and no one has anything to gain by changing only one's own strategy. 
+The principle of Nash equilibrium dates back to the time of Cournot, 
+who in 1838 applied it to competing firms choosing outputs.
+&lt;/text&gt;
+
+Summarize the text in one sentence.
+
+Assistant:</em>
+</code></pre>
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output: </b>
+<em>The Nash equilibrium is a concept in game theory 
+where each player has adopted a strategy that they have no incentive 
+to deviate from given the other players' strategies.</em>
+</code></pre>
+							</td>
+						</tr>
+					</table></div></div>
+			<p>(Source of prompt: <a href="https://en.wikipedia.org/wiki/Nash_equilibrium" rel="noopener noreferrer" target="_blank"><span>
+				Wikipedia on Nash equilibrium</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>, model used:
+				Claude)</p>
+		 
+			<h2 id="text-generation">Text generation</h2>
+			<p>Given a prompt, LLMs on
+				Amazon Bedrock
+				can respond with a passage of original text that matches the description. Here is
+				one example:</p>
+			<div class="table-container"><div class="table-contents"><table id="w230aac34c15c11b5">
+						<tr>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt template for Amazon Titan and AI21 Jurassic: </b>
+<em>"""Please write a <span>{</span><span>{</span>Text Category}} in the voice of <span>{</span><span>{</span>Role}}."""</em>
+</code></pre>
+							</td>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt: </b>
+<em>Please write an email in the voice of a friend 
+congratulating someone on a new job.</em>
+</code></pre>
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output: </b>
+<em>Hey [Name],
+
+I just found out about your new job, and I'm so happy for you! 
+Congratulations! You deserve this opportunity since you worked so hard 
+to get it. I know you'll do great and make a positive impact on your team. 
+I'm here to support you every step of the way. Wishing you all the best 
+in this exciting new chapter of your life!
+
+Cheers,
+[Your Name]</em>
+</code></pre>
+							</td>
+						</tr>
+					</table></div></div>
+			<p>(Source of prompt: AWS, model used: Amazon Titan Text G1 - Express)</p>
+		 
+			<p>For text generation use cases, specifying detailed task requirements can work well. In
+				the
+				following
+				example,
+				we ask the model to generate response with exclamation points.</p>
+		 
+			<div class="table-container"><div class="table-contents"><table id="w230aac34c15c11c11">
+						<tr>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt template for Amazon Titan and AI21 Jurassic: </b>
+<em>"""<span>{</span><span>{</span>Task specification}}
+Please write a <span>{</span><span>{</span>Text Category}} in the voice of <span>{</span><span>{</span>Role}}."""</em>
+</code></pre>
+							</td>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt: </b>
+<em>Write text with exclamation points.
+Please write a formatted email in the voice of a friend 
+congratulating someone on a new job.</em>
+</code></pre>
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output: </b>
+<em>Hey [name]!
+
+I just saw the news and I am so, so happy for you! 
+You deserve this position and this company with all your heart. 
+I can't wait to see you soar and accomplish all the things 
+you've been working towards. If anyone is deserving 
+of a promotion, it's you!
+
+Congratulations again, friend!
+
+Love,
+[name]</em>
+</code></pre>
+							</td>
+						</tr>
+					</table></div></div>
+			<p>(Source of prompt: AWS, model used: Amazon Titan Text G1 - Express)</p>
+		 
+			<p>In
+				the following example, a user prompts the model to take on the
+				role of a specific person when generating the text. Notice how the signature
+				reflects the role the model is taking on in the response.</p>
+		 
+			<div class="table-container"><div class="table-contents"><table id="w230aac34c15c11c17">
+						<tr>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt template for Amazon Titan and AI21 Jurassic: </b>
+<em>"""<span>{</span><span>{</span>Role assumption}} <span>{</span><span>{</span>Task description}}
+"""</em>
+</code></pre>
+							</td>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User input: </b>
+<em>My name is Jack. Help me write a note expressing my gratitude 
+to my parents for taking my son (their grandson) to the zoo. 
+I miss my parents so much.</em>
+</code></pre>
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output: </b>
+<em>Dear Mom and Dad,
+
+I wanted to take a moment to express my heartfelt gratitude 
+for taking my son to the zoo last weekend. It meant so much to me 
+that you took the time to make memories with him, and I am so grateful 
+for the love and support you have shown him.
+
+I miss you both so much, and I wish we could be together more often. 
+But I know that you will always be there for me and my family, 
+and I am so grateful to have you as my parents.
+
+Love,
+Jack</em>
+</code></pre>
+							</td>
+						</tr>
+					</table></div></div>
+			<p>(Source of prompt: AWS, model used: AI21 Jurassic-2 Ultra v1)</p>
+		 
+			<h2 id="code-generation">Code generation</h2>
+		
+			<p>The prompt describes the task or function and programming language for the code
+				the
+				user expects the model to generate.</p>
+			<div class="table-container"><div class="table-contents"><table id="w230aac34c15c13b5">
+						<tr>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt template for Amazon Titan and AI21 Jurassic: </b>
+<em>"""Write a function in <span>{</span><span>{</span>programming language}} to 
+<span>{</span><span>{</span>task or purpose}}""".</em>
+</code></pre>
+							</td>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User input: </b>
+<em>Write a python function to download a s3 file to local disk.
+</em></code></pre>
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output: </b>
+<em>The following code can be used to download an s3 file to the local disk.
+
+```Python
+import boto3
+# Creates a boto3 client object
+s3 = boto3.client('s3')
+def download_file(bucket_name, object_key, file_path):
+try:
+# Downloads the s3 file to the specified file path
+s3.download_file(bucket_name, object_key, file_path)
+except Exception as e:
+print(e)
+# Specifies the values of bucket_name, object_key, and file_path
+bucket_name = "samplebucketname"
+object_key = "sampleobjectkey"
+file_path = "/samplefilepath"
+download_file(bucket_name, object_key, file_path)
+```
+
+The given code uses the download_file function to download an s3 file 
+to the local disk. The download_file function takes the bucket name, 
+object key, and file path as input parameters. The bucket name 
+is the name of the s3 bucket where the file is located, 
+the object key is the unique identifier of the file within the bucket, 
+and the file path is the destination path on the local disk 
+where the file will be downloaded. The function uses the download_file method 
+of the s3 client to download the file from the specified bucket 
+and write it to the specified file path.</em>
+</code></pre>
+							</td>
+						</tr>
+					</table></div></div>
+		 
+			<p>(Source of prompt: AWS, model used: Amazon Titan Text G1 - Express)</p>
+		 
+			<div class="table-container"><div class="table-contents"><table id="w230aac34c15c13b9">
+						<tr>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt template for Claude</b>
+<em>"""
+
+Human: Write a function in <span>{</span><span>{</span>programming language}} to 
+<span>{</span><span>{</span>task or purpose}}
+
+Assistant:"""</em>
+</code></pre>
+							</td>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt: </b>
+
+
+<em>Human: Write some python code that quickly approximates 
+the square root of a number.
+
+Assistant: </em>
+</code></pre>
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output: </b>
+<em>Here is a simple function to approximate 
+the square root of a number using Newton's method:
+
+```python
+def sqrt(n, iterations=10):
+x = n
+for i in range(iterations):
+x = (x + n/x) / 2
+return x
+```
+
+To use it:
+
+```python
+print(sqrt(25))
+# 5.0
+
+print(sqrt(15, iterations=20)) 
+# 3.872983346207417
+```
+
+This repeatedly takes the average of x and n/x to converge on the square root. 
+More iterations produce a more accurate approximation.
+
+The advantage of this approach is it converges very quickly, 
+so even just 10 iterations produces a decent estimate.</em>
+</code></pre>
+							</td>
+						</tr>
+					</table></div></div>
+		 
+			<p>(Source of prompt: AWS, model used:
+				Claude)</p>
+		 
+		 
+			<h2 id="mathematics">Mathematics</h2>
+		 
+			<p>The input describes a problem that requires mathematical reasoning at some level, which may
+				be numerical, logical,
+				geometric,
+				or otherwise. For such problem, it's helpful to ask the model to work through the
+				problem in a piecemeal manner by adding phrases to instructions such as <code class="code">Letâs
+					think step by step</code> or <code class="code">Think step by step to come up with the right
+					answer.</code></p>
+		 
+			<div class="table-container"><div class="table-contents"><table id="w230aac34c15c15b5">
+						<tr>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt template for Amazon Titan and AI21 Jurassic: </b>
+<em>"""<span>{</span><span>{</span>Math problem description}}
+Letâs think step by step."""</em>
+</code></pre>
+							</td>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt: </b>
+<em>A triangle has two angles of 70 degrees and 50 degrees. 
+What is the third angle in degrees?
+Letâs think step by step.</em>
+</code></pre>
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output:</b>
+<em>The sum of the three angles in a triangle is always 180 degrees. 
+The two given angles are 70 degrees and 50 degrees. 70 + 50 = 120. 
+Therefore, the third angle is 180 - 120 = 60 degrees. 
+The third angle is 60 degrees.</em>
+</code></pre>
+							</td>
+						</tr>
+					</table></div></div>
+			<p>(Source of prompt:  AWS, model used: Amazon Titan Text G1 - Express)</p>
+		 
+			<p>The
+				following example also demonstrates asking the model to think step by
+				step: </p>
+		 
+			<div class="table-container"><div class="table-contents"><table id="w230aac34c15c15c11">
+						<tr>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt template for Amazon Titan and AI21 Jurassic:</b>
+<em>"""<span>{</span><span>{</span>Math problem description}}
+Think step by step to come up with the right answer."""</em>
+</code></pre>
+							</td>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt:</b>
+<em>Lucy has 12 colorful marbles, and she wants to share them 
+equally with her 4 friends. How many marbles will each friend receive?
+Think step-by-step to come up with the right answer.</em>
+</code></pre>
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight">
+<b>Output:</b>
+<em>1. Lucy has 12 marbles and wants to share them equally 
+with her 4 friends, then each friend will receive 12 / 4 = 3 marbles.
+2. Therefore, each friend will receive 3 marbles.</em>
+</code></pre>
+							</td>
+						</tr>
+					</table></div></div>
+			<p>(Source of prompt: AWS, model used: AI21 Jurassic-2 Ultra v1)</p>
+		 
+			<h2 id="reasoning-logical-thinking">Reasoning/logical thinking</h2>
+			<p>For complex reasoning tasks or problems that requires logical thinking, 
+we can ask the model to make logical deductions and explain its answers.</p>
+			<div class="table-container"><div class="table-contents"><table id="w230aac34c15c17b5">
+						<tr>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt template for Amazon Titan and AI21 Jurassic: </b>
+<em>"""Question: <span>{</span><span>{</span>question}}
+
+Please output the answer and then explain your 
+answer:"""</em>
+
+</code></pre>
+							</td>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt:</b>
+<em>Question: Which word is the odd one out?
+A. accomplished
+B. good
+C. horrible
+D. outstanding
+
+Please output the answer and then explain your answer:</em>
+</code></pre>
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output:</b>
+<em>The odd one out is C. horrible. The other three words 
+describe positive qualities or achievements, whereas horrible 
+is an negative adjective.</em>
+</code></pre>
+							</td>
+						</tr>
+					</table></div></div>
+		 
+			<p>(Source of prompt: AWS, model used: Amazon Titan Text G1 - Express)</p>
+			<p>Here is another example using
+				the
+				Claude
+				model:</p>
+		 
+			<div class="table-container"><div class="table-contents"><table id="w230aac34c15c17c11">
+						<tr>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt template for Claude:</b>
+<em>"""
+
+Human: <span>{</span><span>{</span>question}}
+Please provide the answer and show the reasoning.
+
+Assistant:"""</em>
+</code></pre>
+							</td>
+							<td tabindex="-1">
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt</b>
+
+
+<em>Human: The barber is the "one who shaves all those, and those only, 
+who do not shave themselves". Does the barber shave himself? Why is this
+a paradox? Please provide the answer and show the reasoning.
+
+Assistant:</em>
+</code></pre>
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output:</b>
+<em>This is an example of a paradox known as the Barber paradox. 
+Here is an explanation:
+
+- The statement defines a barber who shaves all and only those people 
+who do not shave themselves. 
+- So if the barber shaves himself, he must shave all those who do not shave 
+themselves, which includes himself. But the barber cannot shave himself 
+as per the initial statement.
+- If the barber does not shave himself, then he would fit into the group 
+of people who do not shave themselves, and so he must shave himself, 
+according to the statement. But again this contradicts the initial statement.
+- So the barber cannot shave himself and also cannot not shave himself. 
+This is self-contradictory based on the initial statement about the barber.
+- Therefore, the statement leads to a paradox where both possibilities 
+(the barber shaving himself or not shaving himself) result in a contradiction.
+
+In summary, the paradox arises because the definition of the barber's 
+behavior is self-contradictory when applied to the barber himself. 
+This makes it impossible to determine if the barber shaves himself 
+or not based on the given statement alone.</em>
+</code></pre>
+							</td>
+						</tr>
+					</table></div></div>
+			<p>(Source of prompt: https://en.wikipedia.org/wiki/Barber_paradox, model used:
+				Claude)</p>
+		<awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./general-guidelines-for-bedrock-users.html">General
+				guidelines for Amazon Bedrock LLM users</div><div id="next" class="next-link" accesskey="n" href="./embeddings.html">Embeddings</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/prompt-templates-and-examples.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/prompt-templates-and-examples.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

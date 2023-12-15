@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Inference parameters for foundation models - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="model-parameters" /><meta name="default_state" content="model-parameters" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html" /><meta name="description" content="Learn about the inference parameters for each of the models that Amazon Bedrock supports." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/model-parameters.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/model-parameters.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/model-parameters.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/model-parameters.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/model-parameters.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/model-parameters.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/model-parameters.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/model-parameters.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/model-parameters.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/model-parameters.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/model-parameters.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/model-parameters.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/model-parameters.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/model-parameters.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/model-parameters.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/model-parameters.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/model-parameters.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/model-parameters.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Inference parameters for foundation models" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Inference parameters for foundation models - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#model-parameters" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-parameters.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-parameters.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-parameters.html" /><meta name="keywords" content="Amazon Bedrock,bedrock" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Inference parameters for foundation models",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#model-parameters" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#model-parameters-general">Inference parameter definitions</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="model-parameters">Inference parameters for foundation models</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>Run inference using any of the foundation models in Amazon Bedrock. Optionally, set inference
+        parameters to influence the response generated by the model. You set inference parameters in a playground in the console, or in the <code class="code">body</code> field of the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html">InvokeModel</a> or <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html">InvokeModelWithResponseStream</a> API.</p><p>When you call a model,
+    you also include a prompt for the model. For information about writing prompts, see <a href="./prompt-engineering-guidelines.html">
+			Prompt engineering guidelines</a>.
+    </p><p>The following sections define the inference parameters available for each base model. For a custom model, use the same
+        inference parameters as the base model from which it was customized.</p><div class="highlights"><h6>Topics</h6><ul><li><a href="#model-parameters-general">Inference parameter definitions</a></li><li><a href="./model-parameters-titan-text.html">Amazon Titan text models</a></li><li><a href="./model-parameters-titan-image.html">Amazon Titan image models</a></li><li><a href="./model-parameters-claude.html">Anthropic Claude models</a></li><li><a href="./model-parameters-jurassic2.html">AI21 Labs Jurassic-2 models</a></li><li><a href="./model-parameters-cohere.html">Cohere models</a></li><li><a href="./model-parameters-meta.html">Meta Llama 2 and Llama 2 Chat models</a></li><li><a href="./model-parameters-stability-diffusion.html">Stability.ai Diffusion models</a></li></ul></div>
+        <h2 id="model-parameters-general">Inference parameter definitions</h2>
+        <p>Typically, foundation models support the following types of inference
+            parameters.</p>
+        <div class="highlights" id="inline-topiclist"><h6>Topics</h6><ul><li><a href="#text-playground-adjust-random">Randomness and diversity</a></li><li><a href="#text-playground-adjust-length">Length</a></li><li><a href="#text-playground-adjust-reps">Repetitions</a></li></ul></div>
+         
+            <h3 id="text-playground-adjust-random">Randomness and diversity</h3>   
+            <p>Foundation models typically support the following parameters to control randomness
+                and diversity in the response. </p>
+            <div class="itemizedlist">
+                 
+                 
+                 
+            <ul class="itemizedlist"><li class="listitem">
+                    <p><b>Temperature</b>â Large language models
+                        use probability to construct the words in a sequence. For any given
+                        sequence, there is a probability distribution of options for the next word
+                        in the sequence. When you set the temperature closer to zero, the model
+                        tends to select the higher-probability words. When you set the temperature
+                        further away from zero, the model may select a lower-probability word. </p>
+                    <p>In technical terms, the temperature modulates the probability density
+                        function for the next tokens, implementing the temperature sampling
+                        technique. This parameter can deepen or flatten the density function curve.
+                        A lower value results in a steeper curve with more deterministic responses,
+                        and a higher value results in a flatter curve with more random
+                        responses.</p>
+                </li><li class="listitem">
+                    <p><b>Top K</b> â Temperature defines the
+                        probability distribution of potential words, and Top K defines the cutoff
+                        where the model no longer selects the words. For example, if K=50, the model
+                        selects from 50 of the most probable words that could be next in a given
+                        sequence. When you lower the Top K value, it reduces the probability that an
+                        unusual word gets selected next in a sequence. </p>
+                    <p>In technical terms, Top K is the number of the highest-probability
+                        vocabulary tokens to keep for Top-K-filtering.</p>
+                </li><li class="listitem">
+                    <p><b>Top P</b> â Top P defines a cut off based on
+                the sum of probabilities of the potential choices. If you set Top P below 1.0, the
+                model considers the most probable options and ignores less probable ones. Top P is
+                similar to Top K, but instead of capping the number of choices, it caps choices
+                based on the sum of their probabilities. </p>
+                <p>For the example prompt "I hear the hoof beats of ," you might want the model to
+                provide "horses," "zebras," or "unicorns" as the next word. If you set the
+                temperature to its maximum, without capping Top K or Top P, you increase the
+                probability of getting unusual results such as "unicorns." If you set the
+                temperature to 0, you increase the probability of "horses." If you set a high
+                temperature and reduce the value of Top K or Top P, you increase the probability of
+                "horses" or "zebras," and decrease the probability of "unicorns."</p>
+                </li></ul></div>
+         
+         
+            <h3 id="text-playground-adjust-length">Length</h3>
+            <p>Foundation models typically support the following parameters control the length of
+                the generated response.</p>
+            <div class="itemizedlist">
+                 
+                 
+                 
+            <ul class="itemizedlist"><li class="listitem">
+                    <p><b>Response length</b> â Configures
+                            the minimum and maximum number of tokens to use in the generated
+                                response.</p>
+                </li><li class="listitem">
+                    <p><b>Length penalty</b> â Length penalty
+                        optimizes the model to be more concise in its output by penalizing longer
+                        responses.</p>
+                    <p>In technical terms, the length penalty penalizes the model exponentially
+                        for lengthy responses. 0.0 means no penalty. To generate longer sequences,
+                        set a value less than 0.0 for the model. To generate shorter sequences, set
+                        a value greater than 0.0.</p>
+                </li><li class="listitem">
+                    <p><b>Stop sequences</b> â A stop sequence is
+                        a sequence of characters. If the model encounters a stop sequence, it stops
+                        generating further tokens. Different models support different types of
+                        characters in a stop sequence, different maximum sequence lengths, and may
+                        support the definition of multiple stop sequences.</p>
+                </li></ul></div>
+         
+         
+            <h3 id="text-playground-adjust-reps">Repetitions</h3>
+            <p>Foundation models typically support the following parameters help control
+                repetition in the generated response.</p>
+            
+            <div class="itemizedlist">
+                 
+            <ul class="itemizedlist"><li class="listitem">
+                    <p><b>Repetition penalty (presence penalty)</b> â
+                        Prevents repetitions of the same words (tokens) in responses. 1.0 means no penalty.
+                        Greater than 1.0 decreases repetition.</p>
+                </li></ul></div>
+            
+          
+    <awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./api-methods-tag.html">Tag resources</div><div id="next" class="next-link" accesskey="n" href="./model-parameters-titan-text.html">Amazon Titan text models</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-parameters.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-parameters.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

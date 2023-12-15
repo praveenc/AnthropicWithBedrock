@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Customize a model - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="model-customization-submit" /><meta name="default_state" content="model-customization-submit" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-submit.html" /><meta name="description" content="To train a fine-tuning model or a Continued Pre-training model with the Amazon Bedrock console, do the following." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-submit.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/model-customization-submit.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/model-customization-submit.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/model-customization-submit.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/model-customization-submit.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-submit.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-submit.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/model-customization-submit.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/model-customization-submit.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/model-customization-submit.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/model-customization-submit.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/model-customization-submit.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/model-customization-submit.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/model-customization-submit.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/model-customization-submit.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/model-customization-submit.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/model-customization-submit.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/model-customization-submit.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/model-customization-submit.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/model-customization-submit.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/model-customization-submit.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-submit.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Customize a model" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Customize a model - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#model-customization-submit" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-customization-submit.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-customization-submit.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-customization-submit.html" /><meta name="keywords" content="Amazon Bedrock,bedrock,improve performance,continual pre-training,fine-tuning,model improvement,task learning,domain" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Custom models",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Using the console",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-console.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 6,
+        "name" : "Customize a model",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-console.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#model-customization-submit" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="model-customization-submit">Customize a model</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>To train a fine-tuning model or a Continued Pre-training model with the Amazon Bedrock console, 
+            do the following.</p><p>For information about using the AWS SDK, see <a href="./model-customization-submit-api.html">Submit a job</a>. </p><div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>Before you begin these steps, do the following:</p><div class="itemizedlist">
+                 
+                 
+            <ul class="itemizedlist"><li class="listitem"><p>Grant Amazon Bedrock permissions to access the
+                    training and validation data and to write the output data by attaching an IAM
+                    policy similar to the example shown in <a href="./security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-model-customization">Grant custom jobs access to your training data</a> to
+                    your Amazon Bedrock service role.</p></li><li class="listitem">
+                    <p>Create a training dataset and optionally a validation dataset. For more
+                        information, see <a href="./model-customization-prepare.html">Prepare the datasets</a>.
+                    </p></li></ul></div></div></div><div class="procedure"><h6>To customize a model</h6><ol><li>
+                <p>Sign in to the AWS Management Console and open the Amazon Bedrock console at <a href="https://console.aws.amazon.com/bedrock/home" rel="noopener noreferrer" target="_blank"><span>https://console.aws.amazon.com/bedrock/home</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+            </li><li>
+                <p>In the navigation pane, choose <b>Foundation models</b> and then
+                        <b>Custom models</b>.</p>
+            </li><li>
+                <p>Choose the <b>Models</b> tab.</p>
+            </li><li>
+                <p> Choose <b>Customize model</b> and then <b>Fine-train
+                    model</b> or <b>Create Continued Pre-training job</b>, depending on the 
+                type of model you want to train.</p>
+            </li><li>
+                <p>In the <b>Create fine-tune job</b> page (<b>Create
+                        Continued Pre-training job</b>, if you are training a Continued
+                    Pre-training model), configure the settings for the job:</p>
+
+                <ol><li>
+                        <p>In the <b>Model details</b> section, choose the
+                                <b>Source model</b> that you want to customize
+                            with your own data and give your resulting model a name in
+                            <b>Fine-tuned model name</b> (or <b>Continued pre-training model name</b>).</p>
+                        
+                    </li><li>
+                        <p>(Optional) You can choose <b>Model encryption</b>
+                            to choose a different KMS key from the default key.</p>
+                        <p>For information about configuring KMS keys, see <a href="./data-encryption.html">Data encryption</a>.</p>
+                    </li><li>
+                        <p>(Optional) You can expand the <b>Tags</b> section
+                            and select <b>Add new tag</b> add tags to associate with
+                            the model.</p>
+                    </li><li>
+                        <p>In the <b>Job configuration</b> section, enter a
+                            name for the job in <b>Job name</b>
+                            and add any tags to associate with the job.</p>
+                    </li><li>
+                        <p>(Optional) In the <b>VPC settings</b> section,
+                            choose the <b>VPC</b> that contains the input data
+                            and output data Amazon S3 locations.</p>
+                        <ol><li>
+                                <p>For <b>Subnet(s)</b>, add the VPC
+                                    subnets.</p>
+                            </li><li>
+                                <p>For <b>Security group(s)</b>, add security
+                                    groups to control access to the data in your VPC.</p>
+                            </li></ol>
+                        <p>For information about configuring the VPC, see <a href="./usingVPC.html">Protect jobs using a VPC</a>.</p>
+                    </li><li>
+                        <p>In the <b>Input data</b> section, provide the S3 link to
+                            the training dataset file and, optionally, the validation dataset file.</p>
+                    </li><li>
+                        <p>In the <b>Hyperparameters</b> section, input the
+                            values for the following hyperparameters to use in training. For information
+                            about the hyperparameters that you can use with a model, 
+                            see <a href="./custom-models-reference.html">Custom models reference</a>.</p>
+                     
+                    </li><li>
+                        <p>In the <b>Output data</b> section, enter the Amazon S3 location in
+                            which Amazon Bedrock should save the output of the job. Amazon Bedrock
+                            stores the training loss metrics and validation loss metrics for each
+                            epoch in separate files in the location that you specify.</p>
+                    </li><li>
+                        <p>You use a service role to provide permissions for Amazon Bedrock to write to
+                            Amazon S3 on your behalf.</p>
+                        <p>In the <b>Service access</b> section, select one
+                            of the following: </p>
+                        <div class="itemizedlist">
+                             
+                             
+                        <ul class="itemizedlist"><li class="listitem">
+                                <p><b>Use an existing service role</b> â
+                                    Select a service role from the drop-down list. For more information on setting up a custom role with the appropriate permissions, see <a href="./model-customization-iam-role.html">Permissions to carry out and manage a model customization job</a>.</p>
+                            </li><li class="listitem">
+                                <p><b>Create and use a new service role</b> â
+                                    Enter a name for the service role.</p>
+                            </li></ul></div>
+                        <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>If your job includes VPC configuration, the console cannot create
+                                a new service role for the job. Create the service role using the
+                                example described in <a href="./usingVPC.html#VPCaccess-console"> Configure
+                                    your model customization job to use VPC </a>.</p></div></div>
+                    </li></ol>
+            </li><li>
+                <p>Choose <b>Create Fine-tuning job</b> (or <b>Create Continued Pre-training job</b>) to begin the job.</p>
+            </li></ol></div><awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./model-customization-console.html">Using the console</div><div id="next" class="next-link" accesskey="n" href="./model-customization-monitor.html">Monitor the job</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-customization-submit.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-customization-submit.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

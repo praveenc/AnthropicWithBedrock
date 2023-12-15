@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>What is a prompt? - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="what-is-a-prompt" /><meta name="default_state" content="what-is-a-prompt" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-a-prompt.html" /><meta name="description" content="Summary of prompts on Amazon Bedrock." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-a-prompt.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-a-prompt.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="What is a prompt?" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>What is a prompt? - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#what-is-a-prompt" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/what-is-a-prompt.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/what-is-a-prompt.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/what-is-a-prompt.html" /><meta name="keywords" content="Amazon Bedrock,bedrock,Prompt Engineering,Prompt definition,Few-shot prompting,Zero-shot prompting,In-context learning,Prompt template,Prompt formatting,API calls" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Prompt engineering guidelines",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-engineering-guidelines.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "What is a prompt?",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-engineering-guidelines.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#what-is-a-prompt" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#components-of-a-prompt">Components of a prompt</a><a href="#few-shot-prompting-vs-zero-shot-prompting">Few-shot prompting vs. zero-shot
+prompting</a><a href="#prompt-template">Prompt template</a><a href="#important-notes-on-bedrock-llms-via-api">
+Important notes on using Amazon Bedrock LLMs by API calls</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="what-is-a-prompt">What is a prompt?</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>Prompts are a specific set of inputs provided by you, the user, that guide LLMs on
+			Amazon Bedrock
+			to generate an appropriate response or output for a given task or instruction.</p><pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User Prompt:</b>
+<em>Who invented the airplane?</em>
+</code></pre><p>When queried by this prompt, Amazon Titan provides an output:</p><pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output:</b>
+<em>The Wright brothers, Orville and Wilbur Wright are widely credited 
+with inventing and manufacturing the world's first successful airplane.</em>
+</code></pre><p>(Source of prompt: AWS, model used: Amazon Titan Text G1 - Express)</p>
+			<h2 id="components-of-a-prompt">Components of a prompt</h2>
+		 
+			<p>A single prompt includes several components, such as the task or
+				instruction
+				you want the LLMs to perform, the context of the task (for
+				example, a description of the relevant domain), demonstration examples, and the
+				input text that you want LLMs on Amazon Bedrock to use in its response. Depending on your use
+				case, the availability of the
+				data,
+				and the task, your prompt should combine one or more of these components.</p>
+			<p>Consider this example prompt asking Amazon Titan to summarize a review:</p>
+			
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User Prompt:</b>
+<em>The following is text from a restaurant review:
+
+âI finally got to check out Alessandroâs Brilliant Pizza and it is now 
+one of my favorite restaurants in Seattle. The dining room has a beautiful view 
+over the Puget Sound but it was surprisingly not crowded. I ordered 
+the fried castelvetrano olives, a spicy Neapolitan-style pizza 
+and a gnocchi dish. The olives were absolutely decadent, and the pizza came 
+with a smoked mozzarella, which was delicious. The gnocchi was fresh and wonderful. 
+The waitstaff were attentive, and overall the experience was lovely. 
+I hope to return soon." 
+
+Summarize the above restaurant review in one sentence.</em>
+</code></pre>
+		 
+			<p>(Source of prompt: AWS)</p>
+			<p>Based on this prompt, Amazon Titan responds with a succinct one-line summary of the
+restaurant review. The review mentions key facts and conveys the main points, as
+desired.</p>
+		 
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output: </b>
+<em>Alessandro's Brilliant Pizza is a fantastic restaurant in Seattle 
+with a beautiful view over Puget Sound, decadent and delicious food, 
+and excellent service.</em>
+</code></pre>
+		 
+			<p>(Model used: Amazon Titan Text G1 - Express)</p>
+		 
+			<p>The instruction
+					<code class="userinput">Summarize
+					the above restaurant review in one
+				sentence</code>
+				and the review text
+					<code class="userinput">I
+					finally got to check out
+				...</code>
+				were both necessary for this type of output. Without either one, the model would not
+				have enough information to produce a sensible summary. The
+					<em>instruction</em>
+				tells the LLM what to do, and the text is the
+					<em>input</em>
+				on which the LLM operates. The
+					<em>context</em>
+					(<code class="userinput">The
+					following is text from a restaurant
+				review</code>)
+				provides additional information and keywords that guide the model to use the input
+				when formulating its output. </p>
+		 
+			<p>In the example below, the text
+					<code class="userinput">Context:
+					Climate change threatens people with increased flooding
+				...</code>
+				is the
+					<em>input</em>
+				which the LLM can use to perform the
+					<em>task</em>
+				of answering the question
+					<code class="userinput">Question:
+					What organization calls climate change the greatest threat to global health in
+					the 21st
+				century?â</code>. </p>
+		 
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt:</b>
+<em>Context: Climate change threatens people with increased flooding, 
+extreme heat, increased food and water scarcity, more disease, and economic loss. 
+Human migration and conflict can also be a result. The World Health Organization (WHO) 
+calls climate change the greatest threat to global health in the 21st century. 
+Adapting to climate change through efforts like flood control measures 
+or drought-resistant crops partially reduces climate change risks, 
+although some limits to adaptation have already been reached. 
+Poorer communities are responsible for a small share of global emissions, 
+yet have the least ability to adapt and are most vulnerable to climate change. 
+The expense, time required, and limits of adaptation mean its success hinge 
+on limiting global warming.
+
+Question: What organization calls climate change the greatest threat 
+to global health in the 21st century?</em>
+</code></pre>
+		 
+			<p>(Source of prompt: https://en.wikipedia.org/wiki/Climate_change)</p>
+		 
+			<p>AI21 Jurassic responses with the correct name of the organization 
+according to the context provided in the prompt.</p>
+		 
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output:</b>
+<em>The World Health Organization (WHO) calls climate change 
+the greatest threat to global health in the 21st century.</em>
+</code></pre>
+		 
+			<p>(Model used: AI21 Jurassic-2 Ultra v1)</p>
+ 
+			<h2 id="few-shot-prompting-vs-zero-shot-prompting">Few-shot prompting vs. zero-shot
+prompting</h2>
+			<p>It is sometimes useful to provide a few examples to help LLMs better
+				calibrate
+				their output to meet your expectations, also known as
+					<em>few-shot
+					prompting</em>
+				or
+					<em>in-context
+				learning</em>,
+				where a
+					<em>shot</em>
+				corresponds to a paired example input and the desired output. To illustrate, first
+				here is an example of a zero-shot sentiment classification prompt where no example
+				input-output pair is provided in the prompt text:</p>
+		 
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt:</b>
+<em>Tell me the sentiment of the following headline and categorize it 
+as either positive, negative or neutral: 
+New airline between Seattle and San Francisco offers a great opportunity 
+for both passengers and investors.</em>
+</code></pre>
+		 
+			<p>(Source of prompt: AWS)</p>
+			
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output:</b>
+<em>Positive</em>
+</code></pre>
+		 
+			<p>(Model used: Amazon Titan Text G1 - Express)</p>
+			<p>Here is the few-shot version of a sentiment classification prompt:</p>
+		 
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt: </b>
+<em>Tell me the sentiment of the following headline and categorize it 
+as either positive, negative or neutral. Here are some examples:
+
+Research firm fends off allegations of impropriety over new technology.
+Answer: Negative
+
+Offshore windfarms continue to thrive as vocal minority in opposition dwindles.
+Answer: Positive
+
+Manufacturing plant is the latest target in investigation by state officials.
+Answer:</em>
+</code></pre>
+		 
+			<p>(Source of prompt: AWS)</p>
+		 
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Output: </b>
+<em>Negative</em></code></pre>
+		 
+			<p>(Model used: Amazon Titan Text G1 - Express)</p>
+			<p>The following example uses
+				Claude
+				models. When using Claude 
+				models,
+				itâs a good practice to use &lt;example&gt;&lt;/example&gt; tags to include
+				demonstration examples.
+				We
+				also
+				recommend
+				using
+				different delimiters such as
+					<code class="code">H:</code>
+				and
+					<code class="code">A:</code>
+				in the examples to avoid confusion with the delimiters
+					<code class="code">Human:</code>
+				and
+					<code class="code">Assistant:</code>
+				for the whole prompt. Notice that for the last few-shot example, the final
+			<code class="code">A:</code> is left off in favor of <code class="code">Assistant:</code>, prompting Claude to generate
+			the answer instead.</p>
+		 
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt: </b>
+
+
+<em>Human: Please classify the given email as "Personal" or "Commercial" related emails.
+Here are some examples.
+
+&lt;example&gt;
+H: Hi Tom, it's been long time since we met last time. We plan to have a party at my house this weekend. Will you be able to come over?
+A: Personal
+&lt;/example&gt;
+
+&lt;example&gt;
+H: Hi Tom, we have a special offer for you. For a limited time, our customers can save up to 35% of their total expense when you make reservations within two days. Book now and save money!
+A: Commercial
+&lt;/example&gt;
+
+H: Hi Tom, Have you heard that we have launched all-new set of products. Order now, you will save $100 for the new products. Please check our website.
+
+Assistant:</em>
+
+<b>Output: </b>
+<em>Commercial</em>
+</code></pre>
+		 
+			<p>(Source of prompt: AWS, model used:
+				Claude)</p>
+		 
+			<h2 id="prompt-template">Prompt template</h2>
+			<p>A prompt template specifies the formatting of the prompt with exchangeable content in it.
+				Prompt templates are ârecipesâ for using LLMs for different use cases such as
+				classification, summarization, question
+				answering,
+				and more. A prompt template may include instructions, few-shot examples, and
+				specific context and questions appropriate for a given use case.
+				The
+				following example is
+				a
+				template that you can use to perform few-shot sentiment classification using Amazon Bedrock
+				text
+				models:</p>
+	  
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>Prompt template: </b>
+<em>"""Tell me the sentiment of the following 
+<span>{</span><span>{</span>Text Type, e.g., ârestaurant reviewâ}} and categorize it 
+as either <span>{</span><span>{</span>Sentiment A}} or <span>{</span><span>{</span>Sentiment B}}. 
+Here are some examples:
+
+Text: <span>{</span><span>{</span>Example Input 1}} 
+Answer: <span>{</span><span>{</span>Sentiment A}}
+
+Text: <span>{</span><span>{</span>Example Input 2}}
+Answer: <span>{</span><span>{</span>Sentiment B}}
+
+Text: <span>{</span><span>{</span>Input}}
+Answer:"""</em>
+</code></pre>
+	  
+			<p>Users can copy and paste this template, filling in their own text and few-shot examples to
+				complete prompts when using LLMs on
+				Amazon Bedrock.
+				More templates are
+				provided in this section.</p>
+			<div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>The double curly braces <code class="code"><span>{</span><span>{</span> and }}</code> mark the places to put in data-specific
+     information in the template, and should not be included in the prompt text.</p></div></div>
+		 
+			<h2 id="important-notes-on-bedrock-llms-via-api">
+Important notes on using Amazon Bedrock LLMs by API calls</h2>
+		 
+			<p>If you are accessing LLMs on
+				Amazon Bedrock
+				via API calls, please be aware that they do not recall prior prompts and previous
+				requests unless the previous interaction is included within the current prompt.
+				You
+				may need this for conversational-style interactions or follow up
+				requests.</p>
+			<p>If you are accessing
+				Claude
+				models
+				using
+				API calls instead
+				of the
+				Amazon Bedrock
+				text
+				playground, you wrap your prompts in a conversational style to get desired response
+				(for the
+				Amazon Titan Text and AI21 Jurassic model family, it's not
+				necessary).
+				The
+				following example demonstrates a conversational-style
+				prompt:</p>
+		 
+<pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><b>User prompt: </b>
+	
+	
+<em>Human: Describe where sea otters live in two sentences.
+
+Assistant:</em>
+
+<b>Output: </b>
+<em>Here is a two sentence description of where sea otters live:
+
+Sea otters live in the northern Pacific Ocean along the coasts of 
+Russia, Alaska, Canada, and the continental United States. 
+They prefer coastal habitats like rocky shores, kelp forests, 
+and estuaries where they have access to shallow, nearshore waters.</em>
+</code></pre>
+		 
+			<p>(Source of prompt: AWS, model used:
+				Claude)</p>
+			<p>Notice how the main content of the prompt
+				is
+				wrapped like this: <code class="code">\n\nHuman: <span>{</span><span>{</span>Main Content}}\n\nAssistant:</code>. For
+				Claude
+				models, prompts sent via the API must contain \n\nHuman: and <code class="code"> \n\nAssistant:</code>.
+				</p>
+			<p>To use conversational mode on Amazon Titan, you can use the
+				format of <code class="code">User: <span>{</span><span>{</span>}} \n Bot: </code> when prompting the model. </p>
+		<awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./introduction.html">Introduction</div><div id="next" class="next-link" accesskey="n" href="./what-is-prompt-engineering.html">What is prompt engineering?</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/what-is-a-prompt.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/what-is-a-prompt.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Set up Amazon Bedrock - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="setting-up" /><meta name="default_state" content="setting-up" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/setting-up.html" /><meta name="description" content="A list of tasks required to begin using Amazon Bedrock." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/setting-up.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/setting-up.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/setting-up.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/setting-up.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/setting-up.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/setting-up.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/setting-up.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/setting-up.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/setting-up.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/setting-up.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/setting-up.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/setting-up.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/setting-up.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/setting-up.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/setting-up.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/setting-up.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/setting-up.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/setting-up.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/setting-up.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/setting-up.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/setting-up.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/setting-up.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Set up Amazon Bedrock" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Set up Amazon Bedrock - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#setting-up" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/setting-up.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/setting-up.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/setting-up.html" /><meta name="keywords" content="Amazon Bedrock,bedrock" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Set up Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/setting-up.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#setting-up" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#manage-model-access">Add model access</a><a href="#setting-up-console">Console access</a><a href="#sign-up-for-aws">Sign up for an AWS account</a><a href="#create-an-admin">Create an administrative user</a><a href="#setup-awscli">Set up the AWS CLI</a><a href="#grant-program-access">Grant programmatic access</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="setting-up">Set up Amazon Bedrock</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>Before you use Amazon Bedrock for the first time, complete the following tasks.</p><div class="highlights" id="inline-topiclist"><h6>Setup tasks</h6><ul><li><a href="#manage-model-access">Add model access</a></li><li><a href="#setting-up-console">Console access</a></li><li><a href="#sign-up-for-aws">Sign up for an AWS account</a></li><li><a href="#create-an-admin">Create an administrative user</a></li><li><a href="#setup-awscli">Set up the AWS CLI</a></li><li><a href="#grant-program-access">Grant programmatic access</a></li></ul></div>
+  <h2 id="manage-model-access">Add model access</h2>
+   
+<div class="awsdocs-note awsdocs-important"><div class="awsdocs-note-title"><awsui-icon name="status-warning" variant="error"></awsui-icon><h6>Important</h6></div><div class="awsdocs-note-text"><p>Amazon Bedrock offers easy access to a choice of high-performing foundation models from leading AI companies, including AI21
+Labs, Anthropic, Cohere, Meta, Stability AI, and Amazon.</p><p>Before you can use any of the foundation models, you must request access to that model.
+   If you try to use the model (with the API or within the console) before you have requested access to it,
+   you will receive an error message. For more information, see
+   <a href="./model-access.html">Model access</a>.</p></div></div>
+
+  
+  <h2 id="setting-up-console">Console access</h2>
+  <p>To access the Amazon Bedrock console and playground:</p>
+  <div class="orderedlist">
+    
+    
+  <ol><li>
+    <p>Sign in to your AWS account.</p>
+   </li><li>
+    <p>Navigate to: <a href="https://console.aws.amazon.com/bedrock" rel="noopener noreferrer" target="_blank"><span>Amazon Bedrock console</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>
+     
+    </p></li></ol></div>
+  
+    <h2 id="sign-up-for-aws">Sign up for an AWS account</h2> 
+
+<p>If you do not have an AWS account, complete the following steps to create one.</p>
+<div class="procedure"><h6>To sign up for an AWS account</h6><ol><li><p>Open <a href="https://portal.aws.amazon.com/billing/signup" rel="noopener noreferrer" target="_blank"><span>https://portal.aws.amazon.com/billing/signup</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+  </li><li><p>Follow the online instructions.</p>
+  <p>Part of the sign-up procedure involves receiving a phone call and entering 
+  a verification code on the phone keypad.</p>
+  <p>When you sign up for an AWS account, an <em>AWS account root user</em> is created. The root user has access to all AWS services
+  and resources in the account. As a security best practice, <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/getting-started.html">assign administrative access to an administrative user</a>, and use only the root user to perform <a href="https://docs.aws.amazon.com/accounts/latest/reference/root-user-tasks.html">tasks that require root user access</a>.</p>
+  </li></ol></div>
+ <p>AWS sends you a confirmation email after the sign-up process is
+complete. At any time, you can view your current account activity and manage your account by
+going to <a href="https://aws.amazon.com/" rel="noopener noreferrer" target="_blank"><span>https://aws.amazon.com/</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a> and choosing <b>My
+  Account</b>.</p>
+   
+<h2 id="create-an-admin">Create an administrative user</h2> <p>After you sign up for an AWS account, create an administrative user so that you 
+don't use the root user for everyday tasks.</p>
+<div class="procedure"><h6>Secure your AWS account root user</h6><ol><li>
+ 
+
+<p> Sign in to the <a href="https://console.aws.amazon.com/" rel="noopener noreferrer" target="_blank"><span>AWS Management Console</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a> as the account owner by choosing <b>Root user</b> and entering your AWS account email address. On the next page, enter your password.</p>
+ 
+ <p>For help signing in by using root user, see <a href="https://docs.aws.amazon.com/signin/latest/userguide/console-sign-in-tutorials.html#introduction-to-root-user-sign-in-tutorial">Signing in as the root user</a> in the <em>AWS Sign-In User Guide</em>.</p>
+</li><li>
+ <p>Turn on multi-factor authentication (MFA) for your root user.</p>
+ <p>For instructions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html#enable-virt-mfa-for-root">Enable a virtual MFA device for your AWS account root user (console)</a> in the <em>IAM User Guide</em>.</p> 
+</li></ol></div>
+<div class="procedure"><h6>Create an administrative user</h6><ul><li>
+ <p>For your daily administrative tasks, grant administrative access to an administrative user in AWS IAM Identity Center.</p>
+ <p>For instructions, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/getting-started.html">Getting started</a> in the <em>AWS IAM Identity Center User Guide</em>.</p>
+</li></ul></div>
+<div class="procedure"><h6>Sign in as the administrative user</h6><ul><li>
+
+<p>To sign in with your IAM Identity Center user, use the sign-in URL that was sent to your email address when you created the IAM Identity Center user.</p>
+
+<p>For help signing in using an IAM Identity Center user, see <a href="https://docs.aws.amazon.com/signin/latest/userguide/iam-id-center-sign-in-tutorial.html">Signing in to the AWS access portal</a> in the <em>AWS Sign-In User Guide</em>.</p>
+</li></ul></div>
+ 
+  <h2 id="setup-awscli">Set up the AWS CLI</h2>  
+  <p>You don't need the AWS Command Line Interface (AWS CLI) to use Amazon Bedrock. If you prefer, you can skip this step
+   and set up the AWS CLI later. </p>   
+  <div class="procedure"><h6>To install and configure the AWS CLI</h6><ol><li>
+    <p>Install the AWS CLI. For instructions, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-getting-started-install.html"> Installing or updating the latest version
+      of the AWS Command Line Interface</a> in the <em>AWS Command Line Interface User Guide</em>.</p>
+   </li><li> 
+    <p>Configure the AWS CLI. For instructions, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring the AWS Command Line Interface</a> in the
+      <em>AWS Command Line Interface User Guide</em>.</p>   
+   </li></ol></div>  
+  
+  <h2 id="grant-program-access">Grant programmatic access</h2>
+
+
+<p>Users need programmatic access if they want to interact with AWS outside of the AWS Management Console. The way to grant programmatic access depends on the type of user that's accessing AWS.</p>
+    <p>To grant users programmatic access, choose one of the following options.</p>
+    <div class="table-container"><div class="table-contents disable-scroll"><table id="w230aac15c27c11"><thead>
+                <tr>
+                    <th>Which user needs programmatic access?</th>
+                    <th>To</th>
+                    <th>By</th>
+                </tr>
+            </thead>
+                <tr>
+                    <td tabindex="-1">
+                        <p>Workforce identity</p>
+                        <p>(Users managed in IAM Identity Center)</p>
+                    </td>
+                    <td tabindex="-1">Use temporary credentials to sign programmatic requests to the AWS CLI, AWS SDKs, or
+                        AWS APIs.</td>
+                    <td tabindex="-1">
+                        <p>Following the instructions for the interface that you want to use.</p>
+                        <div class="itemizedlist">
+                             
+
+
+                             
+                        <ul class="itemizedlist"><li class="listitem">
+                                <p>For the AWS CLI, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.html">Configuring the AWS CLI to use AWS IAM Identity Center</a> in the
+                                        <em>AWS Command Line Interface User Guide</em>.</p>
+                            </li><li class="listitem">
+                                <p>For AWS SDKs, tools, and AWS APIs, see <a href="https://docs.aws.amazon.com/sdkref/latest/guide/access-sso.html">IAM Identity Center
+                                        authentication</a> in the <em>AWS SDKs and Tools Reference Guide</em>.</p>
+
+                            </li></ul></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td tabindex="-1">IAM</td>
+                    <td tabindex="-1">Use temporary credentials to sign programmatic requests to the AWS CLI, AWS SDKs, or
+                        AWS APIs.</td>
+                    <td tabindex="-1">Following the instructions in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">Using temporary
+                        credentials with AWS resources</a> in the <em>IAM User Guide</em>.</td>
+                </tr>
+                <tr>
+                    <td tabindex="-1">IAM</td>
+                    <td tabindex="-1"><p>(Not recommended)</p>Use long-term credentials to sign programmatic requests
+                        to the AWS CLI, AWS SDKs, or AWS APIs.</td>
+                    <td tabindex="-1">
+                        <p>Following the instructions for the interface that you want to use.</p>
+                        <div class="itemizedlist">
+                             
+                             
+                             
+                        <ul class="itemizedlist"><li class="listitem">
+                                <p>For the AWS CLI, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-authentication-user.html">Authenticating using IAM user credentials</a> in
+                                    the <em>AWS Command Line Interface User Guide</em>.</p>
+                            </li><li class="listitem">
+                                <p>For AWS SDKs and tools, see <a href="https://docs.aws.amazon.com/sdkref/latest/guide/access-iam-users.html">Authenticate using long-term credentials</a> in the
+                                        <em>AWS SDKs and Tools Reference Guide</em>.</p>
+                            </li><li class="listitem">
+                                <p>For AWS APIs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html">Managing access keys for
+                                    IAM users</a> in the <em>IAM User Guide</em>.</p>
+                            </li></ul></div>
+                    </td>
+                </tr>
+            </table></div></div>
+
+
+
+
+
+ 
+ <awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./models-supported.html">Supported models</div><div id="next" class="next-link" accesskey="n" href="./model-access.html">Model access</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/setting-up.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/setting-up.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

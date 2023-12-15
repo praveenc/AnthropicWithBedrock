@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Protect jobs using a VPC - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="usingVPC" /><meta name="default_state" content="usingVPC" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/usingVPC.html" /><meta name="description" content="Learn how to configure virtual private clouds (VPCs) for Amazon Bedrock model customization jobs." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/usingVPC.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/usingVPC.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/usingVPC.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/usingVPC.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/usingVPC.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/usingVPC.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/usingVPC.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/usingVPC.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/usingVPC.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/usingVPC.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/usingVPC.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/usingVPC.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/usingVPC.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/usingVPC.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/usingVPC.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/usingVPC.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/usingVPC.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/usingVPC.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/usingVPC.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/usingVPC.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/usingVPC.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/usingVPC.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Protect jobs using a VPC" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Protect jobs using a VPC - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#usingVPC" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/usingVPC.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/usingVPC.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/usingVPC.html" /><meta name="keywords" content="Amazon Bedrock,bedrock" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Security in Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/security.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Data protection in Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 6,
+        "name" : "Protect jobs using a VPC",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#usingVPC" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#configureVPC"> Configure a VPC for Amazon Bedrock </a><a href="#VPCaccess">Configure your model customization job to use VPC</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="usingVPC">Protect jobs using a VPC</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>When you run a model customization job, the job accesses your Amazon S3 bucket to download the
+        input data and to upload job metrics.</p><p>To control access to your data, we recommend that you create a virtual private cloud
+        (VPC). Configure it so that your training data is not accessible over the internet. For
+        information about creating and configuring a VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/getting-started-ipv4.html">Getting Started With Amazon VPC</a> in the
+            <em>Amazon VPC User Guide</em>. </p><p>Using a VPC protects your data and lets you monitor all network traffic in and out of the
+        AWS job containers by using VPC Flow Logs. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html">VPC Flow Logs</a> in the
+            <em>Amazon VPC User Guide</em>. </p><p>If you configure your VPC with no internet access, you must create a VPC endpoint that
+        allows the customization job to access these S3 buckets.</p><p>When you configure your customization job to use VPC, the job creates an elastic network
+        interface (ENI) that uses your VPC endpoint to access your S3 buckets. For information about
+        ENIs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ElasticNetworkInterfaces.html">Elastic Network
+            Interfaces</a> in the <em>Amazon VPC User Guide</em>. </p><div class="highlights" id="inline-topiclist"><h6>Topics</h6><ul><li><a href="#configureVPC"> Configure a VPC for Amazon Bedrock </a></li><li><a href="#VPCaccess">Configure your model customization job to use VPC</a></li></ul></div>
+        <h2 id="configureVPC"> Configure a VPC for Amazon Bedrock </h2> 
+        <p>When you configure the VPC for an Amazon Bedrock model customization job, use the following
+                guidelines. For information about setting up a VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html">Working with VPCs and Subnets</a> in
+                the <em>Amazon VPC User Guide</em>. </p>
+         <div class="highlights" id="inline-topiclist"><h6>Topics</h6><ul><li><a href="#train-vpc-s3">Create an Amazon S3 VPC Endpoint</a></li><li><a href="#train-vpc-policy">Use a custom endpoint policy to restrict access
+                    to Amazon S3</a></li><li><a href="#data-access-role">VPC permissions for customization job
+                    role</a></li><li><a href="#train-vpc-route-table">Configure route tables</a></li></ul></div>
+         
+          
+            <h3 id="train-vpc-s3">Create an Amazon S3 VPC Endpoint</h3>
+            <p>If you configure your VPC with no internet access, you need create a VPC endpoint.
+                The endpoint allows access to the S3 buckets that contain your training data and the
+                training loss metrics data that's stored by the job. </p>
+            <p>By creating a VPC endpoint, you allow your model customization jobs to access the
+                buckets where you store your data and model artifacts. </p>
+            <p>We recommend that you also create a custom policy that allows only requests from
+                your private VPC to access your S3 buckets. For more information, see <a href="./vpc-interface-endpoints.html">Use interface VPC endpoints
+            (AWS PrivateLink)</a>.</p>
+            <div class="procedure"><h6>To create an   Amazon S3 VPC endpoint</h6><ol><li>
+                    <p>Open the Amazon VPC console at <a href="https://console.aws.amazon.com/vpc/" rel="noopener noreferrer" target="_blank"><span>https://console.aws.amazon.com/vpc/</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+                </li><li>
+                    <p>In the navigation pane, choose <b>Endpoints</b>, then choose
+                            <b>Create Endpoint</b>.</p>
+                </li><li>
+                    <p>For <b>Service Name</b>, search for
+                                <code class="code">com.amazonaws.<code class="replaceable">region</code>.s3</code>.
+                        Replace <code class="replaceable">region</code> with the name of the Region where
+                        your VPC resides.</p>
+                </li><li>
+                    <p>Choose the <b>Gateway</b> type.</p>
+                </li><li>
+                    <p>For <b>VPC</b>, choose the VPC you want to use for this
+                        endpoint.</p>
+                </li><li>
+                    <p>For <b>Configure route tables</b>, select the route tables
+                        to be used by the endpoint. Amazon VPC automatically adds a route to each
+                        selected route table that points any Amazon S3 traffic to the new
+                        endpoint.</p>
+                </li><li>
+                    <p>For <b>Policy</b>, choose <b>Full Access</b>
+                        to allow full access to Amazon S3 by any user or service within the VPC. Choose
+                            <b>Custom</b> to restrict access further. For information,
+                        see <a href="#train-vpc-policy">Use a custom endpoint policy to restrict access
+                    to Amazon S3</a>.</p>
+                </li></ol></div>
+         
+          
+             <h3 id="train-vpc-policy">Use a custom endpoint policy to restrict access
+                    to Amazon S3</h3>
+             <p>The default endpoint policy allows full access to Amazon S3 for any user or service in
+                your VPC. To further restrict access to Amazon S3, create a custom endpoint policy. For
+                more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-s3.html#vpc-endpoints-policies-s3">Using Endpoint Policies for Amazon S3</a>. You can also use a bucket policy to
+                restrict access to your S3 buckets to only traffic that comes from your VPC. </p>
+                <p>The following policy allows access to S3 buckets. Edit this policy to allow
+                    access to only the <code class="replaceable">&gt;resources</code> that your job needs. Replace the <code class="replaceable">account-id</code> with the account ID of the user to whom you are providing S3 bucket access permissions.</p>
+                <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span> 
+   "Version": "2012-10-17",
+   "Statement": [
+      <span>{</span>
+        "Sid": "Allow access to output location",
+        "Effect": "Allow",
+        "Action": [
+            "s3:GetObject",
+            "s3:PutObject",
+            "s3:ListBucket"
+        ],
+        "Resource": [
+            "arn:aws:s3:::<code class="replaceable">my_output_bucket/myfolder</code>"
+        ],
+        "Condition": <span>{</span>
+           "StringEquals": <span>{</span>
+               "aws:ResourceAccount": "<code class="replaceable">account-id</code>"
+           }
+        }
+      }, 
+      <span>{</span>
+        "Sid": "Allow access to input data",
+        "Effect": "Allow",
+        "Action": [
+            "s3:GetObject",
+            "s3:PutObject",
+            "s3:ListBucket"
+        ],
+        "Resource": [
+            "arn:aws:s3:::<code class="replaceable">my_training_data_bucket/myfolder</code>",
+            "arn:aws:s3:::<code class="replaceable">my_validation_data_bucket/myfolder</code>"
+        ],
+        "Condition": <span>{</span>
+           "StringEquals": <span>{</span>
+               "aws:ResourceAccount": "<code class="replaceable">account-id</code>"
+           }
+        }
+      }
+   ]               
+}           </code></pre>
+                <p>For information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-s3.html#vpc-endpoints-s3-bucket-policies">Using Amazon S3 Bucket Policies</a>.</p>
+          
+          
+             <h3 id="data-access-role">VPC permissions for customization job
+                    role</h3>
+             <p> When you use a VPC with your model customization job, the data access role that
+                you provide in the <code class="code">CreateModelCustomizationJob</code> request must include the
+                following permissions. Edit this policy to allow access to only the VPC resources
+                that your job needs.</p>
+                 <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class=""><span>{</span>
+        "Effect": "Allow",
+        "Action": [
+            "ec2:DescribeNetworkInterfaces",
+            "ec2:DescribeVpcs",
+            "ec2:DescribeDhcpOptions",
+            "ec2:DescribeSubnets",
+            "ec2:DescribeSecurityGroups"
+                ],
+        "Resource": "*"
+    }, <span>{</span>
+        "Effect": "Allow",
+        "Action": [
+            "ec2:CreateNetworkInterface",
+       ]
+       "Resource":[
+           "arn:aws:ec2:<span>{</span>region}:<span>{</span>AccountId}:network-interface/*"
+       ],
+       "Condition": <span>{</span>
+           "StringEquals": <span>{</span> 
+               "aws:RequestTag/BedrockManaged": ["true"]
+            },
+            "ArnEquals": <span>{</span>
+               "aws:RequestTag/BedrockModelCustomizationJobArn": ["arn:aws:bedrock:<span>{</span>region}:<span>{</span>AccountId}:model-customization-job/*"]
+           }
+       }
+    }, <span>{</span>
+        "Effect": "Allow",
+        "Action": [
+            "ec2:CreateNetworkInterface",
+       ]
+       "Resource":[
+           "arn:aws:ec2:<span>{</span>region}:<span>{</span>AccountId}:subnet/<span>{</span>subnet-Id}",
+           "arn:aws:ec2:<span>{</span>region}:<span>{</span>AccountId}:subnet/<span>{</span>subnet-Id2}",
+           "arn:aws:ec2:<span>{</span>region}:<span>{</span>AccountId}:security-group/<span>{</span>sg-Id}",
+           "arn:aws:ec2:<span>{</span>region}:<span>{</span>AccountId}:security-group/<span>{</span>sg-Id2}"
+       ]
+    }, <span>{</span>
+        "Effect": "Allow",
+        "Action": [
+            "ec2:CreateNetworkInterfacePermission",
+            "ec2:DeleteNetworkInterface",
+            "ec2:DeleteNetworkInterfacePermission",
+        ]
+        "Resource": "*",
+        "Condition": <span>{</span>
+           "ArnEquals": <span>{</span>
+               "ec2:Subnet": [
+                   "arn:aws:ec2:<span>{</span>region}:<span>{</span>AccountId}:subnet/<span>{</span>subnet-Id}",
+                   "arn:aws:ec2:<span>{</span>region}:<span>{</span>AccountId}:subnet/<span>{</span>subnet-Id2}"
+               ],
+               "ec2:ResourceTag/BedrockModelCustomizationJobArn": ["arn:aws:bedrock:<span>{</span>region}:<span>{</span>AccountId}:model-customization-job/*"]
+           },
+           "StringEquals": <span>{</span> 
+               "ec2:ResourceTag/BedrockManaged": "true",
+           }
+        }
+    }, <span>{</span>
+        "Effect": "Allow",
+        "Action": [
+            "ec2:CreateTags"
+        ],
+        "Resource": "arn:aws:ec2:<span>{</span>region}:<span>{</span>AccountId}:network-interface/*",
+        "Condition": <span>{</span>
+            "StringEquals": <span>{</span>
+                "ec2:CreateAction": [
+                    "CreateNetworkInterface"
+                ]    
+            },
+            "ForAllValues:StringEquals": <span>{</span>
+                "aws:TagKeys": [
+                    "BedrockManaged",
+                    "BedrockModelCustomizationJobArn"
+                ]
+            }
+      }
+    }</code></pre>      
+             <p>For more information about configuring the data access role for model customization jobs, see <a href="./model-customization-iam-role.html">Permissions to carry out and manage a model customization job</a>.</p>
+          
+          
+             <h3 id="train-vpc-route-table">Configure route tables</h3>
+             <p>Use default DNS settings for your endpoint route table, so that standard Amazon S3
+                URLs (for example, <code class="code">http://s3-aws-region.amazonaws.com/MyBucket</code>)
+                resolve. If you don't use default DNS settings, ensure that the URLs for the
+                locations of the data in your training jobs resolve. Do this by configuring the
+                endpoint route tables. For information about VPC endpoint route tables, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#vpc-endpoints-routing">Routing for Gateway Endpoints</a> in the <em>Amazon VPC User
+                    Guide</em>.</p>
+          
+      
+        <h2 id="VPCaccess">Configure your model customization job to use VPC</h2>
+        <p>After you configure the VPC and the required roles and permissions as described in the
+            previous sections, you can create a model customization job that uses this VPC.</p> 
+        <p>When you specify the VPC subnets and security groups for a job, Amazon Bedrock creates
+                <em>elastic network interfaces</em> (ENIs) that are associated with your
+            security groups in one of the subnets. ENIs allow the Amazon Bedrock job to connect to
+            resources in your VPC. For information about ENIs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ElasticNetworkInterfaces.html">Elastic Network
+                Interfaces</a> in the <em>Amazon VPC User Guide</em>. Amazon Bedrock tags
+            ENIs that it creates with <code class="code">BedrockManaged</code> and
+                <code class="code">BedrockModelCusomizationJobArn</code> tags. </p>
+        <p>We recommend that you provide at least one subnet in each Availability Zone.</p>
+        <p>You can use security groups to establish rules for controlling Amazon Bedrock access to
+            your VPC resources.</p>
+         
+            <h3 id="VPCaccess-API">Use the API</h3> 
+             <p>For the Amazon Bedrock API, you specify VPC subnets and security groups in
+                the <code class="code">VpcConfig</code> request parameter. The following is an example of the
+                <code class="code">VpcConfig</code> parameter that you include in your API call:</p>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="">"VpcConfig": <span>{</span> 
+"SecurityGroupIds": [
+   "sg-0123456789abcdef0"
+    ],
+    "Subnets": [
+       "subnet-0123456789abcdef0",
+       "subnet-0123456789abcdef1",
+       "subnet-0123456789abcdef2"
+    ]
+}           </code></pre>
+            <p>For more information about configuring jobs using the API, see <a href="./model-customization-submit-api.html">Submit a job (API)</a>.</p>
+         
+         
+            <h3 id="VPCaccess-console">Use the console</h3>
+            <p>For the Amazon Bedrock console, you specify VPC subnets and security groups in the
+                optional <b>VPC settings</b> section when you create the model
+                customization job. For more information about configuring jobs using the console,
+                see <a href="./model-customization-submit.html">Submit a job (console)</a>.</p> 
+            <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>For a job that includes VPC configuration, the console cannot create a new
+                    service role for the job. Create the service role using the following
+                    example.</p></div></div>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "Version": "2012-10-17",
+    "Statement": [
+        <span>{</span>
+            "Effect": "Allow",
+            "Principal": <span>{</span>
+                "Service": "bedrock.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole",
+            "Condition": <span>{</span>
+                "StringEquals": <span>{</span>
+                    "aws:SourceAccount": "<code class="replaceable">111122223333</code>"
+                },
+                "ArnEquals": <span>{</span>
+                    "aws:SourceArn": "arn:aws:bedrock:<code class="replaceable">us-east-1</code>:<code class="replaceable">111122223333</code>:model-customization-job/*"
+                }
+            }
+        }
+    ] 
+}           </code></pre>           
+           
+    <awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./encryption-kb.html">Encryption of knowledge base resources</div><div id="next" class="next-link" accesskey="n" href="./security-iam.html">Identity and access management</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/usingVPC.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/usingVPC.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

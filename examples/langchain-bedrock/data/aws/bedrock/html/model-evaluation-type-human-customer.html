@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Creating a model evaluation job that uses human workers - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="model-evaluation-type-human-customer" /><meta name="default_state" content="model-evaluation-type-human-customer" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-type-human-customer.html" /><meta name="description" content="In a model evaluation job that uses human workers you can compare the responses for up to two models. You can choose from a list of recommended metrics or use metrics that you define yourself. You can have a maximum of 20 model evaluation jobs that use human workers" /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-type-human-customer.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-type-human-customer.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Creating a model evaluation job that uses human workers" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Creating a model evaluation job that uses human workers - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#model-evaluation-type-human-customer" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-type-human-customer.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-type-human-customer.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-type-human-customer.html" /><meta name="keywords" content="Amazon Bedrock,bedrock,model evaluation,human based,Create model evaluation" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Model evaluation",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Getting started with model evaluations",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-type.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 6,
+        "name" : "Creating a model evaluation job that uses human workers",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-type.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#model-evaluation-type-human-customer" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="model-evaluation-type-human-customer">Creating a model evaluation job that uses human workers</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>Model evaluation jobs are in preview release for Amazon Bedrock and is subject to change. To use model evaluation jobs, you must be in either US East (N. Virginia) Region or US West (Oregon) Region.</p></div></div><div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Prerequisites</h6></div><div class="awsdocs-note-text"><p>To complete the following procedure you must do the following.</p><div class="orderedlist">
+					 
+					 
+					 
+					 
+
+
+
+
+				<ol><li>
+						<p>You must have access to the models in Amazon Bedrock.</p>
+					</li><li>
+						<p>You must have an Amazon Bedrock service role. The attached policy must grant access to the following resources. Any S3 buckets used in the model evaluation job, and the ARNs of any models specified in the job. It must also have the <code class="code">sagemaker:StartHumanLoop</code> and <code class="code">sagemaker:DescribeFlowDefinition</code> SageMaker IAM actions defined in the policy. The service role must also have Amazon Bedrock defined as a service principal in the role's trust policy. To learn more, see <a href="./model-evaluation-security.html">Required permissions</a>.</p>
+					</li><li>
+						<p>You must have a Amazon SageMaker service role. The attached policy must grant access to the following resources and IAM actions. Any S3 buckets used in the model evaluation job. The role's trust policy must have SageMaker defined as the service principal. To learn more, see <a href="./model-evaluation-security.html">Required permissions</a>.</p>
+					</li><li><p>The user, group, or role accessing the Amazon Bedrock console must have the required permissions access the required Amazon S3 buckets.</p></li></ol></div></div></div><p>In a model evaluation job that uses human workers you can compare the responses for up to two models. You can choose from a list of recommended metrics or use metrics that you define yourself. You can have a maximum of 20 model evaluation jobs that use human workers <b>In progress</b> in your account per AWS Region.</p><p>For each metric that you use, you must define a <b>Rating method</b>. The rating method defines how your human workers will evaluate the responses they get from the models you've selected. To learn more about the different available rating methods and how to create high quality instructions for workers, see <a href="./model-evaluation-worker-instructions.html">Creating and managing work teams in Amazon Bedrock</a> </p><div class="awsdocs-note awsdocs-important"><div class="awsdocs-note-title"><awsui-icon name="status-warning" variant="error"></awsui-icon><h6>Viewing the model evaluation job results using the Amazon Bedrock console</h6></div><div class="awsdocs-note-text"><p>When a model evaluation job finishes, the results are stored in the Amazon S3 bucket you specified. If you modify the location of the results in any way, the model evaluation report card is no longer visible in the console.</p></div></div><div class="procedure"><h6>To create a model evaluation job that uses human workers</h6><ol><li>
+					<p>Open the Amazon Bedrock console: <a href="https://console.aws.amazon.com/bedrock/home" rel="noopener noreferrer" target="_blank"><span><a href="https://console.aws.amazon.com/bedrock/" rel="noopener noreferrer" target="_blank"><span>https://console.aws.amazon.com/bedrock/</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>home</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a></p>
+				</li><li>
+					<p>In the navigation pane, choose <b>Model evaluation</b>.</p>
+				</li><li>
+					<p>In the <b>Build an evaluation</b> card, under <b>Human: bring your own team</b> choose <b>Create human evaluation</b>.</p>
+				</li><li>
+					<p>On the <b>Specify job details</b> page provide the following.</p>
+					<ol><li>
+							<p><b>Evaluation name</b> â Give the model evaluation job a name that describes the job. This name is shown in your model evaluation job list. The name must be unique in your account in an AWS Region. </p>
+						</li><li>
+							<p><b>Description</b> (Optional) â Provide an optional description.</p>
+						</li></ol>
+				</li><li>
+					<p>Then, choose <b>Next</b>.</p>
+				</li><li>
+					<p>On the <b>Set up evaluation</b> page provide the following.</p>
+					<ol><li>
+							<p><b>Models</b> â You can choose up to two models you want to use in the model evaluation job.</p>
+							<p>To learn more about available models in Amazon Bedrock, see <a href="./model-access.html">Model access</a>.</p>
+						</li><li>
+							<p>(Optional) To change the inference configuration choose <b>update</b>.</p>
+							<p>Changing the inference configuration changes the responses generated by the selected models. To learn more about the available inferences parameters, see <a href="./model-parameters.html">Inference parameters for foundation models</a>.</p>
+						</li><li>
+							<p><b>Task type</b> â Choose the type of task you want the model to attempt to perform during the model evaluation job. All instructions for the model must be included in the prompts themselves. The task type does not control the model's responses.</p>
+						</li><li>
+							<p><b>Evaluation metrics</b> â The list of recommended metrics changes based on the task you select. For each recommended metric, you must select a <b>Rating method</b>. You can have a maximum of 10 evaluation metrics per model evaluation job.</p>
+
+						</li><li>
+							<p>(Optional) Choose <b>Add custom metric</b> to add a custom metric. You must define the <b>Metric</b>, <b>Description</b>, and <b>Rating method</b>.</p>
+						</li><li>
+							<p>In the <b>Datasets</b> card your must provide the following.</p>
+							<ol><li>
+									<p><b>Evaluation dataset</b> â Specify the S3 URI where your prompt dataset is stored. You can have a maximum of 1000 prompts in a custom prompt dataset.</p>
+								</li><li>
+									<p><b>Evaluation results destination</b> â You must specify the S3 URI of the directory where you want the results of your model evaluation job saved.</p>
+								</li><li>
+									<p>(Optional) <b>Encryption key</b> â  Provide the ARN of the AWS KMS key used to encrypt your data in Amazon S3.</p>
+								</li></ol>
+						</li></ol>
+				</li><li>
+					<p>Then, choose <b>Next</b>.</p>
+				</li><li>
+					<p>In the <b>Permissions</b> card, specify the following. To learn more about the required permissions for model evaluations, see <a href="./model-evaluation-security.html">Required IAM permissions and service roles to create a model evaluation job</a>. </p>
+					<ol><li>
+							<p><b>Amazon Bedrock IAM role</b> â Specify an Amazon Bedrock service role that has the required permissions.</p>
+						</li><li>
+							<p><b>Human workflow IAM role</b> â Specify a SageMaker service role that has the required permissions.</p>
+						</li></ol>
+				</li><li>
+					<p>In the <b>Work team</b> card, specify the following.</p>
+					<div class="awsdocs-note awsdocs-important"><div class="awsdocs-note-title"><awsui-icon name="status-warning" variant="error"></awsui-icon><h6>Human worker notification requirements</h6></div><div class="awsdocs-note-text"><p>When you add a new human worker to a model evaluation job, they automatically receive an email inviting them to participate in the model evaluation job. When you add an <em>existing</em> human worker to a model evaluation job, you must  notify and provide them with worker portal URL for the model evaluation job. The existing worker will not receive an automated email notification that they are added to the new model evaluation job.</p></div></div>
+					<ol><li>
+							<p>Using the <b>Select team</b> dropdown, specify either <b>Create a new work team</b> or the name of an existing work team.</p>
+						</li><li>
+							<p>(Optional) <b>Number of workers per prompt</b> â Update the number of workers who evaluate each prompt. After the responses for each prompt have been reviewed by the number of workers you selected, the prompt and its responses will be taken out of circulation from the work team. The final results report will include all ratings from each worker.</p>
+						</li><li>
+							<p>(Optional) <b>Existing worker email</b> â Choose this to copy an email template containing the worker portal URL.</p>
+						</li><li>
+							<p>(Optional) <b>New worker email</b> â Choose this to view the email new workers receive automatically.</p>
+							<div class="awsdocs-note awsdocs-important"><div class="awsdocs-note-title"><awsui-icon name="status-warning" variant="error"></awsui-icon><h6>Important</h6></div><div class="awsdocs-note-text"><p>Large language models are known to occasionally hallucinate and produce toxic or offensive content. Your workers may be shown toxic or offensive material during this evaluation. Ensure you take proper steps to train and notify them before they work on the evaluation. They can decline and release tasks or take breaks during the evaluation while accessing the human evaluation tool.</p></div></div>
+
+						</li></ol>
+				</li><li>
+					<p>Then, choose <b>Next</b>.</p>
+				</li><li>
+					<p>On the <b>Provide instruction page</b> use the text editor to provide instructions for completing the task. You can preview the evaluation UI that your work team uses to evaluate the responses, including the metrics, rating methods, and your instructions. This preview is based on the configuration you have created for this job.</p>
+				</li><li>
+					<p>Then, choose <b>Next</b>.</p>
+				</li><li>
+					<p>On the <b>Review and create</b> page, you can view a summary of the options you've selected in the previous steps. </p>
+				</li><li>
+					<p>To start your model evaluation job, choose <b>Create</b>.</p>
+				</li></ol></div><p>Once the job has successfully started, the status changes to <b>In progress</b>. When the job has finished, the status changes to <b>Completed</b>.</p><p>To learn how to evaluate, view, and download the results of your model evaluation job, see <a href="./model-evaluation-report.html">Model evaluation job results</a>.</p><awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./model-evaluation-type-programmatic.html">Automatic model evaluations</div><div id="next" class="next-link" accesskey="n" href="./model-evaluation-tasks.html">Model evaluation tasks </div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-type-human-customer.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-evaluation-type-human-customer.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

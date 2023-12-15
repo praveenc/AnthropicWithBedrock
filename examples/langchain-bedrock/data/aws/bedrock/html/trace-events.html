@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Trace events - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="trace-events" /><meta name="default_state" content="trace-events" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html" /><meta name="description" content="Each response from an agent is accompanied by a trace that allows you to receive events on the steps being orchestrated by the agent. The trace helps you follow the agent's reasoning process that leads it to the response it gives at that point in the conversation." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/trace-events.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/trace-events.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/trace-events.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/trace-events.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/trace-events.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/trace-events.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/trace-events.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/trace-events.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/trace-events.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/trace-events.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/trace-events.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/trace-events.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/trace-events.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/trace-events.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/trace-events.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/trace-events.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/trace-events.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/trace-events.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Trace events" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Trace events - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#trace-events" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/trace-events.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/trace-events.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/trace-events.html" /><meta name="keywords" content="Amazon Bedrock,bedrock,chatbot,action groups,agent,reasoning,thought process,observation,debug" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Agents for Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Test your agent",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 6,
+        "name" : "Trace events",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#trace-events" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="trace-events">Trace events</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>Each response from an agent is accompanied by a <em>trace</em> that allows you to receive events on the steps being orchestrated by the agent. The trace helps you follow the agent's reasoning
+            process that leads it to the response it gives at that point in the conversation.</p><p>In the console test window, the trace is enabled by default. When you use an API, the trace is disabled by default unless you set the <code class="code">enableTrace</code> to <code class="code">true</code>. For more information about enabling the trace through the API, see <a href="./api-agent-invoke.html">Invoke your agent</a>.</p><p>Use the trace to track the agent's path from the user input to the response it returns. With the trace, you can find information about the inputs to the action groups that the agent invokes and the knowledge bases that it looks up to help it respond to the user, in addition to the outputs that the action groups and knowledge bases return. You can view the reasoning that the agent uses to determine the action that it takes or the query that it makes to a knowledge base. If a step in the trace fails, the trace returns a reason for the failure. Use the detailed information in the trace to debug your agent by identifying steps at which it has trouble or at which it yields unexpected behavior and ways in which you can improve the behavior.</p><p>When you show the trace in the test window in the console, a window appears showing a
+            trace for each <b>Step</b> in the reasoning process. Each
+                <b>Step</b> can be one of the following traces.</p><div class="itemizedlist">
+             
+             
+             
+             
+        <ul class="itemizedlist"><li class="listitem">
+                <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_PreProcessingTrace.html">PreProcessingTrace</a> â Traces the input and output of the pre-processing step, in which the agent contextualizes and categorizes user input and determines if it is valid.</p>
+            </li><li class="listitem">
+                <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_OrchestrationTrace.html">OrchestrationTrace</a> â Traces the input and output of the orchestration step, in which the agent interprets the input, invokes APIs and queries knowledge bases, and returns output to either continue orchestration or to respond to the user.</p>
+            </li><li class="listitem">
+                <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_PostProcessingTrace.html">PostProcessingTrace</a> â Traces the input and output of the post-processing step, in which the agent handles the final output of the orchestration and determines how to return the response to the user.</p>
+            </li><li class="listitem">
+                <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_FailureTrace.html">FailureTrace</a> â Traces the reason that a step failed.</p>
+            </li></ul></div><p>Each of the traces (except the <code class="code">FailureTrace</code>) contains a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ModelInvocationInput.html">ModelInvocationInput</a> object that contains configurations set in the agent's prompt template (for more information, see <a href="./advanced-prompts.html">Advanced prompts</a>), alongside the prompt provided to the agent at this step. The structure of the <code class="code">ModelInvocationInput</code> object is as follows.</p><pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "traceId": "string",
+    "text": "string",
+    "type": "PRE_PROCESSING | ORCHESTRATION | KNOWLEDGE_BASE_RESPONSE_GENERATION | POST_PROCESSING",
+    "inferenceConfiguration": <span>{</span>
+        "maximumLength": number,
+        "stopSequences": ["string"],
+        "temperature": float,
+        "topK": float,
+        "topP": float
+    },
+    "promptCreationMode": "DEFAULT | OVERRIDDEN",
+    "parserMode": "DEFAULT | OVERRIDDEN",
+    "overrideLambda": "string"
+}</code></pre><p>The fields are described below.</p><div class="itemizedlist">
+             
+             
+             
+             
+             
+             
+             
+        <ul class="itemizedlist"><li class="listitem">
+                <p><code class="code">traceId</code> â The unique identifier of the trace.</p>
+            </li><li class="listitem">
+                <p><code class="code">text</code> â The text from the prompt provided to the agent at this step.</p>
+            </li><li class="listitem">
+                <p><code class="code">type</code> â The current step in the agent's process.</p>
+            </li><li class="listitem">
+                <p><code class="code">inferenceConfiguration</code> â Inference parameters that influence response generation.</p>
+            </li><li class="listitem">
+                <p><code class="code">promptCreationMode</code> â Whether the agent's default base prompt template was overridden for this step or not.</p>
+            </li><li class="listitem">
+                <p><code class="code">parserMode</code> â Whether the agent's default response parser was overridden for this step or not.</p>
+            </li><li class="listitem">
+                <p><code class="code">overrideLambda</code> â The ARN of the parser Lambda function used to parse the response, if the default parser was overridden.</p>
+            </li></ul></div><p>Each of the traces is described below.</p><div class="collapsible" data-expand-section="_collapse_all_"><awsui-expandable-section variant="container" header="PreProcessingTrace" id="trace-preprocessing" expanded="false"><pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "modelInvocationInput": <span>{</span> // see above for details }
+    "modelInvocationOutput": <span>{</span>
+        "parsedResponse": <span>{</span>
+            "isValid": boolean,
+            "rationale": "string"
+        },
+        "traceId": "string"
+    }
+}</code></pre><p>Apart from the <code class="code">modelInvocationInput</code>, the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_PreProcessingParsedResponse.html">PreProcessingParsedResponse</a> contains the following fields.</p><div class="itemizedlist">
+                     
+                     
+                <ul class="itemizedlist"><li class="listitem">
+                        <p><code class="code">parsedResponse</code> â Contains the following details about the parsed user prompt.</p>
+                        <div class="itemizedlist">
+                             
+                             
+                        <ul class="itemizedlist"><li class="listitem">
+                                <p><code class="code">isValid</code> â Specifies whether the user prompt is valid or not.</p>
+                            </li><li class="listitem">
+                                <p><code class="code">rationale</code> â Specifies the agent's reasoning for the next steps to take.</p>
+                            </li></ul></div>
+                    </li><li class="listitem">
+                        <p><code class="code">traceId</code> â The unique identifier of the trace.</p>
+                    </li></ul></div></awsui-expandable-section><awsui-expandable-section variant="container" header="OrchestrationTrace" id="trace-orchestration" expanded="false"><p>The orchestration trace consists of the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_ModelInvocationInput.html">ModelInvocationInput</a> object and any combination of the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Rationale.html">Rationale</a>, <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvocationInput.html">InvocationInput</a>, and <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a> objects. Select a tab below to learn about an object.</p><pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "modelInvocationInput": <span>{</span> // see above for details },
+    "rationale": <span>{</span> ... },
+    "invocationInput": <span>{</span> ... },
+    "observation": <span>{</span> ... }
+    }
+}</code></pre><awsdocs-tabs><dl style="display: none">
+                    <dt>Rationale</dt><dd tab-id="rationale">
+                            
+                            <p>The <code class="code">Rationale</code> object contains the reasoning of the agent given the user input. The structure is shown below.</p>
+                            
+                            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class=""><span>{</span>
+   "traceId": "string",
+   "text": "string"
+}</code></pre>
+                            
+                            <p>The fields are described below.</p>
+                            
+                            <div class="itemizedlist">
+                                 
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <p><code class="code">traceId</code> â The unique identifier of the trace step.</p>
+                                </li><li class="listitem">
+                                    <p><code class="code">text</code> â The reasoning or thought process of the agent, based on the input prompt.</p>
+                                </li></ul></div>
+                            
+                        </dd>
+                    <dt>InvocationInput</dt><dd tab-id="invocationinput">
+                            
+                            <p>The <code class="code">InvocationInputTrace</code> object contains information that will be input to the action group or knowledge base that is to be invoked or queried. The structure is shown below.</p>
+                            
+                            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "traceId": string",
+    "invocationType": "ACTION_GROUP | KNOWLEDGE_BASE | FINISH",
+    "actionGroupInvocationInput": <span>{</span>
+        "actionGroupName": "string",
+        "apiPath": "string",
+        "verb": "string",
+        "parameters": [
+            <span>{</span>
+                "name": "string",
+                "type": "string"
+                "value": "string"
+            },
+            ...
+        ],
+        "request": <span>{</span>
+            "content": <span>{</span>
+                "<code class="replaceable">content-type</code>": [
+                    <span>{</span>
+                        "name": "string",
+                        "type": "string",
+                        "value": "string"
+                    }   
+                ]
+            }
+        }
+    },
+    "knowledgeBaseLookupInput": <span>{</span>
+        "knowledgeBaseId": "string",
+        "text": "string"
+    }
+}</code></pre>
+                            
+                            <p>The fields are described below.</p>
+                            
+                            <div class="itemizedlist">
+                                 
+                                 
+                                 
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <p><code class="code">traceId</code> â The unique identifier of the trace.</p>
+                                </li><li class="listitem">
+                                    <p><code class="code">invocationType</code> â Specifies whether the agent is invoking an action group, a knowledge base, or ending the session.</p>
+                                </li><li class="listitem">
+                                    <p><code class="code">actionGroupInvocationInput</code> â Appears if the <code class="code">type</code> is <code class="code">ACTION_GROUP</code>. Contains the following input for the action group being invoked. For more information, see <a href="./agents-api-schema.html">Action group OpenAPI schemas</a>.</p>
+                                    <div class="itemizedlist">
+                                         
+                                         
+                                         
+                                         
+                                         
+                                    <ul class="itemizedlist"><li class="listitem">
+                                            <p><code class="code">actionGroupName</code> â The name of the action group that the agent is going to invoke.</p>
+                                        </li><li class="listitem">
+                                            <p><code class="code">apiPath</code> â The path to the API to call, based off the action group or the API schema.</p>
+                                        </li><li class="listitem">
+                                            <p><code class="code">verb</code> â The API method being used, based off the action group or the API schema.</p>
+                                        </li><li class="listitem">
+                                            <p><code class="code">parameters</code> â Contains a list of objects. Each object contains the name, type, and value of a parameter in the API operation, as defined in the OpenAPI schema.</p>
+                                        </li><li class="listitem">
+                                            <p><code class="code">requestBody</code> â Contains the request body and its properties, as defined in the OpenAPI schema.</p>
+                                        </li></ul></div>
+                                </li><li class="listitem">
+                                    <p><code class="code">knowledgeBaseLookupInput</code> â Appears if the <code class="code">type</code> is <code class="code">KNOWLEDGE_BASE</code>. Contains the following information about the knowledge base and the search query for the knowledge base.</p>
+                                    <div class="itemizedlist">
+                                         
+                                         
+                                    <ul class="itemizedlist"><li class="listitem">
+                                            <p><code class="code">knowledgeBaseId</code> â The unique identifier of the knowledge base that the agent will look up.</p>
+                                        </li><li class="listitem">
+                                            <p><code class="code">text</code> â The query to be made to the knowledge base.</p>
+                                        </li></ul></div>
+                                </li></ul></div>
+                            
+                        </dd>
+                    <dt>Observation</dt><dd tab-id="observation">
+                            
+                            <p>The <code class="code">Observation</code> object contains the result or output of an action group or knowledge base, or the response to the user. The structure is shown below.</p>
+                            
+                            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "traceId": "string",
+    "type": "ACTION_GROUP | KNOWLEDGE_BASE | REPROMPT | ASK_USER | FINISH"
+    "actionGroupInvocation": <span>{</span>
+        "text": "JSON-formatted string"
+    },
+    "knowledgeBaseLookupOutput": <span>{</span>
+        "retrievedReferences": [
+            <span>{</span>
+                "content": <span>{</span>
+                    "text": "string"
+                },
+                "location": <span>{</span>
+                    "type": "S3",
+                    "s3Location": <span>{</span>
+                        "uri": "string"
+                    }
+                }
+            },
+            ...
+        ]
+    },
+    "repromptResponse": <span>{</span>
+        "source": "ACTION_GROUP | KNOWLEDGE_BASE | PARSER"
+        "text": "string"
+    },
+    "finalResponse": <span>{</span>
+        "text"
+    }
+}</code></pre>
+                            
+                            <p>The fields are described below.</p>
+                                
+                            <div class="itemizedlist">
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
+                            <ul class="itemizedlist"><li class="listitem">
+                                    <p><code class="code">traceId</code> â The unique identifier of the trace.</p>
+                                </li><li class="listitem">
+                                    <p><code class="code">type</code> â Specifies whether the agent's observation is returned from the result of an action group or a knowledge base, or if the agent is reprompting the user, asking for more information, or ending the conversation.</p>
+                                </li><li class="listitem">
+                                    <p><code class="code">actionGroupInvocationOutput</code> â Contains the JSON-formatted string returned by the API invoked by the action group. Appears if the <code class="code">type</code> is <code class="code">ACTION_GROUP</code>.</p>
+                                </li><li class="listitem">
+                                    <p><code class="code">knowledgeBaseLookupOutput</code> â Contains text retrieved from the knowledge base that is relevant to responding to the prompt, alongside the S3 location of the data source.  Appears if the <code class="code">type</code> is <code class="code">KNOWLEDGE_BASE</code>. Each object in the list of <code class="code">retrievedReferences</code> contains the following fields.</p>
+                                    
+                                    <div class="itemizedlist">
+                                         
+                                         
+                                    <ul class="itemizedlist"><li class="listitem">
+                                            <p><code class="code">content</code> â Contains <code class="code">text</code> from the knowledge base that is returned from the knowledge base query.</p>
+                                        </li><li class="listitem">
+                                            <p><code class="code">location</code> â Contains the S3 URI of the data source from which the returned text was found.</p>
+                                        </li></ul></div>
+                                </li><li class="listitem">
+                                    <p><code class="code">repromptResponse</code> â  Appears if the <code class="code">type</code> is <code class="code">REPROMPT</code>. Contains the <code class="code">text</code> that asks for a prompt again alongside the <code class="code">source</code> of why the agent needs to reprompt.</p>
+                                </li><li class="listitem">
+                                    <p><code class="code">finalResponse</code> â  Appears if the <code class="code">type</code> is <code class="code">ASK_USER</code> or <code class="code">FINISH</code>. Contains the <code class="code">text</code> that asks the user for more information or is a response to the user.</p>
+                                </li></ul></div>
+                            
+                        </dd>
+                </dl></awsdocs-tabs></awsui-expandable-section><awsui-expandable-section variant="container" header="PostProcessingTrace" id="trace-postprocessing" expanded="false"><pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "modelInvocationInput": <span>{</span> // see above for details }
+    "modelInvocationOutput": <span>{</span>
+        "parsedResponse": <span>{</span>
+            "text": "string"
+        },
+        "traceId": "string"
+    }
+}</code></pre><p>Apart from the <code class="code">modelInvocationInput</code>, the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_PostProcessingParsedResponse.html">PostProcessingParsedResponse</a> contains the following fields.</p><div class="itemizedlist">
+                     
+                     
+                <ul class="itemizedlist"><li class="listitem">
+                        <p><code class="code">parsedResponse</code> â Contains the <code class="code">text</code> to return to the user after being processed by the parser function.</p>
+                    </li><li class="listitem">
+                        <p><code class="code">traceId</code> â The unique identifier of the trace.</p>
+                    </li></ul></div></awsui-expandable-section><awsui-expandable-section variant="container" header="FailureTrace" id="trace-failure" expanded="false"><pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "failureReason": "string",
+    "traceId": "string"
+}</code></pre><p>The fields are described below.</p><div class="itemizedlist">
+                     
+                     
+                <ul class="itemizedlist"><li class="listitem">
+                        <p><code class="code">failureReason</code> â The reason that the step failed.</p>
+                    </li><li class="listitem">
+                        <p><code class="code">traceId</code> â The unique identifier of the trace.</p>
+                    </li></ul></div></awsui-expandable-section></div><awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./agents-test.html">Test your agent</div><div id="next" class="next-link" accesskey="n" href="./agents-edit.html">Manage your agent</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/trace-events.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/trace-events.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Cohere models - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="model-parameters-cohere" /><meta name="default_state" content="model-parameters-cohere" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters-cohere.html" /><meta name="description" content="The following is inference parameters information for the Cohere models that Amazon Bedrock supports." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters-cohere.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters-cohere.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Cohere models" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Cohere models - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#model-parameters-cohere" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-parameters-cohere.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-parameters-cohere.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-parameters-cohere.html" /><meta name="keywords" content="Amazon Bedrock,bedrock" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Inference parameters for foundation models",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Cohere models",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#model-parameters-cohere" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#model-parameters-cohere-command">Cohere Command models</a><a href="#model-parameters-embed">Cohere Embed models</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="model-parameters-cohere">Cohere models</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>The following is inference parameters information for the Cohere models that Amazon Bedrock supports. </p><div class="highlights" id="inline-topiclist"><h6>Topics</h6><ul><li><a href="#model-parameters-cohere-command">Cohere Command models</a></li><li><a href="#model-parameters-embed">Cohere Embed models</a></li></ul></div>
+            <h2 id="model-parameters-cohere-command">Cohere Command models</h2>
+            <p>The Cohere Command models support the following controls.</p>
+            
+            <div class="itemizedlist">
+                 
+                 
+                
+                 
+                
+                 
+                
+                 
+                
+                
+            <ul class="itemizedlist"><li class="listitem">
+                    <p><b>Return likelihoods</b>
+                            (<code class="code">return_likelihoods</code>) â (optional) Specify how and if the token
+                        likelihoods are returned with the response. You can specify the following
+                        options. </p>
+    
+                    <div class="itemizedlist">
+                         
+                         
+                         
+                    <ul class="itemizedlist"><li class="listitem">
+                            <p><code class="code">GENERATION</code> â Only return likelihoods for generated
+                                tokens.</p>
+                        </li><li class="listitem">
+                            <p><code class="code">ALL</code> â Return likelihoods for all tokens.</p>
+                        </li><li class="listitem">
+                            <p><code class="code">NONE</code> â (Default) Don't return any likelihoods.</p>
+                        </li></ul></div>
+                </li><li class="listitem">
+                    <p><b>Stream</b> (<code class="code">stream</code>) â ( Required to support streaming)
+                        Specify
+                            <code class="code">true</code> to return the response piece-by-piece in real-time and
+                            <code class="code">false</code> to return the complete response after the process
+                        finishes.</p>
+                </li><li class="listitem">
+                    <p><b>Logit bias</b> (<code class="code">logit_bias</code>) â (Optional) prevents the model
+                        from generating unwanted tokens or incentivizes the model to include desired tokens.
+                        The format is <code class="code"><span>{</span>token_id: bias}</code> where bias is a float between -10 and 10. Tokens
+                        can be obtained from text using any tokenization service, such as Cohereâs
+                        Tokenize endpoint. For more information, see <a href="https://docs.cohere.com/docs" rel="noopener noreferrer" target="_blank"><span>Cohere documentation</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+    
+    
+                </li><li class="listitem">
+                    <p>
+                        <b>Number of generations</b> (<code class="code">num_generations</code>)
+                        â (Optional) The maximum number of generations that the model should return. </p>
+                </li><li class="listitem">
+                    <p>
+                        <b>Truncate</b> (<code class="code">truncate</code>) â
+                        (Optional) Specifies how the API handles inputs longer than the maximum token length. Use
+                        one of the following:</p>
+                    <div class="itemizedlist">
+                        
+                        
+                         
+                         
+                             
+                        
+                    <ul class="itemizedlist"><li class="listitem">
+                            <p><code class="code">NONE</code> â  Returns an error when the input exceeds the maximum input token length.
+                            </p>
+                        </li><li class="listitem"> <p><code class="code">START</code> â Discard the start of the input.
+                        </p></li><li class="listitem">
+                            <p><code class="code">END</code> â (Default) Discards the end of the input.</p></li></ul></div>
+                    <p>If you specify <code class="code">START</code> or <code class="code">END</code>, the model discards
+                        the input until the remaining input is exactly the maximum input token length
+                        for the model.</p>
+
+                    
+                    
+                </li></ul></div>
+            
+             
+                <h3 id="model-parameters-cohere-command-random">Randomness and
+                        diversity</h3>
+                <p>The Cohere Command model supports the following parameters to control randomness
+                    and diversity in the response.</p>
+                <div class="itemizedlist">
+                     
+                     
+                     
+                <ul class="itemizedlist"><li class="listitem">
+                        <p><b>Temperature</b> (<code class="code">temperature</code>)
+                            â (Optional) Use a lower value to decrease randomness in the response.</p>
+                    </li><li class="listitem">
+                        <p><b>Top P</b> (<code class="code">p</code>) â (Optional) Use a
+                            lower value to ignore less probable options. Set to 0 or 1.0 to disable. If
+                            both <code class="code">p</code> and <code class="code">k</code> are enabled, <code class="code">p</code> acts
+                            after <code class="code">k</code>.</p>
+                    </li><li class="listitem">
+                        <p><b>Top K</b> (<code class="code">k</code>) â (Optional) Specify
+                            the number of token choices the model uses to generate the next token. If
+                            both <code class="code">p</code> and <code class="code">k</code> are enabled, <code class="code">p</code> acts
+                            after <code class="code">k</code>.</p>
+                    </li></ul></div>
+             
+             
+                <h3 id="model-parameters-cohere-command-length">Length</h3>
+                <p>The Cohere Command models support the following parameters to control the length
+                    of the generated response.</p>
+                <div class="itemizedlist">
+                     
+                     
+                <ul class="itemizedlist"><li class="listitem">
+                        <p><b>Maximum length</b>
+                            (<code class="code">max_tokens</code>) â (Optional) Specify the maximum number
+                            of tokens to use in the generated response.</p>
+                    </li><li class="listitem">
+                        <p><b>Stop sequences</b>
+                            (<code class="code">stop_sequences</code>) â (Optional) Configure up to four sequences
+                            that the model recognizes. After a stop sequence, the model stops generating
+                            further tokens. The returned text doesn't contain the stop sequence.</p>
+                    </li></ul></div>
+             
+            
+             
+                <h3 id="model-parameters-cohere-request-body">Model invocation request body field</h3>
+            
+                <p>When you make an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html">InvokeModel</a>
+                    or <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html">InvokeModelWithResponseStream</a> call using a Cohere model, fill the
+                    <code class="code">body</code> field with a JSON object that conforms to the one below. Enter the
+                    prompt in the <code class="code">prompt</code> field. The <code class="code">prompt</code> field is required.</p>
+                
+                 <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+        "prompt": "string",
+        "temperature": float,
+        "p": float,
+        "k": float,
+        "max_tokens": int,
+        "stop_sequences": ["string"],
+        "return_likelihoods": "GENERATION|ALL|NONE",
+        "stream": boolean,
+        "num_generations": int,
+        "logit_bias": <span>{</span>token_id: bias},
+        "truncate": "NONE|START|END"
+    }</code></pre>
+                
+                <p>For more information, see <a href="https://docs.cohere.com/reference/generate" rel="noopener noreferrer" target="_blank"><span>https://docs.cohere.com/reference/generate</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+                
+
+                <p>The following table shows the minimum, maximum, and default values for the numerical parameters.</p>
+                
+                <div class="table-container"><div class="table-contents"><table id="w230aac31c21b7c11c11"><thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Parameter</th>
+                                <th>JSON object format</th>
+                                <th>Minimum</th>
+                                <th>Maximum</th>
+                                <th>Default</th>
+                            </tr>
+                        </thead>
+                            <tr>
+                                <td rowspan="3" tabindex="-1">Randomness and diversity</td>
+                                <td tabindex="-1">Temperature</td>
+                                <td tabindex="-1">temperature</td>
+                                <td tabindex="-1">0</td>
+                                <td tabindex="-1">5</td>
+                                <td tabindex="-1">0.9</td>
+                            </tr>
+                            <tr>
+                                <td tabindex="-1">Top P</td>
+                                <td tabindex="-1">p</td>
+                                <td tabindex="-1">0</td>
+                                <td tabindex="-1">1</td>
+                                <td tabindex="-1">0.75</td>
+                            </tr>
+                            <tr>
+                                <td tabindex="-1">Top K</td>
+                                <td tabindex="-1">k</td>
+                                <td tabindex="-1">0</td>
+                                <td tabindex="-1">500</td>
+                                <td tabindex="-1">0</td>
+                            </tr>
+                            <tr>
+                                <td tabindex="-1">Length</td>
+                                <td tabindex="-1">Max tokens</td>
+                                <td tabindex="-1">max_tokens</td>
+                                <td tabindex="-1">1</td>
+                                <td tabindex="-1">4,096</td>
+                                <td tabindex="-1">20</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" tabindex="-1">Other</td>
+                                <td tabindex="-1">Number of generations</td>
+                                <td tabindex="-1">num_generations</td>
+                                <td tabindex="-1">1</td>
+                                <td tabindex="-1">5</td>
+                                <td tabindex="-1">1</td>
+                            </tr>
+                            
+                            <tr>
+                                
+                                <td tabindex="-1">Logit bias</td>
+                                <td tabindex="-1">logit_bias</td>
+                                <td tabindex="-1">-10 (for a token bias)</td>
+                                <td tabindex="-1">10 (for a token bias)</td>
+                                <td tabindex="-1">No default value</td>
+                            </tr>
+                        </table></div></div>  
+                
+             
+            
+             
+                <h3 id="model-parameters-cohere-response-body">Model invocation response body field</h3>
+                <p>The <code class="code">body</code> response from a call to <code class="code">InvokeModel</code> or <code class="code">InvokeModelWithResponseStream</code> is the following:</p>
+                
+                <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+
+        "generations": [
+            <span>{</span>
+                "finish_reason": "COMPLETE | MAX_TOKENS | ERROR | ERROR_TOXIC",
+                "id": "string",
+                "text": "string",
+                "prompt": "string",
+                "likelihood" : float,
+                "token_likelihoods" : [<span>{</span>"token" : float}],
+                "is_finished" : true | false,
+                "index" : integer
+               
+            }
+        ],
+        "id": "string",
+        "prompt": "string"
+    }
+}</code></pre>
+                
+                
+                <p>The response has the following possible fields:</p>
+                    <div class="itemizedlist">
+                        
+                         
+  
+                         
+                         
+       
+                        
+                       
+                    <ul class="itemizedlist"><li class="listitem"><p><code class="code">generations</code> â  A list of generated results along with the likelihoods for tokens requested. (Always returned).
+                        Each generation object in the list contains the following fields.</p>
+                        <div class="itemizedlist">
+                             
+                             
+                             
+                 
+
+                         
+                             
+                             
+                             
+                                    
+                
+                        
+                        <ul class="itemizedlist"><li class="listitem"><p><code class="code">id</code> â An identifier for the generation. (Always returned).</p></li><li class="listitem"><p><code class="code">likelihood</code> â The likelihood of the output. The value is the average
+                                of the token likelihoods in <code class="code">token_likelihoods</code>. Returned if you specify 
+                                the <code class="code">return_likelihoods</code> input parameter.</p></li><li class="listitem"><p><code class="code">token_likelihoods</code> â An array of per token likelihoods. Returned if you specify 
+                                the <code class="code">return_likelihoods</code> input parameter.</p></li><li class="listitem">
+                                <p><code class="code">finish_reason</code> â states the reason why the
+                                    model finished generating tokens. <code class="code">COMPLETE</code> - the
+                                    model sent back a finished reply. <code class="code">MAX_TOKENS</code>
+                                    â the reply was cut off because the model reached the
+                                    maximum number of tokens for its context length. <code class="code">ERROR
+                                    </code> â something went wrong when generating the reply.
+                                        <code class="code">ERROR_TOXIC</code> â the model generated a
+                                    reply that was deemed toxic. <code class="code">finish_reason</code> is
+                                    returned only when <code class="code">is_finished</code>=<code class="code">true</code>.
+                                    (Not always returned). </p></li><li class="listitem"><p><code class="code">is_finished</code> â A boolean field used only when
+                                <code class="code">stream</code> is <code class="code">true</code>, signifying whether or not
+                                there are additional tokens that will be generated as part of the
+                                streaming response. (Not always returned)</p></li><li class="listitem"><p><code class="code">text</code> â The generated text.</p></li><li class="listitem">
+                                <p><code class="code">index</code> â In a streaming response, use to
+                                    determine which generation a given token belongs to. When only
+                                    one response is streamed, all tokens belong to the same
+                                    generation and index is not returned. <code class="code">index</code>
+                                    therefore is only returned in a streaming request with a value
+                                    for <code class="code">num_generations</code> that is larger than one.</p>
+                            </li></ul></div>
+                            
+                        </li><li class="listitem"><p><code class="code">prompt</code> â The prompt from the input request. (Always returned).</p></li><li class="listitem"><p><code class="code">id</code> â An identifier for the request (always returned).</p></li></ul></div>
+              
+                
+                
+                
+                <p>For more information, see <a href="https://docs.cohere.com/reference/generate" rel="noopener noreferrer" target="_blank"><span>https://docs.cohere.com/reference/generate</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+         
+             
+            
+         
+            <h2 id="model-parameters-embed">Cohere Embed models</h2>
+            <p>The Cohere Embed models support the following controls.</p>
+            
+           <div class="itemizedlist">
+
+                 
+                
+                 
+                
+                 
+                
+                
+                
+                
+    
+                
+                
+            <ul class="itemizedlist"><li class="listitem">
+                    <p><b>texts</b> (<code class="code">texts</code>) â (Required) An array
+                        of strings for the model to embed. For
+                        optimal performance, we recommend reducing the length of each text to less than
+                        512 tokens. 1 token is about 4 characters.</p>
+                </li><li class="listitem">
+                    <p><b>input type</b> (<code class="code">input_type</code>) â
+                        (Required) Prepends special tokens to differentiate each type from one another. You should
+                        not mix different types together, except when mixing types for
+                        for search and retrieval. In this case, embed your corpus with the
+                        <code class="code">search_document</code> type and embedded queries with type <code class="code">search_query</code> type.
+                        
+                    </p>
+                    <div class="itemizedlist">
+                         
+                         
+                         
+                         
+                    <ul class="itemizedlist"><li class="listitem">
+                            <p><code class="code">search_document</code> â  In search
+                                use-cases, use <code class="code">search_document</code> when you encode
+                                documents for embeddings that you store in a vector database.</p>
+                        </li><li class="listitem">
+                            <p><code class="code">search_query</code> â Use <code class="code">search_query</code> when querying your vector DB to find relevant documents.</p>
+                        </li><li class="listitem">
+                            <p><code class="code">classification</code> â Use <code class="code">classification</code> when using embeddings as an input to a text classifier.</p>
+                        </li><li class="listitem">
+                            <p><code class="code">clustering</code> â Use <code class="code">clustering</code> to cluster the embeddings.</p>
+                        </li></ul></div>
+                
+
+                
+                </li><li class="listitem">
+                    <p>
+                        <b>Truncate</b> (<code class="code">truncate</code>) â
+                        (Optional) Specifies how the API handles inputs longer than the maximum token length. Use
+                    one of the following:</p>
+                    <div class="itemizedlist">
+                      
+                   
+                     
+                         
+                             
+                    
+                    <ul class="itemizedlist"><li class="listitem">
+                        <p><code class="code">NONE</code> â  (Default) Returns an error when the input exceeds the maximum input token length.
+                        </p>
+                    </li><li class="listitem"> <p><code class="code">LEFT</code> â Discard the start of the input.
+                        </p></li><li class="listitem">
+                            <p><code class="code">RIGHT</code> â Discards the end of the input.</p></li></ul></div>
+                    <p>If you specify <code class="code">LEFT</code> or <code class="code">RIGHT</code>, the model discards
+                        the input until the remaining input is exactly the maximum input token length
+                        for the model.</p>
+                    
+                </li></ul></div>
+            
+          
+             
+                <h3 id="model-parameters-cohere-embed-request-body">Model invocation request body field</h3>
+                
+
+                <p>When you make an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html">InvokeModel</a> call using a Cohere model, fill the
+                        <code class="code">body</code> field with a JSON object that conforms to the one below.
+                    Enter the prompt in the <code class="code">prompt</code> field.</p>
+            
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+        "texts:["string"],
+        "input_type": "search_document|search_query|classification|clustering",
+        "truncate": "NONE|LEFT|RIGHT"
+    }</code></pre>
+                <p>For more information, see <a href="https://docs.cohere.com/reference/embed" rel="noopener noreferrer" target="_blank"><span>https://docs.cohere.com/reference/embed</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+                <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>Amazon Bedrock doesn't support streaming responses from Cohere Embed models.</p></div></div>
+                
+                
+            
+
+
+            
+            <p>The following table shows the minimum, maximum, and default values for the numerical parameters.</p>
+            
+            
+            <div class="table-container"><div class="table-contents"><table id="w230aac31c21b9b7c13"><thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Parameter</th>
+                            <th>JSON object format</th>
+                            <th>Minimum</th>
+                            <th>Maximum</th>
+                            <th>Default</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                            <td rowspan="2" tabindex="-1">Other</td>
+                            <td tabindex="-1">Texts</td>
+                            <td tabindex="-1">texts</td>
+                            <td tabindex="-1">0 texts per call</td>
+                            <td tabindex="-1">128 texts per call</td>
+                            <td tabindex="-1">N/A</td>
+                        </tr>
+                        <tr>
+                            <td tabindex="-1">Text length</td>
+                            <td tabindex="-1">texts</td>
+                            <td tabindex="-1">0 characters</td>
+                            <td tabindex="-1">2048 characters</td>
+                            <td tabindex="-1">N/A</td>
+                        </tr>
+    
+                    </table></div></div> 
+             
+            
+             
+                <h3 id="model-parameters-cohere-embed-response-body">Model invocation response body field</h3>
+                <p>The <code class="code">body</code> response from a call to <code class="code">InvokeModel</code> is the following:</p>
+                
+                <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight"><span>{</span>
+    "embeddings": [
+        [float //*1024)]
+    ],
+    "id": "string",
+    "texts": ["string"]
+}
+                    
+                </code></pre>
+                
+                
+                <p>The <code class="code">body</code> response has the following fields:</p>
+                
+                <div class="itemizedlist">
+                    
+                     
+            
+                    
+                     
+                     
+                     
+                <ul class="itemizedlist"><li class="listitem">
+                        <p><b>id</b> â An identifier for the response.
+                        </p>
+                    </li><li class="listitem">
+                        <p><b>embeddings</b> â An array of
+                            embeddings, where each embedding is an array of floats with 1024 elements. The length of
+                            the <code class="code">embeddings</code> array will be the same as the length of the
+                            original <code class="code">texts</code> array. </p>
+                    </li><li class="listitem">
+                        <p><b>texts</b> â An array containing the
+                            text entries for which embeddings were returned. </p>
+                    </li></ul></div>
+                
+               
+                <p>For more information, see <a href="https://docs.cohere.com/reference/embed" rel="noopener noreferrer" target="_blank"><span>https://docs.cohere.com/reference/embed</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+                
+             
+            
+        <awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./model-parameters-jurassic2.html">AI21 Labs Jurassic-2 models</div><div id="next" class="next-link" accesskey="n" href="./model-parameters-meta.html">Meta Llama 2 models</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-parameters-cohere.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/model-parameters-cohere.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

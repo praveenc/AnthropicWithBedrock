@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Create a batch inference job - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="batch-inference-create" /><meta name="default_state" content="batch-inference-create" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-create.html" /><meta name="description" content="To create a batch inference job, send a CreateModelInvocationJob request. Provide the following information." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-create.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/batch-inference-create.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/batch-inference-create.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/batch-inference-create.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/batch-inference-create.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-create.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-create.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/batch-inference-create.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/batch-inference-create.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/batch-inference-create.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/batch-inference-create.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/batch-inference-create.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/batch-inference-create.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/batch-inference-create.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/batch-inference-create.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/batch-inference-create.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/batch-inference-create.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/batch-inference-create.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/batch-inference-create.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/batch-inference-create.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/batch-inference-create.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-create.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Create a batch inference job" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Create a batch inference job - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#batch-inference-create" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/batch-inference-create.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/batch-inference-create.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/batch-inference-create.html" /><meta name="keywords" content="Amazon Bedrock,bedrock,batch job,action groups,agent,model inference,large dataset,simultaneous inference" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Use the Amazon Bedrock API",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/using-api.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Amazon Bedrock API operations",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 6,
+        "name" : "Run inference",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 7,
+        "name" : "Run batch inference",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 8,
+        "name" : "Create a batch inference job",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#batch-inference-create" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="batch-inference-create">Create a batch inference job</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><awsdocs-tabs><dl style="display: none">
+            <dt>Request format</dt><dd tab-id="request-format">
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json ">POST /model-invocation-job HTTP/1.1
+Content-type: application/json
+
+<span>{</span>
+   "clientRequestToken": "string",
+   "inputDataConfig": <span>{</span> 
+        "s3InputDataConfig": <span>{</span> 
+            "s3Uri": "string",
+            "s3InputFormat": "JSONL"
+        }
+   },
+   "jobName": "string",
+   "modelId": "string",
+   "outputDataConfig": <span>{</span>
+        "s3OutputDataConfig": <span>{</span>
+            "s3Uri": "string"
+        }
+   },
+   "roleArn": "string",
+   "tags": [ 
+      <span>{</span> 
+         "key": "string",
+         "value": "string"
+      }
+   ]
+}</code></pre>
+                    
+                </dd>
+            <dt>Response format</dt><dd tab-id="response-format">
+                    
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json ">HTTP/1.1 200
+Content-type: application/json
+
+<span>{</span>
+   "jobArn": "string"
+}</code></pre>
+                </dd>
+        </dl></awsdocs-tabs><p>To create a batch inference job, send a <code class="code">CreateModelInvocationJob</code> request. Provide the following information.</p><div class="itemizedlist">
+             
+             
+             
+             
+             
+        <ul class="itemizedlist"><li class="listitem">
+                <p>The ARN of a role with permissions to run batch inference in <code class="code">roleArn</code>.</p>
+            </li><li class="listitem">
+                <p>Information for the S3 bucket containing the input data in <code class="code">inputDataConfig</code> and the bucket where to write information in <code class="code">outputDataConfig</code>.</p>
+            </li><li class="listitem">
+                <p>The ID of the model to use for inference in <code class="code">modelId</code> (see <a href="./model-ids-arns.html">Base model IDs</a>).</p>
+            </li><li class="listitem">
+                <p>A name for the job in <code class="code">jobName</code>.</p>
+            </li><li class="listitem">
+                <p>(Optional) Any tags that you want to attach to the job in <code class="code">tags</code>.</p>
+            </li></ul></div><p>The response returns a <code class="code">jobArn</code> that you can use for other batch inference-related API calls.</p><p>You can check the <code class="code">status</code> of the job with either the <code class="code">GetModelInvocationJob</code> or <code class="code">ListModelInvocationJobs</code> APIs.</p><p>When the job is <code class="code">Completed</code>, you can extract the results of the batch inference job from the files in the S3 bucket you specified in the request for the <code class="code">outputDataConfig</code>. The S3 bucket contains the following files:</p><div class="orderedlist">
+             
+             
+        <ol><li>
+                <p>Output files containing the result of the model inference.</p>
+                <div class="itemizedlist">
+                     
+                     
+                <ul class="itemizedlist"><li class="listitem">
+                        <p>If the output is text, Amazon Bedrock generates an output JSONL file for each input JSONL file. The output files contain outputs from the model for each input in the following format. An <code class="code">error</code> object replaces the <code class="code">modelOutput</code> field in any line where there was an error in inference. The format of the <code class="code">modelOutput</code> JSON object matches the <code class="code">body</code> field for the model that you use in the <code class="code">InvokeModel</code> response. For more information, see <a href="./model-parameters.html">Inference parameters for foundation models</a>.</p> 
+                
+                        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span> "recordId" : "<code class="replaceable">12 character alphanumeric string</code>", "modelInput": <code class="replaceable"><span>{</span>JSON body}</code>, "modelOutput": <code class="replaceable"><span>{</span>JSON body}</code> }</code></pre>
+                        
+                        <p>The following example shows a possible output file.</p>
+                        
+                        <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span> "recordId" : "3223593EFGH", "modelInput" : <span>{</span>"inputText": "Roses are red, violets are"}, "modelOutput" : <span>{</span>'inputTextTokenCount': 8, 'results': [<span>{</span>'tokenCount': 3, 'outputText': 'blue\n', 'completionReason': 'FINISH'}]}}
+<span>{</span> "recordId" : "1223213ABCDE", "modelInput" : <span>{</span>"inputText": "Hello world"}, "error" : <span>{</span>"errorCode" : 400, "errorMessage" : "bad request" }}</code></pre>
+                    </li><li class="listitem">
+                        <p>If the output is image, Amazon Bedrock generates a file for each image.</p>
+                    </li></ul></div>
+            </li><li>
+                <p>A <code class="code">manifest.json.out</code> file containing a summary of the batch inference job.</p>
+                
+                <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "processedRecordCount" : number,
+    "successRecordCount": number,
+    "errorRecordCount": number,
+    "inputTextTokenCount": number, // For embedding/text to text models
+    "outputTextTokenCount" : number, // For text to text models 
+    "outputImgCount512x512pStep50": number, // For text to image models 
+    "outputImgCount512x512pStep150" : number, // For text to image models 
+    "outputImgCount512x896pStep50" : number, // For text to image models 
+    "outputImgCount512x896pStep150" : number // For text to image models 
+}</code></pre>
+                
+            </li></ol></div><awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./batch-inference-data.html">Set up data</div><div id="next" class="next-link" accesskey="n" href="./batch-inference-stop.html">Stop a batch inference job</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/batch-inference-create.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/batch-inference-create.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

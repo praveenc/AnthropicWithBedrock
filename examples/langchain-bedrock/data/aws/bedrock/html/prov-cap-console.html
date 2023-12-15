@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Provisioned Throughput console procedures - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="prov-cap-console" /><meta name="default_state" content="prov-cap-console" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-cap-console.html" /><meta name="description" content="Learn how to use console procedures for Provisioned Throughput for Amazon Bedrock." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-cap-console.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/prov-cap-console.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/prov-cap-console.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/prov-cap-console.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/prov-cap-console.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-cap-console.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-cap-console.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/prov-cap-console.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/prov-cap-console.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/prov-cap-console.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/prov-cap-console.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/prov-cap-console.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/prov-cap-console.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/prov-cap-console.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/prov-cap-console.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/prov-cap-console.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/prov-cap-console.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/prov-cap-console.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/prov-cap-console.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/prov-cap-console.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/prov-cap-console.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-cap-console.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Provisioned Throughput console procedures" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Provisioned Throughput console procedures - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#prov-cap-console" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/prov-cap-console.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/prov-cap-console.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/prov-cap-console.html" /><meta name="keywords" content="Amazon Bedrock,bedrock" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Provisioned Throughput",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Provisioned Throughput console procedures",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#prov-cap-console" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#prov-cap-view">View Provisioned Throughput summary</a><a href="#prov-cap-purchase">Purchase Provisioned Throughput</a><a href="#prov-cap-view-details">View details of a Provisioned Throughput</a><a href="#prov-cap-edit">Edit a Provisioned Throughput</a><a href="#prov-cap-delete">Delete a Provisioned Throughput</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="prov-cap-console">Provisioned Throughput console procedures</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>This section describes the console procedures for Provisioned Throughput.</p><div class="highlights" id="inline-topiclist"><h6>Topics</h6><ul><li><a href="#prov-cap-view">View Provisioned Throughput summary</a></li><li><a href="#prov-cap-purchase">Purchase Provisioned Throughput</a></li><li><a href="#prov-cap-view-details">View details of a Provisioned Throughput</a></li><li><a href="#prov-cap-edit">Edit a Provisioned Throughput</a></li><li><a href="#prov-cap-delete">Delete a Provisioned Throughput</a></li></ul></div>
+        <h2 id="prov-cap-view">View Provisioned Throughput summary</h2>
+        <p>Use the summary page to review the status of each Provisioned Throughput. The <b>Overview</b>
+            panel displays the number of Provisioned Throughput resources in each state. 
+            You can update or delete an active Provisioned Throughput,
+            and you can create a new Provisioned Throughput.</p>
+        <div class="procedure"><ol><li>
+                <p>Open the Amazon Bedrock console at <a href="https://console.aws.amazon.com/bedrock/" rel="noopener noreferrer" target="_blank"><span>https://console.aws.amazon.com/bedrock/</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+            </li><li>
+                <p>From the left navigation pane, choose <b>Provisioned
+                        throughput</b> under <b>Deployments</b>.</p>
+            </li><li>
+                <p>From the <b>Provisioned Throughput</b> table, you can review summary information 
+                    about each Provisioned Throughput.</p>
+            </li></ol></div>
+     
+        <h2 id="prov-cap-purchase">Purchase Provisioned Throughput</h2>
+        <p>You can purchase Provisioned Throughput for a foundation or custom model.</p>
+        <div class="procedure"><ol><li>
+                <p>Open the Amazon Bedrock console at <a href="https://console.aws.amazon.com/bedrock/" rel="noopener noreferrer" target="_blank"><span>https://console.aws.amazon.com/bedrock/</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+            </li><li>
+                <p>From the left menu, choose <b>Provisioned Throughput</b>
+                    under <b>Deployments</b>. Then select
+                        <b>Purchase Provisioned Throughput</b>. The console
+                    opens the <b>Purchase Provisioned Throughput</b> page.</p>
+            </li><li>
+                <p>Under <b>Provisioned Throughput details</b>:</p>              
+                <ol><li>
+                        <p>Enter a name for the Provisioned Throughput.</p>                      
+                    </li><li>
+                        <p>Select the model category and model for the Provisioned Throughput.</p>    
+                        
+                        
+<div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>Provisioned Throughput is currently available for the following models.</p><div class="table-container"><div class="table-contents"><table id="w230aac49c29b9b5b5b3b3b3b3"><thead>
+            <tr>
+                <th>Model name</th>
+                <th>Model ID for provisioned throughput</th>
+            </tr>
+        </thead>
+                <tr>
+                    <td tabindex="-1">Titan Text G1 - Express 8K</td>
+                    <td tabindex="-1">amazon.titan-text-express-v1:0:8k</td>
+                </tr>
+                <tr>
+                    <td tabindex="-1">Titan Embeddings G1 - Text</td>
+                    <td tabindex="-1">amazon.titan-embed-text-v1:2:8k</td>
+                </tr>
+            <tr>
+                <td tabindex="-1">Titan Multimodal Embeddings G1 - Text</td>
+                <td tabindex="-1">amazon.titan-embed-image-v1:0</td>
+            </tr>
+            <tr>
+                <td tabindex="-1">Titan Image Generator G1</td>
+                <td tabindex="-1">amazon.titan-image-generator-v1:0</td>
+            </tr>
+            <tr>
+                <td tabindex="-1">Anthropic Claude V2 18K</td>
+                <td tabindex="-1">anthropic.claude-v2:0:18k</td>
+            </tr>
+            <tr>
+                <td tabindex="-1">Anthropic Claude V2 100K</td>
+                <td tabindex="-1">anthropic.claude-v2:0:100k</td>
+            </tr>
+            <tr>
+                <td tabindex="-1">Anthropic Claude V2.1 18K</td>
+                <td tabindex="-1">anthropic.claude-v2:1:18k</td>
+            </tr>
+            <tr>
+                <td tabindex="-1">Anthropic Claude V2.1 100K</td>
+                <td tabindex="-1">anthropic.claude-v2:1:100k</td>
+            </tr>
+            <tr>
+                <td tabindex="-1">Anthropic Claude Instant V1 100K</td>
+                <td tabindex="-1">
+                    <p>anthropic.claude-instant-v1:2:100K</p>
+                </td>
+            </tr>
+           <tr>
+                <td tabindex="-1">Cohere Command</td>
+                <td tabindex="-1">
+                    <p>cohere.command-text-v14:7:4k</p>
+                </td>
+            </tr>
+            <tr>
+                <td tabindex="-1">Cohere Command Light</td>
+                <td tabindex="-1">
+                    <p>cohere.command-light-text-v14:7:4k</p>
+                </td>
+            </tr>
+              <tr>
+                <td tabindex="-1">Stable Diffusion XL 1.0</td>
+                <td tabindex="-1">stability.stable-diffusion-xl-v1:0</td>
+            </tr>
+             <tr>
+                <td tabindex="-1">Meta Llama 2 Chat 13B</td>
+                <td tabindex="-1">meta.llama2-13b-chat-v1:0:4k</td>
+            </tr>
+              <tr>
+
+                <td tabindex="-1">Meta Llama 2 13B</td>
+                <td tabindex="-1">meta.llama2-13b-v1:0:4k</td>
+            </tr>
+            <tr>
+
+                <td tabindex="-1">Meta Llama 2 70B</td>
+                <td tabindex="-1">meta.llama2-70b-v1:0:4k</td>
+            </tr>
+        </table></div></div></div></div>
+
+                    </li><li>
+                        <p>(Optional) Under <b>Tags</b>, you can associate one or more tags with this Provisioned Throughput.</p>    
+                    </li></ol>
+            </li><li>
+                <p>Under <b>Model units &amp; commitment term</b>:</p>              
+                <ol><li>
+                        <p>Enter the desired number of model units.</p>
+                    </li><li>
+                        <p>Choose the amount of time for which you want to commit to using the Provisioned Throughput. To opt out of commitment for a custom model, you must set the number of model units to 1 and then select <b>No commitment</b>. With this option, you pay an hourly amount for the allocated throughput until you delete it.</p>
+                    </li></ol>
+                
+                <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>To see limitations on model units and commitment term, see <a href="./prov-throughput.html">Provisioned Throughput</a>.</p></div></div>
+            </li><li>
+                <p>Under <b>Estimated purchase summary</b>, review the estimated cost.</p>    
+            </li><li>
+                <p>Choose <b>Purchase Provisioned Throughput</b>.</p>
+            </li><li>
+                <p>Review the note that appears and acknowledge the commitment duration and price by selecting the checkbox. Then choose <b>Confirm purchase</b>.</p>    
+            </li></ol></div> 
+        <p>The console displays the overview page. For the Provisioned Throughput that you just purchased, the console
+        displays it in the table, with the status set to <b>Creating</b>.</p>
+     
+        <h2 id="prov-cap-view-details">View details of a Provisioned Throughput</h2>
+        <p>From the summary page, you can view the details for any of your Provisioned Throughput resources.</p>
+        <div class="procedure"><ol><li>
+                <p>Open the Amazon Bedrock console at <a href="https://console.aws.amazon.com/bedrock/" rel="noopener noreferrer" target="_blank"><span>https://console.aws.amazon.com/bedrock/</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+            </li><li>
+                <p>From the left menu, choose <b>Provisioned Throughput</b>.</p>
+            </li><li>
+                <p>From the <b>Provisioned Throughput</b> table, choose a Provisioned Throughput.
+                The console opens the details page.</p>
+            </li><li>
+                <p>Under <b>Provisioned Throughput overview</b>:</p>
+            </li><li>
+                <p>Under <b>Tags</b>, the console displays the tags that are associated with this Provisioned Throughput.
+                    Choose <b>Manage tags</b> to add or remove tags for this Provisioned Throughput.</p>
+            </li></ol></div>
+     
+        <h2 id="prov-cap-edit">Edit a Provisioned Throughput</h2>
+        <p>You can edit only a few fields of a Provisioned Throughput.</p>
+        <div class="procedure"><ol><li>
+                <p>Open the Amazon Bedrock console at <a href="https://console.aws.amazon.com/bedrock/" rel="noopener noreferrer" target="_blank"><span>https://console.aws.amazon.com/bedrock/</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+            </li><li>
+                <p>From the left menu, choose <b>Provisioned Throughput</b>.</p>
+            </li><li>
+                <p>From the <b>Provisioned Throughput</b> table, select the Provisioned Throughput to edit.</p>
+            </li><li>
+                <p>The console displays the Provisioned Throughput fields that you can edit.</p>
+            </li><li>
+                <p>Choose <b>Save</b> to start the update.</p>
+            </li></ol></div>
+     
+        <h2 id="prov-cap-delete">Delete a Provisioned Throughput</h2>
+        
+        <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>You canât delete a Provisioned Throughput with commitment before the commitment term is complete.</p></div></div>
+        
+        <div class="procedure"><ol><li>
+                <p>Open the Amazon Bedrock console at <a href="https://console.aws.amazon.com/bedrock/" rel="noopener noreferrer" target="_blank"><span>https://console.aws.amazon.com/bedrock/</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p>
+            </li><li>
+                <p>From the left menu, choose <b>Provisioned Throughput</b>.</p>
+            </li><li>
+                <p>From the <b>Provisioned Throughput</b> table, select the Provisioned Throughput to delete.</p>
+            </li><li>
+                <p>The console displays a modal form to warn you that delete is permanent. Choose 
+                <b>Confirm</b> to proceed.</p>
+            </li></ol></div>
+    <awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./prov-thru-permissions.html">Permissions</div><div id="next" class="next-link" accesskey="n" href="./prov-thru-api.html">API operations</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/prov-cap-console.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/prov-cap-console.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

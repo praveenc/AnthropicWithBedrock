@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Monitor Amazon Bedrock events in Amazon EventBridge - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="monitoring-eventbridge" /><meta name="default_state" content="monitoring-eventbridge" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/monitoring-eventbridge.html" /><meta name="description" content="You can use Amazon EventBridge to monitor status change events in Amazon Bedrock. With Amazon EventBridge, you can configure Amazon SageMaker to respond automatically to a model customization job status change in Amazon Bedrock. Events from Amazon Bedrock are delivered to Amazon EventBridge in near real time. You can write simple rules to automate actions when an event matches a rule. If you use Amazon EventBridge with Amazon Bedrock, you can:" /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/monitoring-eventbridge.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/monitoring-eventbridge.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Monitor Amazon Bedrock events in Amazon EventBridge" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Monitor Amazon Bedrock events in Amazon EventBridge - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#monitoring-eventbridge" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/monitoring-eventbridge.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/monitoring-eventbridge.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/monitoring-eventbridge.html" /><meta name="keywords" content="Amazon Bedrock,bedrock" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Monitor Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/monitoring.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Monitor Amazon Bedrock events in Amazon EventBridge",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/monitoring.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#monitoring-eventbridge" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#monitoring-eventbridge-how-it-works">How it works</a><a href="#monitoring-eventbridge-schema">EventBridge schema</a><a href="#monitoring-eventbridge-rules-and-targets">Rules and targets</a><a href="#monitoring-eventbridge-create-rule">Create a rule to handle Amazon Bedrock events</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="monitoring-eventbridge">Monitor Amazon Bedrock events in Amazon EventBridge</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>You can use Amazon EventBridge to monitor status change events in Amazon Bedrock. With Amazon
+   EventBridge, you can configure Amazon SageMaker to respond automatically to a model customization
+   job status change in Amazon Bedrock. Events from Amazon Bedrock are delivered to Amazon EventBridge in
+   near real time. You can write simple rules to automate actions when an event matches a
+   rule. If you use Amazon EventBridge with Amazon Bedrock, you can:</p><div class="itemizedlist">
+    
+    
+  <ul class="itemizedlist"><li class="listitem">
+    <p>Publish notifications whenever there is a state change event in the model customization
+     you have triggered, whether you add new asynchronous workflows in the future. The event
+     published should give you enough information to react to events in downstream workflows.</p></li><li class="listitem">
+    <p>Deliver job status updates without invoking the GetModelCustomizationJob API, which can
+     mean handling API rate limit issues, API updates, and reduction in additional compute
+     resources.</p></li></ul></div><p>There is no cost to receive AWS events from Amazon EventBridge. For more information about,
+   Amazon EventBridge, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html">Amazon EventBridge</a></p><div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><div class="itemizedlist">
+    
+    
+  <ul class="itemizedlist"><li class="listitem">
+     <p>Amazon Bedrock emits events on a best-effort basis. Events are delivered to Amazon EventBridge in near real time. With Amazon EventBridge, you can create rules that trigger
+      programmatic actions in response to an event. For example, you can configure a rule that
+      invokes an SNS topic to send an email notification or invokes a function to take some
+      action. For more information, see the <em>Amazon EventBridge User Guide</em>.</p></li><li class="listitem">
+     <p>Amazon Bedrock creates a new event every time there is a state change in a model
+      customization job that you trigger and make best-effort delivery of such event.
+     </p></li></ul></div></div></div><div class="highlights" id="inline-topiclist"><h6>Topics</h6><ul><li><a href="#monitoring-eventbridge-how-it-works">How it works</a></li><li><a href="#monitoring-eventbridge-schema">EventBridge schema</a></li><li><a href="#monitoring-eventbridge-rules-and-targets">Rules and targets</a></li><li><a href="#monitoring-eventbridge-create-rule">Create a rule to handle Amazon Bedrock events</a></li></ul></div>
+   <h2 id="monitoring-eventbridge-how-it-works">How it works</h2>
+   <p>To receive events from Amazon Bedrock, you need to create rules and targets to match, receive,
+    and handle state change data through Amazon EventBridge. Amazon EventBridge is a serverless
+    event bus that ingests change state events from AWS services, SaaS partners, and customer
+    applications. It processes events based on rules or patterns that you create, and routes these
+    events to one or more âtargetsâ that you choose, such as AWS Lambda, Amazon Simple Queue Service, and Amazon Simple Notification Service.</p>
+   
+   <p>Amazon Bedrock publishes your events via Amazon EventBridge whenever there is a change in
+    the state of a model customization job. In each case, a new event is created and sent to
+    Amazon EventBridge, which then sends the event to your default event-bus. The event
+    shows which customization jobâs state has changed, and the current state of the job. When Amazon EventBridge receives an event that matches a rule that you created, Amazon EventBridge routes it
+    to the target that you specified. When you create a rule, you can configure these targets as
+    well as downstream workflows based on the contents of the event. </p>
+   
+   <h2 id="monitoring-eventbridge-schema">EventBridge schema</h2>
+   <p>The following event fields in the EventBridge event schema are specific to Amazon Bedrock.</p>
+   
+   
+   
+   
+   <div class="itemizedlist">
+     
+    
+     
+     
+    
+     
+
+   <ul class="itemizedlist"><li class="listitem"><p><code class="code">jobArn</code> â The ARN of the model customization job.</p></li><li class="listitem"><p><code class="code">outputModelArn</code> â The ARN of the output model. Published when the training job has completed. </p></li><li class="listitem"><p><code class="code">jobStatus</code> â The current status of the job. </p></li><li class="listitem"><p><code class="code">FailureMessage</code> â  A failure message. Published when the training job has failed.</p></li></ul></div>
+   
+   
+   
+   
+   
+    
+    <h3 id="monitoring-eventbridge-schema-example">Event example</h3>
+    <p>The folllowing is example event JSON for a failed model customization job.</p> 
+    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class=""><span>{</span>
+    "version": "0", 
+    "id": "UUID", 
+    "detail-type": "Model Customization Job State Change", 
+    "source": "aws.bedrock", 
+    "account": "123412341234", 
+    "time": "2023-08-11T12:34:56Z", 
+    "region": "us-east-1", 
+    "resources": [ "arn:aws:bedrock:us-east-1:123412341234:model-customization-job/abcdefghwxyz" ], 
+    "detail": <span>{</span> 
+        "version": "0.0",
+        "jobName": "abcd-wxyz",
+        "jobArn": "arn:aws:bedrock:us-east-1:123412341234:model-customization-job/abcdefghwxyz",
+        "outputModelName": "dummy-output-model-name",
+        "outputModelArn": "arn:aws:bedrock:us-east-1:123412341234:dummy-output-model-name",
+        "roleArn": "arn:aws:iam::123412341234:role/JobExecutionRole",
+        "jobStatus": "Failed",
+        "failureMessage": "Failure Message here.",
+        "creationTime": "2023-08-11T10:11:12Z",
+        "lastModifiedTime": "2023-08-11T12:34:56Z",
+        "endTime": "2023-08-11T12:34:56Z",
+        "baseModelArn": "arn:aws:bedrock:us-east-1:123412341234:base-model-name",
+        "hyperParameters": <span>{</span>
+            "batchSize" : "batchSizeNumberUsed",
+            "epochCount": "epochCountNumberUsed",
+            "learningRate": "learningRateUsed",
+            "learningRateWarmupSteps": "learningRateWarmupStepsUsed"
+            },
+        "trainingDataConfig": <span>{</span>
+            "s3Uri": "s3://bucket/key",
+            },
+        "validationDataConfig": <span>{</span>
+            "s3Uri": "s3://bucket/key",
+            },
+        "outputDataConfig": <span>{</span>
+            "s3Uri": "s3://bucket/key",
+            }
+    }
+}</code></pre>
+    
+
+   
+   <h2 id="monitoring-eventbridge-rules-and-targets">Rules and targets</h2>
+   <p>When an incoming event matches a rule that you created, the event is routed to the target
+    that you specified for that rule, and the target processes these events. Targets support JSON
+    format and can include AWS services such as Amazon EC2 instances, Lambda functions, Kinesis
+    streams, Amazon ECS tasks, Step Functions, Amazon SNS topics, and Amazon SQS. To receive and process events
+    correctly, you need to create rules and targets for matching, receiving, and correctly handling
+    event data. You can create these rules and targets either through the Amazon EventBridge
+    console, or through the AWS CLI. </p>
+   
+    
+    <h3 id="monitoring-eventbridge-example-rule">Example rule</h3>
+    <p>This rule matches an event pattern emitted by: <code class="code">source [âaws.bedrockâ]</code>. The
+     rule captures all events sent by Amazon EventBridge that have source âaws.bedrockâ to your
+     default event bus.</p>
+    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="">
+<span>{</span>
+    "source": ["aws.bedrock"]
+}</code></pre>
+    
+    
+  
+  
+    
+    <h3 id="monitoring-eventbridge-example-target">Target</h3>
+    <p>When creating a rule in Amazon EventBridge, you
+     need to specify a target where EventBridge sends the event that matches your rule
+     pattern. These targets can be a SageMaker pipeline, a Lambda function, an SNS topic, an SQS
+     queue or any of the other targets that EventBridge currently supports. You can refer to the
+     <em>Amazon EventBridge</em> documentation to learn how to set targets for events.
+     For a procedure that shows how to use Amazon Simple Notification Service as a target, see <a href="#monitoring-eventbridge-create-rule">Create a rule to handle Amazon Bedrock events</a>.</p>
+    
+   
+   
+   <h2 id="monitoring-eventbridge-create-rule">Create a rule to handle Amazon Bedrock events</h2>
+   <p>Complete the following procedures in order to receive email notifications about your Amazon Bedrock events.</p>
+   <div class="procedure"><h6>Create an Amazon Simple Notification Service topic</h6><ol><li><p>Open the Amazon SNS console at <a href="https://console.aws.amazon.com/sns/v3/home" rel="noopener noreferrer" target="_blank"><span>https://console.aws.amazon.com/sns/v3/home</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>.</p></li><li><p>In the navigation pane, choose <b>Topics</b>.</p></li><li><p>Choose <b>Create topic</b>.</p></li><li><p>For <b>Type</b>, choose <b>Standard</b>.</p></li><li><p>For <b>Name</b>, enter a name for your topic.</p></li><li><p>Choose <b>Create topic</b>.</p></li><li><p>Choose <b>Create subscription</b>.</p></li><li><p>For <b>Protocol</b>, choose <b>Email</b>.</p></li><li><p>For <b>Endpoint</b>, enter the email address that receives the notifications.</p></li><li><p>Choose <b>Create subscription</b>.</p></li><li><p>You'll receive an email message with the following subject line: <code class="code">AWS Notification - Subscription Confirmation</code>. Follow the directions to confirm your subscription.</p></li></ol></div>
+   
+   <p>Use the following procedure to create a rule to handle your Amazon Bedrock events.</p>
+   <div class="procedure"><h6>To create a rule to handle Amazon Bedrock events</h6><ol><li><p>Open the Amazon EventBridge console at <a href="https://console.aws.amazon.com/events/" rel="noopener noreferrer" target="_blank"><span>https://console.aws.amazon.com/events/</span><awsui-icon class="awsdocs-link-icon" name="external"></awsui-icon></a>. </p></li><li><p>Choose <b>Create rule</b>.</p></li><li><p>For <b>Name</b>, enter a name for your rule.</p></li><li><p>For <b>Rule type</b>, choose <b>Rule with an event pattern</b>.</p></li><li><p> Choose <b>Next</b>.</p></li><li><p>For Event pattern, do the following:</p>
+    <ol><li><p>For <b>Event source</b>, choose <b>AWS services</b>.</p></li><li><p>For <b>AWS service</b>, choose <b>Amazon Bedrock</b>.</p></li><li><p>For <b>Event type</b>, choose <b>Model Customization Job State Change</b>.</p></li><li><p>By default, we send notifications for every event. If you prefer, you can create an event pattern that filters events for a specific job state.</p></li><li><p>Choose <b>Next</b>.</p></li></ol>
+    </li><li><p>Specify a target as follows:</p>
+     <ol><li><p>For <b>Target types</b>, choose <b>AWS service</b>.</p></li><li><p>For <b>Select a target</b>, choose <b>SNS topic</b>.</p></li><li><p>For <b>Topic</b>, choose the SNS topic that you created for notifications.</p></li><li><p>Choose <b>Next</b>.</p></li></ol>
+     </li><li><p>(Optional) Add tags to your rule.</p></li><li><p>Choose <b>Next</b>.</p></li><li><p>Choose <b>Create rule</b>.</p></li></ol></div>
+   
+ <awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./logging-cloudwatch-metrics.html">Logging CloudWatch metrics</div><div id="next" class="next-link" accesskey="n" href="./logging-using-cloudtrail.html">CloudTrail logs</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/monitoring-eventbridge.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/monitoring-eventbridge.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

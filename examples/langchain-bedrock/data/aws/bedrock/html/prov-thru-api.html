@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Using the Provisioned Throughput API - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="prov-thru-api" /><meta name="default_state" content="prov-thru-api" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-api.html" /><meta name="description" content="Learn how to manage Provisioned Throughput using Amazon Bedrock APIs." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-api.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/prov-thru-api.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/prov-thru-api.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/prov-thru-api.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/prov-thru-api.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-api.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-api.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/prov-thru-api.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/prov-thru-api.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/prov-thru-api.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/prov-thru-api.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/prov-thru-api.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/prov-thru-api.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/prov-thru-api.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/prov-thru-api.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/prov-thru-api.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/prov-thru-api.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/prov-thru-api.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/prov-thru-api.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/prov-thru-api.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/prov-thru-api.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-api.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Using the Provisioned Throughput API" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Using the Provisioned Throughput API - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#prov-thru-api" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/prov-thru-api.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/prov-thru-api.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/prov-thru-api.html" /><meta name="keywords" content="Amazon Bedrock,bedrock" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Provisioned Throughput",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Using the Provisioned Throughput API",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#prov-thru-api" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#prov-api-methods-create">Create Provisioned Throughput</a><a href="#prov-api-methods-run">Run inference using Provisioned Throughput</a><a href="#prov-api-methods-update">Update Provisioned Throughput</a><a href="#prov-api-methods-get">Get Provisioned Throughput</a><a href="#prov-api-methods-delete">Delete Provisioned Throughput</a><a href="#prov-api-methods-list">List Provisioned Throughput resources</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="prov-thru-api">Using the Provisioned Throughput API</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>Amazon Bedrock provides API operations to create and manage your Provisioned Throughput resources. </p><div class="highlights" id="inline-topiclist"><h6>Topics</h6><ul><li><a href="#prov-api-methods-create">Create Provisioned Throughput</a></li><li><a href="#prov-api-methods-run">Run inference using Provisioned Throughput</a></li><li><a href="#prov-api-methods-update">Update Provisioned Throughput</a></li><li><a href="#prov-api-methods-get">Get Provisioned Throughput</a></li><li><a href="#prov-api-methods-delete">Delete Provisioned Throughput</a></li><li><a href="#prov-api-methods-list">List Provisioned Throughput resources</a></li></ul></div>
+        <h2 id="prov-api-methods-create">Create Provisioned Throughput</h2> 
+        <p>Use the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateProvisionedModelThroughput.html">
+            CreateProvisionedModelThroughput</a> operation to create a Provisioned Throughput for a base or custom model.</p>
+        <p>When you send a <code class="code">CreateProvisionedModelThroughput</code> operation for a base model, Bedrock
+            validates your access permissions for the requested model and checks for capacity
+            availability. If the validations are successful, Bedrock creates the provisioned
+            throughput and returns the ARN of the Provisioned Throughput.</p>
+        <p>When you send a <code class="code">CreateProvisionedModelThroughput</code> operation for a custom model, Bedrock validates
+            your access permissions for the requested custom model. and checks for capacity
+            availability. If the custom model is encrypted using a customer-managed KMS key, your
+            permissions must include <code class="code">kms:Decrypt</code> permission for this model. </p>
+        
+        <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>To see quotas for your options for <code class="code">commitmentDuration</code> and <code class="code">modelUnits</code>, 
+                see <a href="./prov-throughput.html">Provisioned Throughput</a>.</p></div></div>
+        
+        <p>To create a Provisioned Throughput for an Amazon Titan foundation model, use the
+            following IDs instead of the default ones.</p>
+        
+        
+<div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>Provisioned Throughput is currently available for the following models.</p><div class="table-container"><div class="table-contents"><table id="w230aac49c31b7c13b3"><thead>
+            <tr>
+                <th>Model name</th>
+                <th>Model ID for provisioned throughput</th>
+            </tr>
+        </thead>
+                <tr>
+                    <td tabindex="-1">Titan Text G1 - Express 8K</td>
+                    <td tabindex="-1">amazon.titan-text-express-v1:0:8k</td>
+                </tr>
+                <tr>
+                    <td tabindex="-1">Titan Embeddings G1 - Text</td>
+                    <td tabindex="-1">amazon.titan-embed-text-v1:2:8k</td>
+                </tr>
+            <tr>
+                <td tabindex="-1">Titan Multimodal Embeddings G1 - Text</td>
+                <td tabindex="-1">amazon.titan-embed-image-v1:0</td>
+            </tr>
+            <tr>
+                <td tabindex="-1">Titan Image Generator G1</td>
+                <td tabindex="-1">amazon.titan-image-generator-v1:0</td>
+            </tr>
+            <tr>
+                <td tabindex="-1">Anthropic Claude V2 18K</td>
+                <td tabindex="-1">anthropic.claude-v2:0:18k</td>
+            </tr>
+            <tr>
+                <td tabindex="-1">Anthropic Claude V2 100K</td>
+                <td tabindex="-1">anthropic.claude-v2:0:100k</td>
+            </tr>
+            <tr>
+                <td tabindex="-1">Anthropic Claude V2.1 18K</td>
+                <td tabindex="-1">anthropic.claude-v2:1:18k</td>
+            </tr>
+            <tr>
+                <td tabindex="-1">Anthropic Claude V2.1 100K</td>
+                <td tabindex="-1">anthropic.claude-v2:1:100k</td>
+            </tr>
+            <tr>
+                <td tabindex="-1">Anthropic Claude Instant V1 100K</td>
+                <td tabindex="-1">
+                    <p>anthropic.claude-instant-v1:2:100K</p>
+                </td>
+            </tr>
+           <tr>
+                <td tabindex="-1">Cohere Command</td>
+                <td tabindex="-1">
+                    <p>cohere.command-text-v14:7:4k</p>
+                </td>
+            </tr>
+            <tr>
+                <td tabindex="-1">Cohere Command Light</td>
+                <td tabindex="-1">
+                    <p>cohere.command-light-text-v14:7:4k</p>
+                </td>
+            </tr>
+              <tr>
+                <td tabindex="-1">Stable Diffusion XL 1.0</td>
+                <td tabindex="-1">stability.stable-diffusion-xl-v1:0</td>
+            </tr>
+             <tr>
+                <td tabindex="-1">Meta Llama 2 Chat 13B</td>
+                <td tabindex="-1">meta.llama2-13b-chat-v1:0:4k</td>
+            </tr>
+              <tr>
+
+                <td tabindex="-1">Meta Llama 2 13B</td>
+                <td tabindex="-1">meta.llama2-13b-v1:0:4k</td>
+            </tr>
+            <tr>
+
+                <td tabindex="-1">Meta Llama 2 70B</td>
+                <td tabindex="-1">meta.llama2-70b-v1:0:4k</td>
+            </tr>
+        </table></div></div></div></div>
+
+        
+        
+        
+        <p>The following code examples demonstrate how to create a Provisioned Throughput using
+            the AWS CLI and the Python SDK.</p>
+        <awsdocs-tabs><dl style="display: none">
+            <dt>AWS CLI</dt><dd tab-id="aws-cli">                 
+                    <p>Create the Provisioned Throughput using the following command in the AWS CLI:</p>                
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight">aws bedrock create-provisioned-model-throughput
+   --model-units 1
+   --commitment-duration SixMonths
+   --provisioned-model-name test-model 
+   --model-id arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-v2   </code></pre>                 
+                </dd>           
+            <dt>Python (Boto)</dt><dd tab-id="python-(boto)">                
+                    <p>The following example demonstrates how to create the Provisioned Throughput using Python:</p>                  
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="python ">import boto3 
+bedrock = boto3.client(service_name='bedrock')
+bedrock.create_provisioned_model_throughput(
+    modelUnits=1,
+    commitmentDuration='SixMonths',
+    provisionedModelName='test-model', 
+    modelId='arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-v2' 
+   )               </code></pre>                    
+                </dd>
+        </dl></awsdocs-tabs>
+     
+        <h2 id="prov-api-methods-run">Run inference using Provisioned Throughput</h2>       
+        <p>Use the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html">InvokeModel</a> or <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html">InvokeModelWithResponseStream</a> operation to run inference using Provisioned Throughput.
+            Specify the provisioned model ARN as the <code class="code">modelId</code> parameter. </p>
+        <p>The following code examples show how to run inference for an Anthropic
+            Claude model with a Provisioned Throughput using the AWS CLI and
+            Python. For information about the prompt format and inference parameters, see <a href="./model-parameters.html">Inference parameters for foundation models</a>.</p>
+        <awsdocs-tabs><dl style="display: none">
+            <dt>AWS CLI</dt><dd tab-id="aws-cli">                 
+                    <p>The following example demonstrates how to run inference for an Anthropic
+                        Claude model with a Provisioned Throughput in the AWS CLI.</p>                
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight">aws bedrock-runtime invoke-model
+    --model-id <code class="replaceable">provisioned-model-arn</code> \
+    --body "<span>{</span>\"prompt\": \"\n\nHuman:<code class="replaceable"> story of two dogs</code>\n\nAssistant:\"}" <code class="replaceable">invoke-model-output.txt</code></code></pre>                 
+                </dd>           
+            <dt>Python (Boto)</dt><dd tab-id="python-(boto)">                
+                    <p>The following example demonstrates how to run inference for an Anthropic
+                        Claude model with a Provisioned Throughput using Python:</p>                  
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="python ">import boto3
+import json
+
+bedrock = boto3.client(service_name='bedrock-runtime')
+
+body = json.dumps(<span>{</span>"prompt": "\n\nHuman: <code class="replaceable">explain black holes to 8th graders</code>\n\nAssistant:"})
+modelId = '<code class="replaceable">provisioned-model-arn</code>'
+accept = 'application/json'
+contentType = 'application/json'
+
+response = bedrock.invoke_model(body=body, modelId=modelId, accept=accept, contentType=contentType)
+response_body = json.loads(response.get('body').read())
+
+# text
+print(response_body.get('results')[0].get('outputText'))
+
+# embedding
+print(response_body.get('embedding'))     </code></pre>                    
+                </dd>
+        </dl></awsdocs-tabs>
+     
+        <h2 id="prov-api-methods-update">Update Provisioned Throughput</h2> 
+        <p>Use the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_UpdateProvisionedModelThroughput.html">
+            UpdateProvisionedModelThroughput</a> operation to update the specified Provisioned Throughput.</p> 
+        <p>The following code examples demonstrate how to update a Provisioned Throughput using the AWS CLI and Python.</p>
+        <awsdocs-tabs><dl style="display: none">
+            <dt>AWS CLI</dt><dd tab-id="aws-cli">                 
+                    <p>Update the Provisioned Throughput using the following command in the AWS CLI:</p>                
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight">aws bedrock update-provisioned-model-throughput
+--provisioned-model-id <code class="replaceable">provisioned-model-arn | provisioned-model-name</code> 
+--model-arn <code class="replaceable">custom-model-arn | foundation-model-arn</code></code></pre>                 
+                </dd>           
+            <dt>Python (Boto)</dt><dd tab-id="python-(boto)">                
+                    <p>The following example demonstrates how to update the Provisioned Throughput using Python:</p>                  
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="python ">import boto3 
+bedrock = boto3.client(service_name='bedrock')
+
+bedrock.update_provisioned_model_throughput(
+    provisionedModelName='<code class="replaceable">provisioned-model-arn | provisioned-model-name</code>'
+    modelArn='<code class="replaceable">custom-model-arn | foundation-model-arn</code>' 
+)      </code></pre>                    
+                </dd>
+        </dl></awsdocs-tabs>
+     
+        <h2 id="prov-api-methods-get">Get Provisioned Throughput</h2> 
+        <p>Use the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetProvisionedModelThroughput.html">GetProvisionedModelThroughput</a> operation to retrieve information about the
+            specified Provisioned Throughput.</p> 
+        <p>The following code examples demonstrates how to retrieve information using the AWS CLI
+            and Python.</p>
+        <awsdocs-tabs><dl style="display: none">
+            <dt>AWS CLI</dt><dd tab-id="aws-cli">                 
+                    <p>Retrieve information about the Provisioned Throughput using the following command in the AWS CLI:</p>                
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight">aws bedrock get-provisioned-model-throughput 
+--provisioned-model-id <code class="replaceable">provisioned-model-arn | provisioned-model-name</code></code></pre>                 
+                </dd>           
+            <dt>Python (Boto)</dt><dd tab-id="python-(boto)">                
+                    <p>The following example demonstrates how to retrieve information about the
+                        Provisioned Throughput using Python:</p>                  
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="python ">import boto3 
+bedrock = boto3.client(service_name='bedrock')
+
+bedrock.get_provisioned_model_throughput(
+    provisionedModelName='<code class="replaceable">my-provisioned-model-arn | provisioned model name</code>' 
+)                   </code></pre>                    
+                </dd>
+        </dl></awsdocs-tabs>
+     
+        <h2 id="prov-api-methods-delete">Delete Provisioned Throughput</h2> 
+        <p>Use the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_DeleteProvisionedModelThroughput.html">
+                 DeleteProvisionedModelThroughput</a> operation to delete the specified provisioned
+            throughput.</p> 
+        <p>The following code examples demonstrate how to delete a Provisioned Throughput using the AWS CLI and Python.</p>
+        <awsdocs-tabs><dl style="display: none">
+            <dt>AWS CLI</dt><dd tab-id="aws-cli">                 
+                    <p>Delete the Provisioned Throughput using the following command in the AWS CLI:</p>                
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight">aws bedrock delete-provisioned-model-throughput 
+  --provisioned-model-id <code class="replaceable">provisioned-model-arn | provisioned-model-name</code></code></pre>                 
+                </dd>           
+            <dt>Python (Boto)</dt><dd tab-id="python-(boto)">                
+                    <p>The following example demonstrates how to delete the Provisioned Throughput using Python:</p>                  
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="python ">import boto3 
+bedrock = boto3.client(service_name='bedrock')
+
+bedrock.delete_provisioned_model_throughput(
+    provisionedModelName='<code class="replaceable">my-provisioned-model-arn | provisioned model name</code>'
+)                   </code></pre>                    
+                </dd>
+        </dl></awsdocs-tabs>
+     
+        <h2 id="prov-api-methods-list">List Provisioned Throughput resources</h2> 
+        <p>Use the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListProvisionedModelThroughputs.html">
+            ListProvisionedModelThroughputs</a> operation to list the Provisioned Throughput resources that you have defined.</p> 
+        <p>The following code examples demonstrate how to list the Provisioned Throughput resources using the AWS CLI
+            and Python.</p>
+        <awsdocs-tabs><dl style="display: none">
+            <dt>AWS CLI</dt><dd tab-id="aws-cli">                 
+                    <p>List the Provisioned Throughput resources using the following command in the AWS CLI:</p>                
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="nohighlight">aws bedrock list-provisioned-model-throughputs</code></pre>                 
+                </dd>           
+            <dt>Python (Boto)</dt><dd tab-id="python-(boto)">                
+                    <p>The following example demonstrates how to list the Provisioned Throughput resources using
+                        Python:</p>                  
+                    <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="python ">import boto3 
+bedrock = boto3.client(service_name='bedrock')
+
+bedrock.list_provisioned_model_throughputs()      </code></pre>                    
+                </dd>
+        </dl></awsdocs-tabs>
+    <awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./prov-cap-console.html">Console procedures</div><div id="next" class="next-link" accesskey="n" href="./tagging.html">Tag resources</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/prov-thru-api.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/prov-thru-api.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

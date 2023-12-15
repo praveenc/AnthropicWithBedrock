@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Identity-based policy examples for Amazon Bedrock - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="security_iam_id-based-policy-examples" /><meta name="default_state" content="security_iam_id-based-policy-examples" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" /><meta name="description" content="By default, users and roles don't have permission to create or modify Amazon Bedrock resources. They also can't perform tasks by using the AWS Management Console, AWS Command Line Interface (AWS CLI), or AWS API. To grant users permission to perform actions on the resources that they need, an IAM administrator can create IAM policies. The administrator can then add the IAM policies to roles, and users can assume the roles." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Identity-based policy examples for Amazon Bedrock" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Identity-based policy examples for Amazon Bedrock - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#security_iam_id-based-policy-examples" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/security_iam_id-based-policy-examples.html" /><meta name="keywords" content="Amazon Bedrock,bedrock" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Security in Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/security.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Identity and access management for Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/security-iam.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 6,
+        "name" : "Identity-based policy examples for Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/security-iam.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#security_iam_id-based-policy-examples" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#security_iam_service-with-iam-policy-best-practices">Policy best
+               practices</a><a href="#security_iam_id-based-policy-examples-console">Use the console</a><a href="#security_iam_id-based-policy-examples-view-own-permissions">Allow users
+               to view their own permissions</a><a href="#security_iam_id-based-policy-examples-subscription">Allow access to third-party model subscriptions</a><a href="#security_iam_id-based-policy-examples-deny">Deny access for
+               inference on specific models</a><a href="#security_iam_id-based-policy-examples-model-customization">Grant custom jobs access to your training data</a><a href="#security_iam_id-based-policy-examples-kms">Permissions for using
+               KMS keys with model customization </a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="security_iam_id-based-policy-examples">Identity-based policy
+            examples for Amazon Bedrock</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>By default, users and roles don't have permission to create or modify Amazon Bedrock
+ resources. They also can't perform tasks by using the AWS Management Console, AWS Command Line Interface (AWS CLI), or AWS API. To grant users permission to perform actions on the 
+ resources that they need, an IAM administrator can create IAM policies. The administrator can then add the IAM policies to roles, and users can assume the roles.</p><p>To learn how to create an IAM identity-based policy by using these example JSON policy
+ documents, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html">Creating IAM policies</a> in the
+ <em>IAM User Guide</em>.</p><p>For details about actions and resource types defined by Amazon Bedrock, including the format of the ARNs for each of the resource types, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbedrock.html">Actions, Resources, and Condition Keys for Amazon Bedrock </a> in the <em>Service Authorization Reference</em>.</p><div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>The Amazon Bedrock service is available as a limited preview release, so its information is not included in the Service Authorization Reference.</p></div></div><div class="highlights" id="inline-topiclist"><h6>Topics</h6><ul><li><a href="#security_iam_service-with-iam-policy-best-practices">Policy best
+               practices</a></li><li><a href="#security_iam_id-based-policy-examples-console">Use the Amazon Bedrock
+               console</a></li><li><a href="#security_iam_id-based-policy-examples-view-own-permissions">Allow users
+               to view their own permissions</a></li><li><a href="#security_iam_id-based-policy-examples-subscription">Allow access to third-party model subscriptions</a></li><li><a href="#security_iam_id-based-policy-examples-deny">Deny access for
+               inference on specific models</a></li><li><a href="#security_iam_id-based-policy-examples-model-customization">Grant custom jobs access to your training data</a></li><li><a href="#security_iam_id-based-policy-examples-kms">Permissions for using
+               KMS keys with model customization </a></li></ul></div>
+         <h2 id="security_iam_service-with-iam-policy-best-practices">Policy best
+               practices</h2>
+         
+         
+   
+ <p>Identity-based policies determine whether someone can create, access, or delete Amazon Bedrock resources in your
+      account. These actions can incur costs for your AWS account. When you create or edit identity-based policies, follow these guidelines and
+      recommendations:</p>
+   <div class="itemizedlist">
+       
+       
+       
+       
+       
+   <ul class="itemizedlist"><li class="listitem">
+         <p><b>Get started with AWS managed policies and move toward least-privilege permissions</b>
+            â To get started granting permissions to your users and workloads, use the <em>AWS
+            managed policies</em> that grant permissions for many common use cases. They are
+            available in your AWS account. We recommend that you reduce permissions further by
+            defining AWS customer managed policies that are specific to your use cases. For more information, see 
+            <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies">AWS managed policies</a> or <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions.html">AWS managed policies for job functions</a> in the <em>IAM User Guide</em>.</p>
+      </li><li class="listitem">
+         <p><b>Apply least-privilege permissions</b> â 
+            When you set permissions with IAM policies, grant only the permissions required to
+            perform a task. You do this by defining the actions that can be taken on specific resources
+            under specific conditions, also known as <em>least-privilege permissions</em>.
+            For more information about using IAM to apply permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">
+            Policies and permissions in IAM</a> in the <em>IAM User Guide</em>.</p>
+      </li><li class="listitem">
+         <p><b>Use conditions in IAM policies to further restrict access</b>
+            â You can add a condition to your policies to limit access to actions and resources. For example, you can write a policy condition to specify that all requests must
+            be sent using SSL. You can also use conditions to grant access to service actions
+            if they are used through a specific AWS service, such as AWS CloudFormation. For more information, see
+            <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">
+            IAM JSON policy elements: Condition</a> in the <em>IAM User Guide</em>.</p>
+      </li><li class="listitem">
+         <p><b>Use IAM Access Analyzer to validate your IAM policies to ensure secure and functional permissions</b>
+            â IAM Access Analyzer validates new and existing policies so that the policies adhere to the IAM policy language (JSON) and IAM best practices.
+            IAM Access Analyzer provides more than 100 policy checks and actionable recommendations to help
+            you author secure and functional policies. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-policy-validation.html">IAM Access Analyzer policy validation</a> in the <em>IAM User Guide</em>.</p>
+      </li><li class="listitem">
+         <p><b>Require multi-factor authentication (MFA)</b> â
+            If you have a scenario that requires IAM users or a root user in your AWS account, turn on MFA for additional security. To require
+            MFA when API operations are called, add MFA conditions to your policies. For
+            more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_configure-api-require.html">
+            Configuring MFA-protected API access</a> in the <em>IAM User Guide</em>.</p>
+      </li></ul></div>
+ <p>For more information about best practices in IAM, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">Security best practices in IAM</a> in the <em>IAM User Guide</em>.</p>
+ 
+       
+         <h2 id="security_iam_id-based-policy-examples-console">Use the Amazon Bedrock
+               console</h2>
+         
+   
+        <p>To access the Amazon Bedrock console, you must have a minimum set of permissions.
+            These permissions must allow you to list and view details about the Amazon Bedrock resources
+            in your AWS account. If you create an identity-based policy that is more restrictive
+            than the minimum required permissions, the console won't function as intended for
+            entities (users or roles) with that policy.</p> 
+        <p>You don't need to allow minimum console permissions for users that are making calls
+            only to the AWS CLI or the AWS API. Instead, allow access to only the actions that match
+            the API operation that they're trying to perform.</p>
+  
+         <p>To provide access to the Amazon Bedrock console, attach the following policy to the roles or entities that need access.
+            A few of the actions in the policy are for use by the Amazon Bedrock console only, so IAM might raise <code class="code">Invalid Action</code> errors. 
+            You can ignore these errors and choose <b>Next</b> to complete the task.</p>   
+         <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class=""><span>{</span>
+    "Version": "2012-10-17",
+    "Statement": [
+        <span>{</span>
+            "Sid": "BedrockConsole",
+            "Effect": "Allow",
+            "Action": [  
+               "bedrock:ListFoundationModels",
+               "bedrock:GetFoundationModel",
+               "bedrock:InvokeModel", 
+               "bedrock:InvokeModelWithResponseStream", 
+               "bedrock:CreateModelCustomizationJob", 
+               "bedrock:GetModelCustomizationJob", 
+               "bedrock:GetFoundationModelAvailability",
+               "bedrock:ListModelCustomizationJobs", 
+               "bedrock:StopModelCustomizationJob", 
+               "bedrock:GetCustomModel", 
+               "bedrock:ListCustomModels", 
+               "bedrock:DeleteCustomModel",
+               "bedrock:CreateProvisionedModelThroughput", 
+               "bedrock:UpdateProvisionedModelThroughput", 
+               "bedrock:GetProvisionedModelThroughput", 
+               "bedrock:DeleteProvisionedModelThroughput", 
+               "bedrock:ListProvisionedModelThroughputs", 
+               "bedrock:ListTagsForResource", 
+               "bedrock:UntagResource", 
+               "bedrock:TagResource", 
+               "bedrock:CreateAgent", 
+               "bedrock:UpdateAgent", 
+               "bedrock:GetAgent", 
+               "bedrock:ListAgents", 
+               "bedrock:CreateActionGroup", 
+               "bedrock:UpdateActionGroup", 
+               "bedrock:GetActionGroup", 
+               "bedrock:ListActionGroups", 
+               "bedrock:CreateAgentDraftSnapshot", 
+               "bedrock:GetAgentVersion",
+               "bedrock:ListAgentVersions", 
+               "bedrock:CreateAgentAlias", 
+               "bedrock:UpdateAgentAlias",               
+               "bedrock:GetAgentAlias,
+               "bedrock:ListAgentAliases"  
+               "bedrock:InvokeAgent"  
+               "bedrock:PutFoundationModelEntitlement",
+               "bedrock:GetModelInvocationLoggingConfiguration",
+               "bedrock:PutModelInvocationLoggingConfiguration",
+               "bedrock:CreateFoundationModelAgreement",
+               "bedrock:DeleteFoundationModelAgreement",
+               "bedrock:ListFoundationModelAgreementOffers",
+               "bedrock:GetUseCaseForModelAccess",
+               "bedrock:PutUseCaseForModelAccess"
+            ],
+            "Resource": "*"
+        }
+    ]   
+}         </code></pre>         
+         <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_change-permissions.html#users_change_permissions-add-console">Adding permissions to a user</a> in the
+            <em>IAM User Guide</em>.</p>
+       
+         <h2 id="security_iam_id-based-policy-examples-view-own-permissions">Allow users
+               to view their own permissions</h2>         
+         
+   
+         <p>This example shows how you might create a policy that allows IAM users to view the inline and managed policies that are attached to their user
+            identity. This policy includes permissions to complete this action on the console or programmatically using the AWS CLI or AWS API.</p>
+         <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "Version": "2012-10-17",
+    "Statement": [
+        <span>{</span>
+            "Sid": "ViewOwnUserInfo",
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetUserPolicy",
+                "iam:ListGroupsForUser",
+                "iam:ListAttachedUserPolicies",
+                "iam:ListUserPolicies",
+                "iam:GetUser"
+            ],
+            "Resource": ["arn:aws:iam::*:user/$<span>{</span>aws:username}"]
+        },
+        <span>{</span>
+            "Sid": "NavigateInConsole",
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetGroupPolicy",
+                "iam:GetPolicyVersion",
+                "iam:GetPolicy",
+                "iam:ListAttachedGroupPolicies",
+                "iam:ListGroupPolicies",
+                "iam:ListPolicyVersions",
+                "iam:ListPolicies",
+                "iam:ListUsers"
+            ],
+            "Resource": "*"
+        }
+    ]
+}</code></pre>
+   
+       
+         <h2 id="security_iam_id-based-policy-examples-subscription">Allow access to third-party model subscriptions</h2>
+         <p>To access the Amazon Bedrock models for the first time, you use the Amazon Bedrock console to
+            subscribe to third-party models. Your IAM user or role that the console user assumes requires permission to access
+            the subscription API operations. </p>
+         <p>The following example shows an identity-based policy to allow access to the
+            subscription API operations. The example includes a condition key that limits the scope of the policy
+            to the Amazon Bedrock products in the Marketplace.</p>
+         <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class=""><span>{</span>
+    "Version": "2012-10-17",
+    "Statement": [
+        <span>{</span>
+            "Effect": "Allow",
+            "Action": [
+                "aws-marketplace:Subscribe"
+            ],
+            "Resource": "*",
+            "Condition": <span>{</span>
+                "ForAnyValue:StringEquals": <span>{</span>
+                    "aws-marketplace:ProductId": [
+                        "c468b48a-84df-43a4-8c46-8870630108a7",
+                        "99d90be8-b43e-49b7-91e4-752f3866c8c7",
+                        "b0eb9475-3a2c-43d1-94d3-56756fd43737",
+                        "1d288c71-65f9-489a-a3e2-9c7f4f6e6a85",
+                        "cc0bdd50-279a-40d8-829c-4009b77a1fcc",
+                        "d0123e8d-50d6-4dba-8a26-3fed4899f388",
+                        "a61c46fe-1747-41aa-9af0-2e0ae8a9ce05",
+                        "c504a4f3-fbde-48da-850c-1d60d131ff5a",
+                        "216b69fd-07d5-4c7b-866b-936456d68311",
+                        "b7568428-a1ab-46d8-bab3-37def50f6f6a",
+                        "38e55671-c3fe-4a44-9783-3584906e7cad",
+                        "prod-ariujvyzvd2qy",
+                        "prod-2lvuzn4iy6n6o"
+                    ]
+                }
+            }
+        },
+        <span>{</span>
+            "Effect": "Allow",
+            "Action": [
+                "aws-marketplace:Unsubscribe",
+                "aws-marketplace:ViewSubscriptions"
+            ],
+            "Resource": "*"
+        }
+    ]
+}</code></pre>
+       
+         <h2 id="security_iam_id-based-policy-examples-deny">Deny access for
+               inference on specific models</h2>
+         <p>The following example shows an identity-based policy that denies access to running inference on a specific model.</p>
+         <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class=""><span>{</span>
+    "Version": "2012-10-17",
+    "Statement": <span>{</span>
+        "Sid": "DenyInference",
+        "Effect": "Deny",
+        "Action": [
+            "bedrock:InvokeModel",
+            "bedrock:InvokeModelWithResponseStream"
+         ]
+        "Resource": "arn:aws:bedrock:*::foundation-model/model-id-of-model-to-deny"
+    }
+}        </code></pre>
+       
+         <h2 id="security_iam_id-based-policy-examples-model-customization">Grant custom jobs access to your training data</h2>
+         <p>The following example grants access to the Amazon S3 locations of the input and output data.</p>
+         <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="json "><span>{</span>
+    "Version": "2012-10-17",
+    "Statement": [
+        <span>{</span>
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:ListBucket",
+                "s3:ListObjects"
+            ],
+            "Resource": [
+                "arn:aws:s3:::<code class="replaceable">my_training_data_bucket/myfolder</code>",
+                "arn:aws:s3:::<code class="replaceable">my_validation_bucket/myfolder</code>",
+                "arn:aws:s3:::<code class="replaceable">my_output_bucket/myfolder</code>"
+            ],
+            "Condition": <span>{</span>
+               "StringEquals": <span>{</span>
+                   "aws:ResourceAccount": "<code class="replaceable">account-no</code>"
+               }
+           }
+        }
+    ]
+}</code></pre>
+         
+       
+         <h2 id="security_iam_id-based-policy-examples-kms">Permissions for using
+               KMS keys with model customization </h2>
+         <p>Provide the appropriate AWS KMS permissions for users and roles that create or use custom models.
+            For details, see <a href="./encryption-custom-job.html#encryption-key-run-custom">Use a customer managed key to run customization
+                jobs</a>.</p>
+      <awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./security_iam_service-with-iam.html">How Amazon Bedrock works with IAM</div><div id="next" class="next-link" accesskey="n" href="./security-iam-awsmanpol.html">AWS managed policies</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/security_iam_id-based-policy-examples.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/security_iam_id-based-policy-examples.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

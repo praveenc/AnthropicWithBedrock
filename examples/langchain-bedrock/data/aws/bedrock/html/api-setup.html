@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Setting up the Amazon Bedrock API - Amazon Bedrock</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="api-setup" /><meta name="default_state" content="api-setup" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-setup.html" /><meta name="description" content="Learn how to use the APIs with Amazon Bedrock foundation models." /><meta name="deployment_region" content="IAD" /><meta name="product" content="Amazon Bedrock" /><meta name="guide" content="User Guide" /><meta name="abstract" content="User Guide for the Amazon Bedrock service." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-setup.html" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/api-setup.html" hreflang="id-id" /><link rel="alternative" href="https://docs.aws.amazon.com/id_id/bedrock/latest/userguide/api-setup.html" hreflang="id" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/api-setup.html" hreflang="de-de" /><link rel="alternative" href="https://docs.aws.amazon.com/de_de/bedrock/latest/userguide/api-setup.html" hreflang="de" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-setup.html" hreflang="en-us" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-setup.html" hreflang="en" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/api-setup.html" hreflang="es-es" /><link rel="alternative" href="https://docs.aws.amazon.com/es_es/bedrock/latest/userguide/api-setup.html" hreflang="es" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/api-setup.html" hreflang="fr-fr" /><link rel="alternative" href="https://docs.aws.amazon.com/fr_fr/bedrock/latest/userguide/api-setup.html" hreflang="fr" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/api-setup.html" hreflang="it-it" /><link rel="alternative" href="https://docs.aws.amazon.com/it_it/bedrock/latest/userguide/api-setup.html" hreflang="it" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/api-setup.html" hreflang="ja-jp" /><link rel="alternative" href="https://docs.aws.amazon.com/ja_jp/bedrock/latest/userguide/api-setup.html" hreflang="ja" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/api-setup.html" hreflang="ko-kr" /><link rel="alternative" href="https://docs.aws.amazon.com/ko_kr/bedrock/latest/userguide/api-setup.html" hreflang="ko" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/api-setup.html" hreflang="pt-br" /><link rel="alternative" href="https://docs.aws.amazon.com/pt_br/bedrock/latest/userguide/api-setup.html" hreflang="pt" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_cn/bedrock/latest/userguide/api-setup.html" hreflang="zh-cn" /><link rel="alternative" href="https://docs.aws.amazon.com/zh_tw/bedrock/latest/userguide/api-setup.html" hreflang="zh-tw" /><link rel="alternative" href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-setup.html" hreflang="x-default" /><meta name="feedback-folder" content="2d8c2a09-1dac-41bf-9893-c0333d272b2c" /><meta name="feedback-item" content="Bedrock" /><meta name="this_doc_product" content="Amazon Bedrock" /><meta name="this_doc_guide" content="User Guide" /><script defer="" src="/assets/r/vendor4.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor3.js?version=2021.12.02"></script><script defer="" src="/assets/r/vendor1.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-common.js?version=2021.12.02"></script><script defer="" src="/assets/r/awsdocs-doc-page.js?version=2021.12.02"></script><link href="/assets/r/vendor4.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-common.css?version=2021.12.02" rel="stylesheet" /><link href="/assets/r/awsdocs-doc-page.css?version=2021.12.02" rel="stylesheet" /><script async="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'bedrock'}"></script><meta id="panorama-serviceSubSection" value="User Guide" /><meta id="panorama-serviceConsolePage" value="Setting up the Amazon Bedrock API" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Setting up the Amazon Bedrock API - Amazon Bedrock</title><meta name="pdf" content="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#api-setup" /><meta name="rss" content="bedrock-ug.rss" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/api-setup.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/api-setup.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=http://docs.aws.amazon.com/en_us/bedrock/latest/userguide/api-setup.html" /><meta name="keywords" content="Amazon Bedrock,bedrock" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "Amazon Bedrock",
+        "item" : "https://docs.aws.amazon.com/bedrock/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "User Guide",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 4,
+        "name" : "Use the Amazon Bedrock API",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/using-api.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 5,
+        "name" : "Setting up the Amazon Bedrock API",
+        "item" : "https://docs.aws.amazon.com/bedrock/latest/userguide/using-api.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/bedrock/latest/userguide/bedrock-ug.pdf#api-setup" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="https://aws.amazon.com">AWS</a><a href="/index.html">Documentation</a><a href="/bedrock/index.html">Amazon Bedrock</a><a href="what-is-bedrock.html">User Guide</a></div><div id="page-toc-src"><a href="#endpoints">Amazon Bedrock endpoints</a><a href="#api-using-cli-prereq">Setting up the AWS CLI</a><a href="#api-sdk">AWS SDK setup</a><a href="#api-using-sage">Using SageMaker notebooks</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="api-setup">Setting up the Amazon Bedrock API</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><div class="awsdocs-note awsdocs-important"><div class="awsdocs-note-title"><awsui-icon name="status-warning" variant="error"></awsui-icon><h6>Important</h6></div><div class="awsdocs-note-text"><p>Amazon Bedrock offers easy access to a choice of high-performing foundation models from leading AI companies, including AI21
+Labs, Anthropic, Cohere, Meta, Stability AI, and Amazon.</p><p>Before you can use any of the foundation models, you must request access to that model.
+   If you try to use the model (with the API or within the console) before you have requested access to it,
+   you will receive an error message. For more information, see
+   <a href="./model-access.html">Model access</a>.</p></div></div><p>You can access the Amazon Bedrock API using the AWS CLI, an AWS SDK, or a SageMaker Notebook.</p>
+        
+        <h2 id="endpoints">Amazon Bedrock endpoints</h2>
+        
+        <p>To connect programmatically to an AWS service, you use an endpoint. Refer to the <a href="https://docs.aws.amazon.com/general/latest/gr/bedrock.html">Amazon Bedrock endpoints and quotas</a> chapter in the AWS General Reference for information about the endpoints that you can use for Amazon Bedrock.</p>
+        
+     
+        <h2 id="api-using-cli-prereq">Setting up the AWS CLI</h2>       
+        <div class="orderedlist">
+             
+             
+        <ol><li>
+                <p>If you plan to use the CLI, install and configure the AWS CLI. See <a href="./setting-up.html#setup-awscli">Set up the AWS CLI</a>.</p>
+            </li><li>
+                <p>Configure your AWS credentials using the <code class="code">aws configure</code> CLI
+                    command (see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configure the
+                        AWS CLI</a>).</p>
+            </li></ol></div>
+        
+        <p>Refer to the following references for AWS CLI commands and operations:</p>
+            
+        <div class="itemizedlist">
+             
+             
+        <ul class="itemizedlist"><li class="listitem">
+                <p><a href="https://docs.aws.amazon.com/cli/latest/reference/bedrock">Amazon Bedrock CLI commands</a></p>
+            </li><li class="listitem">
+                <p><a href="https://docs.aws.amazon.com/cli/latest/reference/bedrock-runtime">Amazon Bedrock Runtime CLI commands</a></p>
+            </li></ul></div>
+        
+     
+        <h2 id="api-sdk">Setting up an AWS SDK</h2>
+        
+        <p>AWS software development kits (SDKs) are available for many popular programming languages. Each SDK provides an API, code examples, and documentation that make it easier for developers to build applications in their preferred language. Currently, you can make Amazon Bedrock API calls through the following SDKs.</p>
+        
+        <div class="itemizedlist">
+             
+             
+             
+             
+             
+             
+             
+        <ul class="itemizedlist"><li class="listitem">
+                <p><a href="https://docs.aws.amazon.com/sdk-for-cpp">AWS SDK for
+                    C++</a></p>
+            </li><li class="listitem">
+                <p><a href="https://docs.aws.amazon.com/sdk-for-go">AWS SDK for
+                    Go</a></p>
+            </li><li class="listitem">
+                <p><a href="https://docs.aws.amazon.com/sdk-for-java">AWS SDK for
+                    Java</a></p>
+            </li><li class="listitem">
+                <p><a href="https://docs.aws.amazon.com/sdk-for-javascript">AWS SDK for
+                        JavaScript</a></p>
+            </li><li class="listitem">
+                <p><a href="https://docs.aws.amazon.com/sdk-for-net">AWS SDK for
+                    .NET</a></p>
+            </li><li class="listitem">
+                <p><a href="https://docs.aws.amazon.com/pythonsdk">AWS SDK for Python
+                        (Boto3)</a></p>
+            </li><li class="listitem">
+                <p><a href="https://docs.aws.amazon.com/sdk-for-ruby">AWS SDK for
+                    Ruby</a></p>
+            </li></ul></div> 
+        
+        <p>For code examples, find a method in <a href="./api-methods.html">Amazon Bedrock API operations</a> and select the tab that corresponds to the programming language of your choice.</p>
+
+     
+        <h2 id="api-using-sage">Using SageMaker notebooks</h2> 
+        <p>You can use the SDK for Python (Boto3) to invoke Amazon Bedrock API operations from a SageMaker
+            notebook.</p>
+         
+            <h3 id="api-using-sage-prereq">Prerequisites  </h3>
+            <p>Note the following prerequisites:</p>
+            <div class="orderedlist">
+                   
+                 
+            <ol><li><p>Request Amazon Bedrock access for the AWS account that hosts the notebook. </p></li><li><p>Use the console to accept the Amazon Bedrock terms and conditions.</p></li></ol></div>
+         
+         
+            <h3 id="api-using-sage-role">Configure the SageMaker role</h3>
+            <p>Add Amazon Bedrock permissions to the IAM role for this SageMaker notebook.</p>
+            <p>From the IAM console, perform these steps:</p>
+            <div class="orderedlist">
+                 
+                 
+            <ol><li><p>Choose the IAM role, then choose <b>Add Permissions</b> and select <b>Create Inline Policies</b> from the dropdown list.</p></li><li><p>Include the following permission.</p></li></ol></div>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class=""><span>{</span>
+    "Version": "2012-10-17",
+    "Statement": [
+        <span>{</span>
+            "Effect": "Allow",
+            "Action": "bedrock:*",
+            "Resource": "*"
+        }
+    ]
+}           </code></pre>
+            <p>Add the following permissions to the trust relationships.</p>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class=""><span>{</span>
+    "Version": "2012-10-17",
+    "Statement": [
+        <span>{</span>
+            "Effect": "Allow",
+            "Principal": <span>{</span>
+                "Service": "bedrock.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+        },
+        <span>{</span>
+            "Sid": "",
+            "Effect": "Allow",
+            "Principal": <span>{</span>
+                "Service": "sagemaker.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+        }
+    ]
+}                   </code></pre>
+         
+        
+         
+            <h3 id="api-using-sage-runtime-test">Test the Runtime setup</h3>
+            <p>Add the following code to your notebook and run the code.</p>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="python ">import boto3
+import json
+bedrock = boto3.client(service_name='bedrock-runtime')
+
+body = json.dumps(<span>{</span>
+    "prompt": "\n\nHuman:explain black holes to 8th graders\n\nAssistant:",
+    "max_tokens_to_sample": 300,
+    "temperature": 0.1,
+    "top_p": 0.9,
+})
+
+modelId = 'anthropic.claude-v2'
+accept = 'application/json'
+contentType = 'application/json'
+
+response = bedrock.invoke_model(body=body, modelId=modelId, accept=accept, contentType=contentType)
+
+response_body = json.loads(response.get('body').read())
+# text
+print(response_body.get('completion'))</code></pre>
+         
+        
+         
+            <h3 id="api-using-sage-test">Test the Amazon Bedrock setup</h3>
+            <p>Add the following code to your notebook and run the code. </p>
+            <pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><code class="python ">import boto3
+bedrock = boto3.client(service_name='bedrock')
+
+bedrock.get_foundation_model(modelIdentifier='anthropic.claude-v2')</code></pre>
+         
+        
+        
+        
+
+    <awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./using-api.html">Use the API</div><div id="next" class="next-link" accesskey="n" href="./api-methods.html">API operations</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/api-setup.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?feedback_destination_id=2d8c2a09-1dac-41bf-9893-c0333d272b2c&amp;topic_url=https://docs.aws.amazon.com/en_us/bedrock/latest/userguide/api-setup.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>
