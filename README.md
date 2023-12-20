@@ -7,7 +7,8 @@
 
 ## Retrieval Augmented Generation (RAG)
 
-- [RAG with Claude-v2 and Cohere-v3 on Bedrock](./examples/langchain-bedrock/rag_with_bedrock/RAG_with_claudev2_coherev3.ipynb)
+- [RAG with re-ranking Claudev2, Coherev3, Qdrant](./examples/langchain-bedrock/rag_with_bedrock/RAG_with_reranking_claudev2.ipynb)
+- [RAG with MultiQuery Retriever Claudev2, Coherev3, Qdrant](./examples/langchain-bedrock/rag_with_bedrock/RAG_with_multiquery_claudev2.ipynb)
 
 ## Function calling - Example with prompt engineering (not external packages)
 
