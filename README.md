@@ -3,7 +3,7 @@
 ## Chaining LLM calls using LangChain with Anthropic models on Amazon Bedrock
 
 - [Langchain Sequential Chains](./examples/langchain-bedrock/sequential-router-chains/anthropic-sequential-chains.ipynb)
-- [Langchain Multi-prompt Router Chains](./examples/langchain-anthropic/sequential-router-chains/anthropic-router-chains.ipynb)
+- [Langchain Multi-prompt Router Chains](./examples/langchain-bedrock/sequential-router-chains/anthropic-router-chains.ipynb)
 
 ## Retrieval Augmented Generation (RAG)
 
