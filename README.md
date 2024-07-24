@@ -1,5 +1,19 @@
 # Building GenAI applications on Amazon Bedrock with Anthropic
 
+## Tool Use with Anthropic LLMs on Amazon Bedrock
+
+### Claudev3 on Amazon Bedrock
+
+- [Tool use with Claudev3 and Amazon Bedrock](./examples/tool_use/claude_v3x/tool_use_claudev3.ipynb)
+
+### Claudev2 Tool Use (Function calling) - Example with prompt engineering (not external packages)
+
+- [How function Calling with Claude works](./examples/tool_use/claude_v2x/README.md)
+- [Function Calling with Anthropic_Bedrock py SDK](./examples/tool_use/claude_v2x/anthropic_func_calling.ipynb)
+  - [List of functions to be called](./examples/tool_use/claude_v2x/tools.py)
+
+---
+
 ## Chaining LLM calls using LangChain with Anthropic models on Amazon Bedrock
 
 - [Langchain Sequential Chains](./examples/langchain-bedrock/sequential-router-chains/anthropic-sequential-chains.ipynb)
@@ -10,11 +24,6 @@
 - [RAG with re-ranking Claudev2, Coherev3, Qdrant](./examples/langchain-bedrock/rag_with_bedrock/RAG_with_reranking_claudev2.ipynb)
 - [RAG with MultiQuery Retriever Claudev2, Coherev3, Qdrant](./examples/langchain-bedrock/rag_with_bedrock/RAG_with_multiquery_claudev2.ipynb)
 
-## Function calling - Example with prompt engineering (not external packages)
-
-- [How function Calling with Claude works](./examples/function_calling/README.md)
-- [Function Calling with Anthropic_Bedrock py SDK](./examples/function_calling/anthropic_func_calling.ipynb)
-  - [List of functions to be called](./examples/function_calling/tools.py)
 
 ## LangChain Agents with Anthropic Claude
 
