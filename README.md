@@ -2,12 +2,23 @@
 
 ## Tool Use with Anthropic LLMs on Amazon Bedrock
 
-### Claudev3 on Amazon Bedrock
+Refer [here](./examples/tool_use/claude_v3x/README.md) on how tool use works.
 
-- [Tool use with Claudev3 and Amazon Bedrock](./examples/tool_use/claude_v3x/tool_use_claudev3.ipynb)
-  - Demonstrate calling python functions with `tool_use` params.
-    - [`calculator`](./examples/tool_use/claude_v3x/tools_claudev3.py) function to perform arthimetic operations
-    - [`get_lat_long`](./examples/tool_use/claude_v3x/tools_claudev3.py) and [`get_weather`](./examples/tool_use/claude_v3x/tools_claudev3.py) functions to get current weather information
+- [Tool use with Claudev3 and Amazon Bedrock](./examples/tool_use/claude_v3x/api_calls/tool_use_claudev3.ipynb)\
+Demonstrate calling python functions with `tool_use` params.
+  - [`calculator`](./examples/tool_use/claude_v3x/api_calls/tools_claudev3.py) function to perform arthimetic operations
+  - [`get_lat_long`](./examples/tool_use/claude_v3x/api_calls/tools_claudev3.py) and [`get_weather`](./examples/tool_use/claude_v3x/api_calls/tools_claudev3.py) functions to get current weather information.
+
+
+
+- [Get structured output with Tool use](./examples/tool_use/claude_v3x/structured_output/tool_use_structured_output.ipynb)\
+Demonstrate extracting structured output for the following use-cases
+   1. **Text Summarization**
+   2. **Named Entity Recognition**
+   3. **Sentiment Analysis**
+   4. **Text Classification**
+
+---
 
 ### Claudev2 Tool Use (Function calling) - Example with prompt engineering (not external packages)
 
