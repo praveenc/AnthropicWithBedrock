@@ -1,4 +1,4 @@
-# Function Calling with Claude
+# Tool Use (a.k.a function calling) with Claude
 
 Through the function calling prompt, users can now describe functions to Claude and have the model intelligently choose to use the functions to answer user questions.
 

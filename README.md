@@ -5,11 +5,14 @@
 ### Claudev3 on Amazon Bedrock
 
 - [Tool use with Claudev3 and Amazon Bedrock](./examples/tool_use/claude_v3x/tool_use_claudev3.ipynb)
+  - Demonstrate calling python functions with `tool_use` params.
+    - [`calculator`](./examples/tool_use/claude_v3x/tools_claudev3.py) function to perform arthimetic operations
+    - [`get_lat_long`](./examples/tool_use/claude_v3x/tools_claudev3.py) and [`get_weather`](./examples/tool_use/claude_v3x/tools_claudev3.py) functions to get current weather information
 
 ### Claudev2 Tool Use (Function calling) - Example with prompt engineering (not external packages)
 
-- [How function Calling with Claude works](./examples/tool_use/claude_v2x/README.md)
-- [Function Calling with Anthropic_Bedrock py SDK](./examples/tool_use/claude_v2x/anthropic_func_calling.ipynb)
+- [How Tool use (function calling) works in Claude v2.x](./examples/tool_use/claude_v2x/README.md)
+- [Tool use with Claude v2.x models on Anthropic_Bedrock Notebook](./examples/tool_use/claude_v2x/anthropic_func_calling.ipynb)
   - [List of functions to be called](./examples/tool_use/claude_v2x/tools.py)
 
 ---
