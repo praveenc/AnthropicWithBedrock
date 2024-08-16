@@ -4,7 +4,7 @@
 
 Refer [here](./examples/tool_use/claude_v3x/README.md) on how tool use works.
 
-- [Tool use with Claudev3 and Amazon Bedrock](./examples/tool_use/claude_v3x/api_calls/tool_use_claudev3.ipynb)\
+- [Tool use with Claudev3 and Amazon Bedrock](./examples/tool_use/claude_v3x/api_calls/tool_use_apicalls_claudev3.ipynb)\
 Demonstrate calling python functions with `tool_use` params.
   - [`calculator`](./examples/tool_use/claude_v3x/api_calls/tools_claudev3.py) function to perform arthimetic operations
   - [`get_lat_long`](./examples/tool_use/claude_v3x/api_calls/tools_claudev3.py) and [`get_weather`](./examples/tool_use/claude_v3x/api_calls/tools_claudev3.py) functions to get current weather information.
@@ -17,6 +17,9 @@ Demonstrate extracting structured output for the following use-cases
    2. **Named Entity Recognition**
    3. **Sentiment Analysis**
    4. **Text Classification**
+
+- [Building a sample research assistant with tool use](./examples/tool_use/claude_v3x/research_assistant/research_assistant_sonnet_v35.ipynb)\
+Demonstrate build out a research assistant using Claude. A user can enter a topic that they want to research and get a list of Wikipedia article links saved to a markdown file for later reading.
 
 ---
 
